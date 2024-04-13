@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mayk_App.View.SingUpPage"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel"
+             x:DataType="vm:SingUpViewModel"
+             Title="SingUpPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Регистрация"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button Text="Зарегистрироваться"/>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+            <Label  FontAttributes="Bold" TextColor="Gray" Text="Уже есть аккаунт?" VerticalTextAlignment="Center" />
+            <Frame>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RedirectToSingInCommand}"/>
+                </Frame.GestureRecognizers>
+                <Label  Text="Войти" FontSize="18" 
+                           FontAttributes="Bold"
+                           TextColor="{x:StaticResource Primary}" />
+            </Frame>
+            <HorizontalStackLayout.GestureRecognizers>
+                <!--<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_For_SignUP" />-->
+            </HorizontalStackLayout.GestureRecognizers>
+        </HorizontalStackLayout>
+
+
+    </VerticalStackLayout>
+</ContentPage>
