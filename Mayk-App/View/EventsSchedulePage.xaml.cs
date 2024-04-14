@@ -1,8 +1,8 @@
 namespace Mayk_App.View;
 
-public partial class SchedulePage : ContentPage
+public partial class EventsSchedulePage : ContentPage
 {
-	public SchedulePage()
+	public EventsSchedulePage()
 	{
 		InitializeComponent();
 	}
