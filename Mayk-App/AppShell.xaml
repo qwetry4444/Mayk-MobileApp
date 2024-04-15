@@ -3,29 +3,29 @@
     x:Class="Mayk_App.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Mayk_App.View">
+    xmlns:view="clr-namespace:Mayk_App.View">
 
-    <!--<ShellContent
+    <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:StartPage}"
-        Route="StartPage" />-->
+        ContentTemplate="{DataTemplate view:StartPage}"
+        Route="StartPage" />
 
     <TabBar>
         <ShellContent Title="Расписание"
                       Icon="calendar.png"
-                      ContentTemplate="{DataTemplate local:EventsSchedulePage}" />
+                      ContentTemplate="{DataTemplate view:EventsSchedulePage}" />
         <ShellContent Title="Документы"
                       Icon="docs.svg"
-                      ContentTemplate="{DataTemplate local:DocumentsPage}" />
+                      ContentTemplate="{DataTemplate view:DocumentsPage}" />
         <ShellContent Title="Заметки"
                       Icon="note.png"
-                      ContentTemplate="{DataTemplate local:NotesListPage}" />
+                      ContentTemplate="{DataTemplate view:NotesListPage}" />
     </TabBar>
 
         <!--<Tab Title="Расписание"
              Icon="calendar.png" >
             <ShellContent Title="Cats"
-                         ContentTemplate="{DataTemplate local:MainPage}" />
+                         ContentTemplate="{DataTemplate view:MainPage}" />
         </Tab>
 
         <Tab Title="Документы"

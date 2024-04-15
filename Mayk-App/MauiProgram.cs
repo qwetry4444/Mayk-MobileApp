@@ -1,6 +1,9 @@
 ﻿using Mayk_App.View;
 using Mayk_App.ViewModel;
 using Microsoft.Extensions.Logging;
+using CommunityToolkit;
+using Mayk_App.Services;
+using Mayk_App.Service;
 
 namespace Mayk_App
 {
@@ -16,9 +19,10 @@ namespace Mayk_App
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+            builder.Services.AddTransient<IUserService, UserService>();
 
-            builder.Services.AddSingleton<StartPage>();
-            builder.Services.AddSingleton<StartViewModel>();
+            builder.Services.AddTransient<StartPage>();
+            builder.Services.AddTransient<StartViewModel>();
 
             builder.Services.AddTransient<SingInPage>();
             builder.Services.AddTransient<SingInViewModel>();
@@ -26,7 +30,7 @@ namespace Mayk_App
             builder.Services.AddTransient<SingUpPage>();
             builder.Services.AddTransient<SingUpViewModel>();
 
-            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddTransient<MainPage>();
             
 #if DEBUG
     		builder.Logging.AddDebug();

@@ -6,12 +6,22 @@
              x:DataType="vm:SingUpViewModel"
              Title="SingUpPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Регистрация"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <StackLayout Padding="20">
+            <Label 
+                Text="Регистрация"
+                FontSize="Large"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Margin="0,20,0,10"/>
+            <Entry Placeholder="Имя" Text="{Binding FirstName}" Margin="0,0,0,10"/>
+            <Entry Placeholder="Фамилия" Text="{Binding LastName}" Margin="0,0,0,10"/>
+            <Entry Placeholder="Почта" Keyboard="Email" Text="{Binding Email}" Margin="0,0,0,10"/>
+            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" Margin="0,0,0,10"/>
+            <Entry Placeholder="Confirm Password" IsPassword="True" Text="{Binding PasswordRepeat}" Margin="0,0,0,10"/>
 
-        <Button Text="Зарегистрироваться"/>
+            <Button Text="Зарегистрироваться" Command="{Binding VerifyUserCommand}" HorizontalOptions="FillAndExpand" Margin="0,10,0,0"/>
+        </StackLayout>
+
 
         <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
             <Label  FontAttributes="Bold" TextColor="Gray" Text="Уже есть аккаунт?" VerticalTextAlignment="Center" />

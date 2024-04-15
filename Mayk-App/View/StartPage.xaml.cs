@@ -1,6 +1,6 @@
 using Mayk_App.ViewModel;
 
-namespace Mayk_App;
+namespace Mayk_App.View;
 
 public partial class StartPage : ContentPage
 {
