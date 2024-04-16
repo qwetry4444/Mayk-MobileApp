@@ -16,6 +16,7 @@
             <Entry Placeholder="Имя" Text="{Binding FirstName}" Margin="0,0,0,10"/>
             <Entry Placeholder="Фамилия" Text="{Binding LastName}" Margin="0,0,0,10"/>
             <Entry Placeholder="Почта" Keyboard="Email" Text="{Binding Email}" Margin="0,0,0,10"/>
+            <Entry Placeholder="Почта" Keyboard="Email" Text="{Binding }" Margin="0,0,0,10"/>
             <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" Margin="0,0,0,10"/>
             <Entry Placeholder="Confirm Password" IsPassword="True" Text="{Binding PasswordRepeat}" Margin="0,0,0,10"/>
 

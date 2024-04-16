@@ -4,6 +4,8 @@ using Microsoft.Extensions.Logging;
 using CommunityToolkit;
 using Mayk_App.Services;
 using Mayk_App.Service;
+using Microsoft.Maui.Hosting;
+using MvvmHelpers;
 
 namespace Mayk_App
 {
@@ -18,25 +20,43 @@ namespace Mayk_App
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
-            builder.Services.AddTransient<IUserService, UserService>();
+                })
+                .RegisterAppServices()
+                .RegisterViewModels()
+                .RegisterViews();
 
-            builder.Services.AddTransient<StartPage>();
-            builder.Services.AddTransient<StartViewModel>();
 
-            builder.Services.AddTransient<SingInPage>();
-            builder.Services.AddTransient<SingInViewModel>();
-
-            builder.Services.AddTransient<SingUpPage>();
-            builder.Services.AddTransient<SingUpViewModel>();
-
-            builder.Services.AddTransient<MainPage>();
-            
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
         }
+
+        public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder mauiAppBuilder)
+        {
+            mauiAppBuilder.Services.AddSingleton<IUserService, UserService>();
+            return mauiAppBuilder;
+        }
+
+        public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder mauiAppBuilder)
+        {
+            mauiAppBuilder.Services.AddSingleton<StartViewModel>();
+            mauiAppBuilder.Services.AddSingleton<SingInViewModel>();
+            mauiAppBuilder.Services.AddSingleton<SingUpViewModel>();
+
+            return mauiAppBuilder;
+        }
+
+        public static MauiAppBuilder RegisterViews(this MauiAppBuilder mauiAppBuilder)
+        {
+            mauiAppBuilder.Services.AddTransient<StartPage>();
+            mauiAppBuilder.Services.AddTransient<MainPage>();
+            mauiAppBuilder.Services.AddTransient<SingUpPage>();
+            mauiAppBuilder.Services.AddTransient<SingInPage>();
+
+            return mauiAppBuilder;
+        }
+
     }
 }

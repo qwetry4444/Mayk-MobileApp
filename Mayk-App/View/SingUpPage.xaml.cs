@@ -9,6 +9,6 @@ public partial class SingUpPage : ContentPage
 	{
 		InitializeComponent();
 		BindingContext = vm;
-		this.singUpViewModel = vm;
+		singUpViewModel = vm;
 	}
 }

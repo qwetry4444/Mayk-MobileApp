@@ -8,7 +8,7 @@ namespace Mayk_App.Service
     {
         private SQLiteAsyncConnection connection;
 
-        UserService()
+        public UserService()
         {
             SetupDatabase();
         }

@@ -4,12 +4,27 @@
              x:Class="Mayk_App.View.StartPage"
              Title="StartPage"
              xmlns:vm="clr-namespace:Mayk_App.ViewModel"
-             x:DataType="vm:StartViewModel">
+             x:DataType="vm:StartViewModel"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="start_png5.svg">
+    
+    
     <Grid ColumnDefinitions=".1*, .8*, .1*"
-          RowDefinitions="100"
+          RowDefinitions="Auto"
           Padding="20">
+
+        <VerticalStackLayout
+            Grid.Column="1"
+            Grid.Row="0">
+            <Label Text="Маяк" />
+            <Label Text="Концертное объединение" />
+
+        </VerticalStackLayout>
+
+        
         <Frame Grid.Column="1"
-               Grid.Row="0">
+               Grid.Row="2">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RedirectToCommandCommand}"/>
             </Frame.GestureRecognizers>

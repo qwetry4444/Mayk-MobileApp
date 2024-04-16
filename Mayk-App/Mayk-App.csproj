@@ -52,7 +52,10 @@
 	  <None Remove="Resources\Images\calendar.png" />
 	  <None Remove="Resources\Images\calendar.svg" />
 	  <None Remove="Resources\Images\docs.svg" />
+	  <None Remove="Resources\Images\logo.svg" />
 	  <None Remove="Resources\Images\note.svg" />
+	  <None Remove="Resources\Images\start.svg" />
+	  <None Remove="Resources\Images\start_png5.png" />
 	</ItemGroup>
 
 	<ItemGroup>

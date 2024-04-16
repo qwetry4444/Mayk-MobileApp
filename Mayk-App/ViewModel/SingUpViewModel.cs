@@ -1,23 +1,18 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Mayk_App.Service;
+using Mayk_App.Model;
 using Mayk_App.Services;
 using Mayk_App.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mayk_App.ViewModel
 {
     public partial class SingUpViewModel : ObservableObject
     {
-        private readonly IUserService userService;
+        private readonly IUserService _userService;
 
-        SingUpViewModel(IUserService userService)
+        public SingUpViewModel(IUserService userService)
         {
-            this.userService = userService;
+            _userService = userService;
         }
 
         [RelayCommand]
@@ -29,14 +24,29 @@ namespace Mayk_App.ViewModel
         [RelayCommand]
         async void VerifyUser()
         {
-            return;
-        } 
+            if (string.IsNullOrEmpty(FirstName) 
+                || string.IsNullOrEmpty(LastName) 
+                || string.IsNullOrEmpty(Email) 
+                || string.IsNullOrEmpty(PhoneNumber) 
+                || string.IsNullOrEmpty(Password))
+                return;
+            //User a = new User(user)
+            //await _userService.AddAsync(new Model.User(
+            //    UserId = 
+
+            //    ));
+        }
+
+        int _userId = 0;
 
         [ObservableProperty]
         private string _firstName;
 
         [ObservableProperty]
         private string _lastName;
+
+        [ObservableProperty]
+        private string _phoneNumber;
 
         [ObservableProperty]
         private string _email;
@@ -46,5 +56,7 @@ namespace Mayk_App.ViewModel
 
         [ObservableProperty]
         private string _passwordRepeat;
+
+
     }
 }
