@@ -20,6 +20,10 @@ namespace Mayk_App
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Montserrat-Medium.ttf", "MontserratMedium");
+                    fonts.AddFont("Montserrat-Regular.ttf", "MontserratRegular");
+                    fonts.AddFont("Montserrat-Bold.ttf", "MontserratBold");
+                    fonts.AddFont("Montserrat-Semibold.ttf", "MontserratSemibold");
                 })
                 .RegisterAppServices()
                 .RegisterViewModels()
