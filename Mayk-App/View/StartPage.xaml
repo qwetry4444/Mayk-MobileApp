@@ -8,9 +8,60 @@
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False"
              BackgroundImageSource="start_png5.svg">
-    
-    
-    <Grid ColumnDefinitions=".1*, .3*, .4*, .3*, .1*"
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle"
+                   TargetType="{x:Type Label}">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="MontserratSemibold"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="28"/>
+                <Setter Property="TextColor" Value="#fff"/>
+                <Setter Property="Margin" Value="0, 50, 0, 10"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="SubtitleLabelStyle"
+                   TargetType="{x:Type Label}">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="MontserratMedium"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="TextColor" Value="#fff"/>
+                <Setter Property="Margin" Value="0, 10, 0, 10"/>
+                <Setter Property="LineBreakMode" Value="WordWrap"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="PrimaryButtonPanelStyle"
+                   TargetType="Frame">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#E65C00" Offset="0"/>
+                            <GradientStop Color="#F9D423" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style>
+            
+            <Style x:Key="PrimaryButtonLabelStyle"
+                   TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="#fff"/>
+                <Setter Property="FontFamily" Value="MontserratSemibold"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid ColumnDefinitions=".1*, .3*, .7*, .3*, .1*"
           RowDefinitions="Auto, *, 64"
           Padding="20">
 
@@ -18,46 +69,29 @@
                              Grid.Row="0"
                              HorizontalOptions="Center"
                              VerticalOptions="Center"
-                             Margin="0, 64, 0, 0"
-                             >
+                             Margin="0, 64, 0, 0">
             <Label Text="Маяк"
-                   HorizontalOptions="Center"
-                   FontFamily="MontserratSemibold"
-                   FontAttributes="Bold"
-                   FontSize="Title"
-                   TextColor="#fff"
-                   Margin="0, 50, 0, 10"/>
-            
+                   Style="{StaticResource TitleLabelStyle}"/>
+
             <BoxView Color="#fff" 
                      HeightRequest="1" 
                      WidthRequest="140"
-                     HorizontalOptions="CenterAndExpand"
-                     />
+                     HorizontalOptions="CenterAndExpand"/>
 
-            <Label Text="Концертное объединение"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   HorizontalTextAlignment="Center"
-                   LineBreakMode="WordWrap"
-                   FontSize="Subtitle"
-                   FontFamily="MontserratMedium"
-                   TextColor="#fff"
-                   Margin="0, 10, 0, 50"/>
-
+            <Label Text="Творческое объединение"
+                   Style="{StaticResource SubtitleLabelStyle}"/>
         </VerticalStackLayout>
 
-        
+
         <Frame Grid.Column="1"
-               Grid.ColumnSpan="3"
-               Grid.Row="2"
-               Padding="20">
+              Grid.ColumnSpan="3"
+              Grid.Row="2"
+              Style="{StaticResource PrimaryButtonPanelStyle}">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RedirectToCommandCommand}"/>
             </Frame.GestureRecognizers>
-            <Label Text="Войти"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
+            <Label Text="Начать"
+                   Style="{StaticResource PrimaryButtonLabelStyle}"/>
         </Frame>
     </Grid>
-    
 </ContentPage>

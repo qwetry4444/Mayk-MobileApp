@@ -21,16 +21,4 @@
                       Icon="note.png"
                       ContentTemplate="{DataTemplate view:NotesListPage}" />
     </TabBar>
-
-        <!--<Tab Title="Расписание"
-             Icon="calendar.png" >
-            <ShellContent Title="Cats"
-                         ContentTemplate="{DataTemplate view:MainPage}" />
-        </Tab>
-
-        <Tab Title="Документы"
-             Icon="calendar.svg">
-            <ShellContent ContentTemplate="{DataTemplate views:MonkeysPage}" />
-        </Tab>-->
-
 </Shell>

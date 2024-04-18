@@ -11,6 +11,7 @@ namespace Mayk_App
 {
     public static class MauiProgram
     {
+        Preferences.
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
@@ -28,7 +29,12 @@ namespace Mayk_App
                 .RegisterAppServices()
                 .RegisterViewModels()
                 .RegisterViews();
-
+            Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>
+            {
+#if ANDROID
+                handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+#endif
+            });
 
 #if DEBUG
             builder.Logging.AddDebug();

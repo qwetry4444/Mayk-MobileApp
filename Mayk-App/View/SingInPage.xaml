@@ -5,9 +5,155 @@
              xmlns:vm="clr-namespace:Mayk_App.ViewModel"
              x:DataType="vm:SingInViewModel"
              Title="SingInPage">
+
+    <ContentPage.Resources>
+        <LayoutOptions x:Key="horzOptions"
+               Alignment="Center" />
+        <LayoutOptions x:Key="vertOptions"
+               Alignment="Center" />
+
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle"
+                   TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemibold"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="TextColor" Value="#F09819"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="SubtitleBlackLabelStyle"
+                   TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemibold"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="#000"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="SubtitleOrangeLabelStyle"
+                   TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemibold"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="#F09819"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="InputPanelStyle"
+                   TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#E8E8E8"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="HeightRequest" Value="80"/>
+                <Setter Property="BorderColor" Value="#fff"/>
+            </Style>
+
+            <Style x:Key="ButtonPanelStyle"
+                   TargetType="Frame">
+                <Setter Property="HeightRequest" Value="64"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#E65C00" Offset="0"/>
+                            <GradientStop Color="#F9D423" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderColor" Value="#fff"/>
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style>
+            
+            <Style x:Key="ButtonTextStyle"
+                   TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="#fff"/>
+                <Setter Property="FontFamily" Value="MontserratSemibold"/>
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
+
+            <Style x:Key="EntryStyle"
+       TargetType="Entry">
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="TextColor" Value="#606060"/>
+                <Setter Property="FontFamily" Value="MontserratMedium"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="HeightRequest" Value="50"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
     
-    <Grid RowDefinitions="1*,8*,1*">
-        <Frame CornerRadius="0" BackgroundColor="{x:StaticResource DashboardBackground}"
+
+
+    <Grid ColumnDefinitions="1*, 1*, 2*, 4*, 2*, 1*, 1*"
+          RowDefinitions="Auto, Auto, Auto, Auto"
+          Padding="20"
+          RowSpacing="30">
+        <VerticalStackLayout Grid.Column="3" 
+                             Grid.Row="0"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Spacing="10"
+                             Margin="0, 64, 0, 16">
+            <Image Source="logo.svg"/>
+            <Label Text="Маяк"
+                   Style="{StaticResource TitleLabelStyle}"/>
+
+            <BoxView Color="#000"  
+                     HeightRequest="1" 
+                     WidthRequest="100"
+                     HorizontalOptions="CenterAndExpand"/>
+            <VerticalStackLayout>
+                <Label Text="Творческое"
+                   Style="{StaticResource SubtitleBlackLabelStyle}"/>
+                <Label Text="объединение"
+                   Style="{StaticResource SubtitleOrangeLabelStyle}"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Column="2"
+                             Grid.ColumnSpan="3"
+                             Grid.Row="1"
+                             Spacing="15">
+            <Frame Style="{StaticResource InputPanelStyle}">
+                <Entry Placeholder="Почта"
+                       Style="{StaticResource EntryStyle}"/>
+            </Frame>
+            <Frame Style="{StaticResource InputPanelStyle}">
+                <Entry Placeholder="Пароль"
+                       Style="{StaticResource EntryStyle}"/>
+            </Frame>
+            
+        </VerticalStackLayout>
+
+        <Frame Grid.Column="1"
+               Grid.ColumnSpan="5"
+               Grid.Row="2"
+               Style="{StaticResource ButtonPanelStyle}">
+            <Label Text="Войти"
+                   Style="{StaticResource ButtonTextStyle}"/>
+        </Frame>
+
+        <VerticalStackLayout Grid.Column="2"
+                             Grid.ColumnSpan="3"
+                             Grid.Row="3"
+                             HorizontalOptions="Center"
+                             Spacing="10">
+            <Label Text="Все еще нет аккаунта?"
+                   Style="{StaticResource SubtitleBlackLabelStyle}"/>
+            <Label Text="Зарегестрироваться"
+                   Style="{StaticResource SubtitleOrangeLabelStyle}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RedirectToSingUpCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+        </VerticalStackLayout>
+
+
+        <!--<Frame CornerRadius="0" BackgroundColor="{x:StaticResource DashboardBackground}"
                Grid.Row="1" VerticalOptions="CenterAndExpand"
                Margin="0,0,40,0"
                >
@@ -16,20 +162,20 @@
 
                 <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                     <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
-                        <!--<Image VerticalOptions="Center" Source="email.png" HeightRequest="25" WidthRequest="25" />-->
-                        <!--<handless:BorderlessEntry VerticalOptions="Center" Placeholder="Email" Grid.Column="1" />-->
+                        --><!--<Image VerticalOptions="Center" Source="email.png" HeightRequest="25" WidthRequest="25" />-->
+                        <!--<handless:BorderlessEntry VerticalOptions="Center" Placeholder="Email" Grid.Column="1" />--><!--
                     </Grid>
                 </Frame>
 
                 <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                     <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
-                        <!--<Image VerticalOptions="Center" Source="password.png" HeightRequest="25" WidthRequest="25" />
-                        <handless:BorderlessEntry VerticalOptions="Center" Placeholder="Password" IsPassword="True" Grid.Column="1" />-->
+                        --><!--<Image VerticalOptions="Center" Source="password.png" HeightRequest="25" WidthRequest="25" />
+                        <handless:BorderlessEntry VerticalOptions="Center" Placeholder="Password" IsPassword="True" Grid.Column="1" />--><!--
                     </Grid>
                 </Frame>
 
                 <Button CornerRadius="0" HeightRequest="60" Text="SIGN IN" FontSize="20" FontAttributes="Bold" />
-                <!--Lest create borderless entry -->
+                --><!--Lest create borderless entry --><!--
                 <Label FontAttributes="Bold" Text="Forgot Password?" TextColor="Gray" HorizontalTextAlignment="Center" />
                 <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
                     <Label  FontAttributes="Bold" TextColor="Gray" Text="Don't have account?" VerticalTextAlignment="Center" />
@@ -42,11 +188,11 @@
                            TextColor="{x:StaticResource Primary}" />
                     </Frame>
                     <HorizontalStackLayout.GestureRecognizers>
-                        <!--<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_For_SignUP" />-->
+                        --><!--<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_For_SignUP" />--><!--
                     </HorizontalStackLayout.GestureRecognizers>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 
-        </Frame>
+        </Frame>-->
     </Grid>
 </ContentPage>

@@ -4,31 +4,28 @@
              x:Class="Mayk_App.View.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+        <Grid
+            ColumnDefinitions="1*, 1*, 8*, 1*, 1*"
+            RowDefinitions="Auto, Auto, Auto">
+            <HorizontalStackLayout Grid.Column="1"
+                                   Grid.ColumnSpan="3"
+                                   Grid.Row="0">
+                <Label Text="Здравствуйте, "/>
+                <Label Text="NAME"/>
+            </HorizontalStackLayout>
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+            <HorizontalStackLayout Grid.Column="1"
+                       Grid.ColumnSpan="3"
+                       Grid.Row="1">
+                <Label Text="Ближайшие"/>
+                <Label Text="события"/>
+            </HorizontalStackLayout>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="3"
+                                 Grid.Row="2">
+                
+            </VerticalStackLayout>
+        </Grid>
     </ScrollView>
 
 </ContentPage>
