@@ -11,7 +11,6 @@ namespace Mayk_App
 {
     public static class MauiProgram
     {
-        Preferences.
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
@@ -46,6 +45,7 @@ namespace Mayk_App
         public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder mauiAppBuilder)
         {
             mauiAppBuilder.Services.AddSingleton<IUserService, UserService>();
+            mauiAppBuilder.Services.AddSingleton<IRepetitionService, RepetitionService>();
             return mauiAppBuilder;
         }
 
@@ -54,6 +54,7 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<StartViewModel>();
             mauiAppBuilder.Services.AddSingleton<SingInViewModel>();
             mauiAppBuilder.Services.AddSingleton<SingUpViewModel>();
+            mauiAppBuilder.Services.AddSingleton<MainViewModel>();
 
             return mauiAppBuilder;
         }
@@ -61,9 +62,9 @@ namespace Mayk_App
         public static MauiAppBuilder RegisterViews(this MauiAppBuilder mauiAppBuilder)
         {
             mauiAppBuilder.Services.AddTransient<StartPage>();
-            mauiAppBuilder.Services.AddTransient<MainPage>();
             mauiAppBuilder.Services.AddTransient<SingUpPage>();
             mauiAppBuilder.Services.AddTransient<SingInPage>();
+            mauiAppBuilder.Services.AddTransient<MainPage>();
 
             return mauiAppBuilder;
         }

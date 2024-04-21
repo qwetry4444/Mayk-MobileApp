@@ -12,6 +12,7 @@ namespace Mayk_App
             Routing.RegisterRoute(nameof(SingInPage), typeof(SingInPage));
             Routing.RegisterRoute(nameof(SingUpPage), typeof(SingUpPage));
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
+
         }
     }
 }

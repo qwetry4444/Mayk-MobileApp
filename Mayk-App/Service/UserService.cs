@@ -13,24 +13,44 @@ namespace Mayk_App.Service
             SetupDatabase();
         }
 
-        public Task<int> AddAsync(User user) => connection.InsertAsync(user);
+        public async Task<int> AddAsync(User user)
+        {
+            return await connection.InsertAsync(user);
+        }
 
-        public Task<int> DeleteAsync(User user) => connection?.DeleteAsync(user);
+        public async Task<int> DeleteAsync(User user)
+        {
+            return await connection?.DeleteAsync(user);
+        }
 
-        public async Task<List<User>> GetAsync() => await connection.Table<User>().ToListAsync();
+        public async Task<List<User>> GetAsync()
+        {
+            return await connection.Table<User>().ToListAsync(); 
+        }
 
-        public async Task<User> GetUser(string email) => await connection.Table<User>().Where(u => u.Email.ToLower().Equals(email.ToLower())).FirstOrDefaultAsync();
+        public async Task<User> GetUser(string email)
+        {
+            var user = await connection.Table<User>()
+                .Where(u => u.Email.ToLower().Equals(email.ToLower()))
+                .FirstOrDefaultAsync();
+            return user;
+        }
 
-        public Task<int> UpdateAsync(User user) => connection.UpdateAsync(user);
+        public async Task<int> UpdateAsync(User user)
+        {
+            return await connection.UpdateAsync(user);
+        }
 
         private async void SetupDatabase()
         {
-            if (connection is null)
-            {
-                string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "NetcodeUser.db3");
-                connection = new SQLiteAsyncConnection(dbPath);
-                await connection.CreateTableAsync<User>();
-            }
+            if (connection is not null)
+                return;
+
+            String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string dbName = "MaykDatabase1.db3";
+            string dbFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), dbName);
+            connection = new SQLiteAsyncConnection(dbFile);
+            await connection.CreateTableAsync<User>();
         }
     }
 }

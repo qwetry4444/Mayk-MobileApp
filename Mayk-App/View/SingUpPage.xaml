@@ -43,7 +43,7 @@
                 <Setter Property="BackgroundColor" Value="#E8E8E8"/>
                 <Setter Property="CornerRadius" Value="25"/>
                 <Setter Property="HasShadow" Value="False"/>
-                <Setter Property="HeightRequest" Value="64"/>
+                <Setter Property="HeightRequest" Value="50"/>
                 <Setter Property="BorderColor" Value="#fff"/>
             </Style>
 
@@ -119,18 +119,27 @@
                              Spacing="15">
             <Frame Style="{StaticResource InputPanelStyle}">
                 <Entry Placeholder="Имя"
+                       Text="{Binding FirstName, Mode=TwoWay}"
                        Style="{StaticResource EntryStyle}"/>
             </Frame>
             <Frame Style="{StaticResource InputPanelStyle}">
                 <Entry Placeholder="Фамилия"
+                       Text="{Binding LastName, Mode=TwoWay}"
                        Style="{StaticResource EntryStyle}"/>
             </Frame>
             <Frame Style="{StaticResource InputPanelStyle}">
                 <Entry Placeholder="Почта"
+                       Text="{Binding Email, Mode=TwoWay}"
+                       Style="{StaticResource EntryStyle}"/>
+            </Frame>
+            <Frame Style="{StaticResource InputPanelStyle}">
+                <Entry Placeholder="Номер телефона"
+                       Text="{Binding PhoneNumber, Mode=TwoWay}"
                        Style="{StaticResource EntryStyle}"/>
             </Frame>
             <Frame Style="{StaticResource InputPanelStyle}">
                 <Entry Placeholder="Пароль"
+                       Text="{Binding Password, Mode=TwoWay}"
                        Style="{StaticResource EntryStyle}"/>
             </Frame>
         </VerticalStackLayout>
@@ -141,6 +150,9 @@
                Style="{StaticResource ButtonPanelStyle}">
             <Label Text="Зарегестрироваться"
                    Style="{StaticResource ButtonTextStyle}"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RegisterUserCommand}"/>
+            </Frame.GestureRecognizers>
         </Frame>
 
         <VerticalStackLayout Grid.Column="2"

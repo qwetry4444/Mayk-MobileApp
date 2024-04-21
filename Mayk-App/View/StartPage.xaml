@@ -45,6 +45,7 @@
                         </LinearGradientBrush>
                     </Setter.Value>
                 </Setter>
+                <Setter Property="BorderColor" Value="#80362D"/>
                 <Setter Property="HasShadow" Value="False"/>
                 <Setter Property="CornerRadius" Value="20"/>
             </Style>

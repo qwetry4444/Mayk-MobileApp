@@ -30,32 +30,45 @@ namespace Mayk_App.ViewModel
                 || string.IsNullOrEmpty(PhoneNumber) 
                 || string.IsNullOrEmpty(Password))
                 return;
-            //User a = new User(user)
-            //await _userService.AddAsync(new Model.User(
-            //    UserId = 
+        }
 
-            //    ));
+        [RelayCommand]
+        async Task RegisterUser()
+        {
+           
+            User user1 = new User
+            {
+                UserId = _userId,
+                FirstName = FirstName,
+                LastName = LastName,
+                Email = Email,
+                Password = Password,
+                PhoneNumber = PhoneNumber,
+                IsAdmin = false
+            };
+            await _userService.AddAsync(user1); 
+            await Shell.Current.GoToAsync(nameof(MainPage));
         }
 
         int _userId = 0;
 
         [ObservableProperty]
-        private string _firstName;
+        private string _firstName = "1";
 
         [ObservableProperty]
-        private string _lastName;
+        private string _lastName = "1";
 
         [ObservableProperty]
-        private string _phoneNumber;
+        private string _phoneNumber = "1";
 
         [ObservableProperty]
-        private string _email;
+        private string _email = "1";
 
         [ObservableProperty]
-        private string _password;
+        private string _password = "1";
 
         [ObservableProperty]
-        private string _passwordRepeat;
+        private string _passwordRepeat = "1";
 
 
     }
