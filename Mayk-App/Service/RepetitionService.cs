@@ -1,4 +1,5 @@
 ﻿using Mayk_App.Model;
+using Microsoft.Maui.ApplicationModel.Communication;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -17,27 +18,33 @@ namespace Mayk_App.Service
             SetupDatabase();
         }
 
-        Task<int> IRepetitionService.AddAsync(Repetition repetition)
+        public async Task<int> AddAsync(Repetition repetition)
         {
-            throw new NotImplementedException();
+            return await connection.InsertAsync(repetition);
         }
 
-        Task<int> IRepetitionService.DeleteAsync(Repetition repetition)
+        public async Task<int> DeleteAsync(Repetition repetition)
         {
-            throw new NotImplementedException();
+            return await connection.DeleteAsync(repetition);
         }
 
-        async Task<List<Repetition>> IRepetitionService.GetAsync()
+        public async Task<List<Repetition>> GetAsync()
         {
             return await connection.Table<Repetition>().ToListAsync();
         }
 
-        Task<Repetition> IRepetitionService.GetUserRepetition(string user_id)
+        public async Task<Repetition> GetUserRepetitions(string user_id)
         {
+            var user = await connection.Table<User>()
+                .Where(u => u.Email.ToLower().Equals(user_id.ToLower()))
+                .FirstOrDefaultAsync();
+            //var user = await connection.Table<User>()
+            //    .FirstOrDefaultAsync();
+            //return user;
             throw new NotImplementedException();
         }
 
-        Task<int> IRepetitionService.UpdateAsync(Repetition repetition)
+        public Task<int> UpdateAsync(Repetition repetition)
         {
             throw new NotImplementedException();
         }
@@ -52,6 +59,5 @@ namespace Mayk_App.Service
             connection = new SQLiteAsyncConnection(dbFile);
             await connection.CreateTableAsync<Repetition>();
         }
-
     }
 }

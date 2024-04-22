@@ -26,7 +26,7 @@ namespace Mayk_App.Model
 
         public UserActivityRepetition(int userActivityRepetitionsId, int userActivitieId, int repetitionId)
         {
-            UserActivityRepetitionsId = userActivityRepetitionsId;
+            UserActivityRepetitionId = userActivityRepetitionsId;
             UserActivitieId = userActivitieId;
             RepetitionId = repetitionId;
         }

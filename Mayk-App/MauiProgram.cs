@@ -45,7 +45,13 @@ namespace Mayk_App
         public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder mauiAppBuilder)
         {
             mauiAppBuilder.Services.AddSingleton<IUserService, UserService>();
+            mauiAppBuilder.Services.AddSingleton<IActivityService, ActivityService>();
+            mauiAppBuilder.Services.AddSingleton<IUserActivityService, UserActivityService>();
+
+            mauiAppBuilder.Services.AddSingleton<IEventService, EventService>();
             mauiAppBuilder.Services.AddSingleton<IRepetitionService, RepetitionService>();
+            mauiAppBuilder.Services.AddSingleton<IUserActivityRepetitionService, UserActivityRepetitionService>();
+
             return mauiAppBuilder;
         }
 
@@ -55,6 +61,7 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<SingInViewModel>();
             mauiAppBuilder.Services.AddSingleton<SingUpViewModel>();
             mauiAppBuilder.Services.AddSingleton<MainViewModel>();
+            mauiAppBuilder.Services.AddSingleton<EventsScheduleViewModel>();
 
             return mauiAppBuilder;
         }
@@ -65,6 +72,7 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddTransient<SingUpPage>();
             mauiAppBuilder.Services.AddTransient<SingInPage>();
             mauiAppBuilder.Services.AddTransient<MainPage>();
+            mauiAppBuilder.Services.AddTransient<EventsSchedulePage>();
 
             return mauiAppBuilder;
         }
