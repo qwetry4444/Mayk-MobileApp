@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin"
+             x:Class="Mayk_App.View.Admin.AddEventPage"
+             x:DataType="vm:AddEventViewModel"
+             Title="AddEvent">
+    <Grid ColumnDefinitions="1*, 1*, 2*, 4*, 2*, 1*, 1*"
+          RowDefinitions="Auto, Auto, Auto, Auto"
+          Padding="20"
+          RowSpacing="30">
+
+        <VerticalStackLayout Grid.Column="2"
+                             Grid.ColumnSpan="3"
+                             Grid.Row="0"
+                             Spacing="15">
+            <Frame Style="{StaticResource InputPanelStyle}">
+                <Entry Placeholder="Название"
+                       Text="{Binding Name}"/>
+            </Frame>
+            <Frame Style="{StaticResource InputPanelStyle}">
+                <DatePicker
+                    Date="{Binding Date}"/>
+            </Frame>
+            <Frame Style="{StaticResource InputPanelStyle}">
+                <Entry Placeholder="Место"
+                       Text="{Binding Location}"/>
+            </Frame>
+            <Frame>
+                <Entry Placeholder="Описание"
+                       Text="{Binding Description}"/>
+            </Frame>
+
+        </VerticalStackLayout>
+
+        <Frame Grid.Column="1"
+               Grid.ColumnSpan="5"
+               Grid.Row="1"
+               Style="{StaticResource ButtonPanelStyle}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding AddEventCommand}"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Добавить"/>
+        </Frame>
+
+        <Frame Grid.Column="1"
+       Grid.ColumnSpan="5"
+       Grid.Row="2"
+       Style="{StaticResource ButtonPanelStyle}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+            Command="{Binding RefreshCommand}"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Обновить"/>
+        </Frame>
+    </Grid>
+</ContentPage>

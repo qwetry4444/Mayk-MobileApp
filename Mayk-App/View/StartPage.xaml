@@ -63,7 +63,7 @@
 
 
     <Grid ColumnDefinitions=".1*, .3*, .7*, .3*, .1*"
-          RowDefinitions="Auto, *, 64"
+          RowDefinitions="Auto, *, 64, 64"
           Padding="20">
 
         <VerticalStackLayout Grid.Column="2" 
@@ -83,13 +83,23 @@
                    Style="{StaticResource SubtitleLabelStyle}"/>
         </VerticalStackLayout>
 
-
         <Frame Grid.Column="1"
               Grid.ColumnSpan="3"
               Grid.Row="2"
               Style="{StaticResource PrimaryButtonPanelStyle}">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RedirectToCommandCommand}"/>
+                <TapGestureRecognizer Command="{Binding RedirectToAddPageCommand}"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Добавить данные"
+                   Style="{StaticResource PrimaryButtonLabelStyle}"/>
+        </Frame>
+
+        <Frame Grid.Column="1"
+              Grid.ColumnSpan="3"
+              Grid.Row="3"
+              Style="{StaticResource PrimaryButtonPanelStyle}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RedirectToSingUpPageCommand}"/>
             </Frame.GestureRecognizers>
             <Label Text="Начать"
                    Style="{StaticResource PrimaryButtonLabelStyle}"/>

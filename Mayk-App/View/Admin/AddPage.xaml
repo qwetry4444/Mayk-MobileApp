@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin"
+             x:DataType="vm:AddViewModel"
+             x:Class="Mayk_App.View.Admin.AddPage"
+             Title="AddPage">
+    <VerticalStackLayout>
+        <Frame>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RedirectToAddEventPageCommand}"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Добавить мероприятие"/>
+        </Frame>
+
+        <Frame>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RedirectToAdRepetitionPageCommand}"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Добавить репетицию"/>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
