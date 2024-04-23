@@ -1,11 +1,10 @@
 ﻿using Mayk_App.View;
 using Mayk_App.ViewModel;
 using Microsoft.Extensions.Logging;
-using CommunityToolkit;
 using Mayk_App.Services;
 using Mayk_App.Service;
-using Microsoft.Maui.Hosting;
-using MvvmHelpers;
+using Mayk_App.View.Admin;
+using Mayk_App.ViewModel.Admin;
 
 namespace Mayk_App
 {
@@ -63,6 +62,11 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<MainViewModel>();
             mauiAppBuilder.Services.AddSingleton<EventsScheduleViewModel>();
 
+            mauiAppBuilder.Services.AddSingleton<AddViewModel>();
+            mauiAppBuilder.Services.AddSingleton<AddEventViewModel>();
+            mauiAppBuilder.Services.AddSingleton<AddRepetitionViewModel>();
+
+
             return mauiAppBuilder;
         }
 
@@ -73,6 +77,11 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddTransient<SingInPage>();
             mauiAppBuilder.Services.AddTransient<MainPage>();
             mauiAppBuilder.Services.AddTransient<EventsSchedulePage>();
+
+
+            mauiAppBuilder.Services.AddTransient<AddPage>();
+            mauiAppBuilder.Services.AddTransient<AddEventPage>();
+            mauiAppBuilder.Services.AddTransient<AddRepetitionPage>();
 
             return mauiAppBuilder;
         }

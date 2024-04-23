@@ -11,6 +11,10 @@ namespace Mayk_App.Model
         public int EventId { get; set; }
 
         [NotNull]
+        [Column("name")]
+        public string Name { get; set; }
+
+        [NotNull]
         [Column("date")]
         public DateTime Date { get; set; }
 

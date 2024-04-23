@@ -76,6 +76,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="View\Admin\AddEventPage.xaml.cs">
+	    <DependentUpon>AddEventPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Admin\AddRepetitionPage.xaml.cs">
+	    <DependentUpon>AddRepetitionPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="View\EventsSchedulePage.xaml.cs">
 	    <DependentUpon>EventsSchedulePage.xaml</DependentUpon>
 	  </Compile>
@@ -88,6 +94,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\Admin\AddEventPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Admin\AddPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Admin\AddRepetitionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\DocumentsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

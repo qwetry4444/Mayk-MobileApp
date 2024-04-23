@@ -17,14 +17,14 @@ namespace Mayk_App.Service
             SetupDatabase();
         }
 
-        public Task<int> AddAsync(Event _event)
+        public async Task<int> AddAsync(Event _event)
         {
-            throw new NotImplementedException();
+            return await connection.InsertAsync(_event);
         }
 
-        public Task<int> DeleteAsync(Event _event)
+        public async Task<int> DeleteAsync(Event _event)
         {
-            throw new NotImplementedException();
+            return await connection.DeleteAsync(_event);
         }
 
         public async Task<List<Event>> GetAsync()
@@ -37,9 +37,9 @@ namespace Mayk_App.Service
             throw new NotImplementedException();
         }
 
-        public Task<int> UpdateAsync(Event _event)
+        public async Task<int> UpdateAsync(Event _event)
         {
-            throw new NotImplementedException();
+            return await connection.UpdateAsync(_event);
         }
 
         private async void SetupDatabase()

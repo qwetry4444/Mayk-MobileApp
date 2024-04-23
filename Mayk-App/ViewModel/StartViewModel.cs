@@ -1,20 +1,22 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Mayk_App.View.Admin;
 
 namespace Mayk_App.ViewModel
 {
     public partial class StartViewModel : ObservableObject
     {
         [RelayCommand]
-        async Task RedirectToCommand()
+        async Task RedirectToSingUpPage()
         {
-            await Shell.Current.GoToAsync(nameof(SingInPage));
+            await Shell.Current.GoToAsync(nameof(SingUpPage));
+        }
+
+        [RelayCommand]
+        async Task RedirectToAddPage()
+        {
+            await Shell.Current.GoToAsync(nameof(AddPage));
         }
     }
 }
