@@ -65,6 +65,7 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<AddViewModel>();
             mauiAppBuilder.Services.AddSingleton<AddEventViewModel>();
             mauiAppBuilder.Services.AddSingleton<AddRepetitionViewModel>();
+            mauiAppBuilder.Services.AddSingleton<AddUserToRepetitionViewModel>();
 
 
             return mauiAppBuilder;
@@ -82,6 +83,7 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddTransient<AddPage>();
             mauiAppBuilder.Services.AddTransient<AddEventPage>();
             mauiAppBuilder.Services.AddTransient<AddRepetitionPage>();
+            mauiAppBuilder.Services.AddTransient<AddUserToRepetitionPage>();
 
             return mauiAppBuilder;
         }
