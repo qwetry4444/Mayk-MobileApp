@@ -17,6 +17,7 @@ namespace Mayk_App
             Routing.RegisterRoute(nameof(AddPage), typeof(AddPage));
             Routing.RegisterRoute(nameof(AddEventPage), typeof(AddEventPage));
             Routing.RegisterRoute(nameof(AddRepetitionPage), typeof(AddRepetitionPage));
+            Routing.RegisterRoute(nameof(AddUserToRepetitionPage), typeof(AddUserToRepetitionPage));
 
         }
     }
