@@ -21,7 +21,7 @@ namespace Mayk_App.Model
         [Indexed]
         [NotNull]
         [Column("event_id")]
-        public string EventId { get; set; }
+        public int EventId { get; set; }
 
 
 
@@ -29,7 +29,7 @@ namespace Mayk_App.Model
         public Repetition()
         { }
 
-        public Repetition(int repetitionId, DateTime date, string location, string eventId)
+        public Repetition(int repetitionId, DateTime date, string location, int eventId)
         {
             RepetitionId = repetitionId;
             Date = date;

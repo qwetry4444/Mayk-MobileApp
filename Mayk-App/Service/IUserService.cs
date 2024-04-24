@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mayk_App.Services
+namespace Mayk_App.Service
 {
     public interface IUserService
     {

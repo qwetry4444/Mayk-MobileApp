@@ -1,6 +1,7 @@
 ﻿
 using Mayk_App.View;
 using Mayk_App.View.Admin;
+using Mayk_App.View.Admin.AddUserToRepetition;
 
 namespace Mayk_App
 {
@@ -17,7 +18,8 @@ namespace Mayk_App
             Routing.RegisterRoute(nameof(AddPage), typeof(AddPage));
             Routing.RegisterRoute(nameof(AddEventPage), typeof(AddEventPage));
             Routing.RegisterRoute(nameof(AddRepetitionPage), typeof(AddRepetitionPage));
-            Routing.RegisterRoute(nameof(AddUserToRepetitionPage), typeof(AddUserToRepetitionPage));
+            Routing.RegisterRoute(nameof(RepetitionsListPage), typeof(RepetitionsListPage));
+            Routing.RegisterRoute(nameof(UsersListPage), typeof(UsersListPage));
 
         }
     }

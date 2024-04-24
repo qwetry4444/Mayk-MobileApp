@@ -1,5 +1,5 @@
 ﻿using Mayk_App.Model;
-using Mayk_App.Services;
+using Mayk_App.Service;
 using SQLite;
 
 namespace Mayk_App.Service

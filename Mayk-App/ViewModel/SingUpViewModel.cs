@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.Model;
-using Mayk_App.Services;
+using Mayk_App.Service;
 using Mayk_App.View;
 
 namespace Mayk_App.ViewModel

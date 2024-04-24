@@ -1,10 +1,11 @@
 ﻿using Mayk_App.View;
 using Mayk_App.ViewModel;
 using Microsoft.Extensions.Logging;
-using Mayk_App.Services;
 using Mayk_App.Service;
 using Mayk_App.View.Admin;
+using Mayk_App.View.Admin.AddUserToRepetition;
 using Mayk_App.ViewModel.Admin;
+using Mayk_App.ViewModel.Admin.AddUserToRepetitionViewModel;
 
 namespace Mayk_App
 {
@@ -50,6 +51,8 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<IEventService, EventService>();
             mauiAppBuilder.Services.AddSingleton<IRepetitionService, RepetitionService>();
             mauiAppBuilder.Services.AddSingleton<IUserActivityRepetitionService, UserActivityRepetitionService>();
+            mauiAppBuilder.Services.AddSingleton<IUserRepetitionService, UserRepetitionService>();
+
 
             return mauiAppBuilder;
         }
@@ -65,7 +68,8 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<AddViewModel>();
             mauiAppBuilder.Services.AddSingleton<AddEventViewModel>();
             mauiAppBuilder.Services.AddSingleton<AddRepetitionViewModel>();
-            mauiAppBuilder.Services.AddSingleton<AddUserToRepetitionViewModel>();
+            mauiAppBuilder.Services.AddSingleton<RepetitionsListViewModel>();
+            mauiAppBuilder.Services.AddSingleton<UsersListViewModel>();
 
 
             return mauiAppBuilder;
@@ -80,10 +84,12 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddTransient<EventsSchedulePage>();
 
 
+
             mauiAppBuilder.Services.AddTransient<AddPage>();
             mauiAppBuilder.Services.AddTransient<AddEventPage>();
             mauiAppBuilder.Services.AddTransient<AddRepetitionPage>();
-            mauiAppBuilder.Services.AddTransient<AddUserToRepetitionPage>();
+            mauiAppBuilder.Services.AddTransient<RepetitionsListPage>();
+            mauiAppBuilder.Services.AddTransient<UsersListPage>();
 
             return mauiAppBuilder;
         }

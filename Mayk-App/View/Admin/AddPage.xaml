@@ -15,9 +15,16 @@
 
         <Frame>
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RedirectToAdRepetitionPageCommand}"/>
+                <TapGestureRecognizer Command="{Binding RedirectToAddRepetitionPageCommand}"/>
             </Frame.GestureRecognizers>
             <Label Text="Добавить репетицию"/>
+        </Frame>
+            
+         <Frame>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RedirectToAddUserToRepetitionPageCommand}"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Добавить пользователя на репетицию"/>
         </Frame>
     </VerticalStackLayout>
 </ContentPage>

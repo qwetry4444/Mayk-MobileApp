@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin.AddUserToRepetitionViewModel"
+             xmlns:model="clr-namespace:Mayk_App.Model"
+             x:Class="Mayk_App.View.Admin.AddUserToRepetition.UsersListPage"
+             x:DataType="vm:UsersListViewModel"
+             Title="UsersListPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Добовление участников на репетицию c id="
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label Text="{Binding Repetition.RepetitionId}"/>
+
+        <ListView ItemsSource="{Binding Users}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:User">
+                    <ViewCell>
+                        <Frame>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:UsersListViewModel}}, Path=AddUserToRepetitionCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                            </Frame.GestureRecognizers>
+                            <Grid ColumnDefinitions="Auto, Auto, Auto"
+                                  RowDefinitions="Auto">
+                                <Label Text="{Binding UserId}"
+                                           Grid.Column="0"/>
+                                <Label Text="{Binding FirstName}"
+                                           Grid.Column="1"/>
+                                <Label Text="{Binding LastName}"
+                                           Grid.Column="2"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

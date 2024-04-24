@@ -82,6 +82,9 @@
 	  <Compile Update="View\Admin\AddRepetitionPage.xaml.cs">
 	    <DependentUpon>AddRepetitionPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="View\Admin\AddUserToRepetition\RepetitionsListPage.xaml.cs">
+	    <DependentUpon>RepetitionsListPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="View\EventsSchedulePage.xaml.cs">
 	    <DependentUpon>EventsSchedulePage.xaml</DependentUpon>
 	  </Compile>
@@ -103,7 +106,10 @@
 	  <MauiXaml Update="View\Admin\AddRepetitionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Admin\AddUserToRepetitionPage.xaml">
+	  <MauiXaml Update="View\Admin\AddUserToRepetition\RepetitionsListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Admin\AddUserToRepetition\UsersListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\DocumentsPage.xaml">
@@ -132,5 +138,7 @@
 	<ItemGroup>
 	  <Folder Include="Database\" />
 	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionMaykAppHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

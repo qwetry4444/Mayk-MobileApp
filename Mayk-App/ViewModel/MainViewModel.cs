@@ -2,7 +2,6 @@
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.Model;
 using Mayk_App.Service;
-using Mayk_App.Services;
 using MvvmHelpers;
 using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
 

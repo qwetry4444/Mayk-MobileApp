@@ -42,7 +42,7 @@ namespace Mayk_App.ViewModel.Admin
 
 
         [ObservableProperty]
-        private string _eventId;
+        private int _eventId;
 
         [ObservableProperty]
         private DateTime _date;
