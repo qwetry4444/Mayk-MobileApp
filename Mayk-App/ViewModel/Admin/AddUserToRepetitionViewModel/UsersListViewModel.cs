@@ -7,6 +7,7 @@ using MvvmHelpers;
 
 namespace Mayk_App.ViewModel.Admin.AddUserToRepetitionViewModel
 {
+    [QueryProperty(nameof(RepetitionId), "repetitionId")]
     public partial class UsersListViewModel : CommunityToolkit.Mvvm.ComponentModel.ObservableObject
     {
         private readonly IUserService UserService;
@@ -36,7 +37,7 @@ namespace Mayk_App.ViewModel.Admin.AddUserToRepetitionViewModel
         }
 
         [ObservableProperty]
-        Repetition repetition;
+        public int repetitionId;
 
         [RelayCommand]
         async Task AddUserToRepetition(User user)
@@ -45,7 +46,7 @@ namespace Mayk_App.ViewModel.Admin.AddUserToRepetitionViewModel
                 new UserRepetition
                 {
                     UsereId = user.UserId,
-                    RepetitionId = repetition.RepetitionId
+                    RepetitionId = RepetitionId
                 });
         }
 
@@ -55,6 +56,12 @@ namespace Mayk_App.ViewModel.Admin.AddUserToRepetitionViewModel
             Users.Clear();
             List<User> users = await UserService.GetAsync();
             Users.AddRange(users);
+        }
+
+        [RelayCommand]
+        async Task GoBackAsync()
+        {
+            await Shell.Current.GoToAsync("..");
         }
     }
 }

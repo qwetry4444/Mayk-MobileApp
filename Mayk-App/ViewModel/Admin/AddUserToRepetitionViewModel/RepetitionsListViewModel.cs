@@ -44,10 +44,10 @@ namespace Mayk_App.ViewModel.Admin
         [RelayCommand]
         async Task GoToUserList(Repetition repetition)
         {
-            await Shell.Current.GoToAsync(nameof(UsersListPage), false, 
+            await Shell.Current.GoToAsync(nameof(UsersListPage), 
                 new Dictionary<string, object>
                 {
-                    {"Repetition", repetition }
+                    {"repetitionId", repetition.RepetitionId }
                 });
         }
 

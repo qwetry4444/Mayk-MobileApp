@@ -8,33 +8,37 @@
              Title="UsersListPage">
     <VerticalStackLayout>
         <Label 
-            Text="Добовление участников на репетицию c id="
+            Text="{Binding RepetitionId, 
+                           StringFormat='Добавление участников на репетицию c id {0}'}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Label Text="{Binding Repetition.RepetitionId}"/>
 
-        <ListView ItemsSource="{Binding Users}">
-            <ListView.ItemTemplate>
+
+        <Label Text="{Binding RepetitionId}"/>
+        <!--<Label Text="{Binding Source={x:Reference slider},
+                      Path=Value,
+                      StringFormat='The slider value is {0:F2}'}" />-->
+        
+        
+        <CollectionView ItemsSource="{Binding Users}">
+            <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:User">
-                    <ViewCell>
-                        <Frame>
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:UsersListViewModel}}, Path=AddUserToRepetitionCommand}"
-                                                      CommandParameter="{Binding .}"/>
-                            </Frame.GestureRecognizers>
-                            <Grid ColumnDefinitions="Auto, Auto, Auto"
-                                  RowDefinitions="Auto">
-                                <Label Text="{Binding UserId}"
+                    <Frame Padding="30">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:UsersListViewModel}}, Path=AddUserToRepetitionCommand}"
+                                                          CommandParameter="{Binding .}"/>
+                        </Frame.GestureRecognizers>
+                        <Grid ColumnDefinitions="2*, 5*, 5*">
+                            <Label Text="{Binding UserId}"
                                            Grid.Column="0"/>
-                                <Label Text="{Binding FirstName}"
+                            <Label Text="{Binding FirstName}"
                                            Grid.Column="1"/>
-                                <Label Text="{Binding LastName}"
+                            <Label Text="{Binding LastName}"
                                            Grid.Column="2"/>
-                            </Grid>
-                        </Frame>
-                    </ViewCell>
+                        </Grid>
+                    </Frame>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>

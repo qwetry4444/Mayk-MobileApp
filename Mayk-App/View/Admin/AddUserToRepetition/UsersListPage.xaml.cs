@@ -2,6 +2,7 @@ using Mayk_App.ViewModel.Admin.AddUserToRepetitionViewModel;
 
 namespace Mayk_App.View.Admin.AddUserToRepetition;
 
+
 public partial class UsersListPage : ContentPage
 {
 	private UsersListViewModel viewModel;
@@ -17,5 +18,10 @@ public partial class UsersListPage : ContentPage
         base.OnAppearing();
 
 		await viewModel.LoadUsers();
+    }
+
+    protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    {
+        base.OnNavigatedTo(args);
     }
 }

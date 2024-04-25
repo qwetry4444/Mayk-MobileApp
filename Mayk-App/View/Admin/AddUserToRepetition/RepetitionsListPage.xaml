@@ -8,26 +8,34 @@
              Title="RepetitionsListPage">
 
     <ListView ItemsSource="{Binding Repetitions}"
-              >
+              SeparatorVisibility="Default">
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="model:Repetition">
                 <ViewCell>
-                    <Frame HeightRequest="50"
-                           Padding="0"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:RepetitionsListViewModel}}, Path=GoToUserListCommand}"
-                                                  CommandParameter="{Binding .}"/>
-                        </Frame.GestureRecognizers>
-                        <Grid ColumnDefinitions="100, *"
-                              Padding="0">
-                            <Label Text="{Binding Location}"
-                               Grid.Column="0"/>
-                            <Label Text="{Binding Date}"
-                               Grid.Column="1"/>
-                        </Grid>
-                    </Frame>
+                    <Grid>
+                        <Frame>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:RepetitionsListViewModel}}, Path=GoToUserListCommand}"
+                                              CommandParameter="{Binding .}"/>
+                            </Frame.GestureRecognizers>
+                            <Grid Padding="0" 
+                              VerticalOptions="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="250"/>
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Location}"
+                                   VerticalTextAlignment="Center"
+                                   Grid.Column="0"/>
+                                <Label Text="{Binding Date}"
+                                   VerticalTextAlignment="Center"
+                                   Grid.Column="1"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
