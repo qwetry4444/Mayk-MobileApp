@@ -56,9 +56,14 @@
 	  <None Remove="Resources\Fonts\Montserrat-VariableFont_wght.ttf" />
 	  <None Remove="Resources\Images\calendar.png" />
 	  <None Remove="Resources\Images\calendar.svg" />
+	  <None Remove="Resources\Images\closed_eye.png" />
 	  <None Remove="Resources\Images\docs.svg" />
+	  <None Remove="Resources\Images\garbage_backet.png" />
+	  <None Remove="Resources\Images\library.png" />
 	  <None Remove="Resources\Images\logo.svg" />
 	  <None Remove="Resources\Images\note.svg" />
+	  <None Remove="Resources\Images\pencil.png" />
+	  <None Remove="Resources\Images\ph_bell.png" />
 	  <None Remove="Resources\Images\start.svg" />
 	  <None Remove="Resources\Images\start_png5.png" />
 	</ItemGroup>
@@ -66,6 +71,7 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
 		<PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
 		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.8" />
@@ -84,6 +90,21 @@
 	  </Compile>
 	  <Compile Update="View\Admin\AddUserToRepetition\RepetitionsListPage.xaml.cs">
 	    <DependentUpon>RepetitionsListPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitionsPage.xaml.cs">
+	    <DependentUpon>ChangeUsersRepetitionsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Admin\ChangeTablesPages\ChangeUsers\ChangeUsersPage.xaml.cs">
+	    <DependentUpon>ChangeUsersPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Admin\ChangeTablesPages\ChangeRepetitionsPage.xaml.cs">
+	    <DependentUpon>ChangeRepetitionsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Admin\ChangeTablesPages\ChangeEventsPage.xaml.cs">
+	    <DependentUpon>ChangeEventsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Admin\TablesListPage.xaml.cs">
+	    <DependentUpon>TablesListPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="View\EventsSchedulePage.xaml.cs">
 	    <DependentUpon>EventsSchedulePage.xaml</DependentUpon>
@@ -106,10 +127,28 @@
 	  <MauiXaml Update="View\Admin\AddRepetitionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeEventsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeRepetitionsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsers\ChangeUsersPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitionsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\Admin\AddUserToRepetition\RepetitionsListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Admin\AddUserToRepetition\UsersListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsers\UserChangeForm.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Admin\TablesListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\DocumentsPage.xaml">

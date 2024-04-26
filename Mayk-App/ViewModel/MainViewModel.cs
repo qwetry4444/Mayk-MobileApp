@@ -9,6 +9,7 @@ using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
 
 namespace Mayk_App.ViewModel
 {
+    [QueryProperty(nameof(UserId), "userId")]
     public partial class MainViewModel : ObservableObject
     {
         private readonly IUserService _userService;
@@ -25,6 +26,10 @@ namespace Mayk_App.ViewModel
             Users = new ObservableRangeCollection<User>();
             Repetitions = new ObservableRangeCollection<Repetition>();
         }
+
+
+        [ObservableProperty]
+        int userId;
 
         [RelayCommand]
         async Task getUsers()

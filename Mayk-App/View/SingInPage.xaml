@@ -62,7 +62,21 @@
                 <Setter Property="HasShadow" Value="False"/>
                 <Setter Property="CornerRadius" Value="20"/>
             </Style>
-            
+
+            <Style x:Key="WrongAlertPanelStyle"
+                   TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource Red}"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="BorderColor" Value="#fff"/>
+            </Style>
+
+            <Style x:Key="WrongAlertLabelStyle"
+                   TargetType="Label">
+                <Setter Property="TextColor" Value="#fff"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="13"/>
+            </Style>
+
             <Style x:Key="ButtonTextStyle"
                    TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center"/>
@@ -125,6 +139,11 @@
                 <Entry Placeholder="Пароль"
                        Style="{StaticResource EntryStyle}"/>
             </Frame>
+            <Frame IsVisible="{Binding IsWrong}"
+                   Style="{StaticResource WrongAlertPanelStyle}">
+                <Label Text="Неверный логин или пароль!"
+                       Style="{StaticResource WrongAlertLabelStyle}"/>
+            </Frame>
             
         </VerticalStackLayout>
 
@@ -132,6 +151,9 @@
                Grid.ColumnSpan="5"
                Grid.Row="2"
                Style="{StaticResource ButtonPanelStyle}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding VerifyUserCommand}"/>
+            </Frame.GestureRecognizers>
             <Label Text="Войти"
                    Style="{StaticResource ButtonTextStyle}"/>
         </Frame>

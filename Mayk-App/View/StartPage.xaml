@@ -88,7 +88,7 @@
               Grid.Row="2"
               Style="{StaticResource PrimaryButtonPanelStyle}">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding RedirectToAddPageCommand}"/>
+                <TapGestureRecognizer Command="{Binding RedirectToTablesListPageCommand}"/>
             </Frame.GestureRecognizers>
             <Label Text="Добавить данные"
                    Style="{StaticResource PrimaryButtonLabelStyle}"/>

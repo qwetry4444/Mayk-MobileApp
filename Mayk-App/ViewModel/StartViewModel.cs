@@ -14,9 +14,9 @@ namespace Mayk_App.ViewModel
         }
 
         [RelayCommand]
-        async Task RedirectToAddPage()
+        async Task RedirectToTablesListPage()
         {
-            await Shell.Current.GoToAsync(nameof(AddPage));
+            await Shell.Current.GoToAsync(nameof(TablesListPage));
         }
     }
 }

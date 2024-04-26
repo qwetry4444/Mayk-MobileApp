@@ -35,8 +35,8 @@ namespace Mayk_App.ViewModel
         [RelayCommand]
         async Task RegisterUser()
         {
-           
-            User user1 = new User
+
+            User user = new User
             {
                 UserId = _userId,
                 FirstName = FirstName,
@@ -46,8 +46,11 @@ namespace Mayk_App.ViewModel
                 PhoneNumber = PhoneNumber,
                 IsAdmin = false
             };
-            await _userService.AddAsync(user1); 
-            await Shell.Current.GoToAsync(nameof(MainPage));
+            await _userService.AddAsync(user);
+            await Shell.Current.GoToAsync(nameof(MainPage), new Dictionary<string, object>
+            {
+                { "userId", user.UserId }
+            });
         }
 
         int _userId = 0;

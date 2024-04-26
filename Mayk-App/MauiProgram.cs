@@ -6,6 +6,44 @@ using Mayk_App.View.Admin;
 using Mayk_App.View.Admin.AddUserToRepetition;
 using Mayk_App.ViewModel.Admin;
 using Mayk_App.ViewModel.Admin.AddUserToRepetitionViewModel;
+using Mayk_App.View.Admin.ChangeTablesPages;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
+
+/* Необъединенное слияние из проекта "Mayk-App (net7.0-android)"
+До:
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
+После:
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel;
+*/
+
+/* Необъединенное слияние из проекта "Mayk-App (net7.0-maccatalyst)"
+До:
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
+После:
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel.ChangeUsersViewModel.ChangeUsersViewModel;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel.ChangeUsersViewModel;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel;
+*/
+
+/* Необъединенное слияние из проекта "Mayk-App (net7.0-windows10.0.19041.0)"
+До:
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
+После:
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel.ChangeUsersViewModel;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel;
+*/
+//using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
+//using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel.ChangeUsersViewModel.ChangeUsersViewModel.ChangeUsersViewModel;
+//using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel.ChangeUsersViewModel.ChangeUsersViewModel;
+//using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel.ChangeUsersViewModel;
+//using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel;
+//using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
 
 namespace Mayk_App
 {
@@ -71,6 +109,17 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<RepetitionsListViewModel>();
             mauiAppBuilder.Services.AddSingleton<UsersListViewModel>();
 
+            mauiAppBuilder.Services.AddSingleton<TablesListViewModel>();
+
+            mauiAppBuilder.Services.AddSingleton<ChangeUsersViewModel>();
+            mauiAppBuilder.Services.AddSingleton<UserChangeFormViewModel>();
+
+
+            mauiAppBuilder.Services.AddSingleton<ChangeEventsViewModel>();
+            mauiAppBuilder.Services.AddSingleton<ChangeRepetitionsViewModel>();
+            mauiAppBuilder.Services.AddSingleton<ChangeUsersRepetitionsViewModel>();
+
+
 
             return mauiAppBuilder;
         }
@@ -90,6 +139,16 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddTransient<AddRepetitionPage>();
             mauiAppBuilder.Services.AddTransient<RepetitionsListPage>();
             mauiAppBuilder.Services.AddTransient<UsersListPage>();
+
+            mauiAppBuilder.Services.AddTransient<TablesListPage>();
+            
+            mauiAppBuilder.Services.AddTransient<ChangeUsersPage>();
+            mauiAppBuilder.Services.AddTransient<UserChangeForm>();
+
+            mauiAppBuilder.Services.AddTransient<ChangeEventsPage>();
+            mauiAppBuilder.Services.AddTransient<ChangeRepetitionsPage>();
+            mauiAppBuilder.Services.AddTransient<ChangeUsersRepetitionsPage>();
+
 
             return mauiAppBuilder;
         }

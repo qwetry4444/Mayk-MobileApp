@@ -34,7 +34,7 @@
                         <DataTemplate x:DataType="model:User">
                             <ViewCell>
                                 <Grid>
-                                    <Label Text="AXAXAX)"/>
+                                    <Label Text="{Binding UserId}"/>
                                     <Label Text="{Binding FirstName}"/>
                                     <Label Text="{Binding LastName}"/>
                                 </Grid>

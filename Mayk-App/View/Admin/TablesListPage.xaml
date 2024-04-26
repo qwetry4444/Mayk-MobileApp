@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin"
+             x:Class="Mayk_App.View.Admin.TablesListPage"
+             x:DataType="vm:TablesListViewModel"
+             Title="TablesList">
+    <VerticalStackLayout>
+        <Frame>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RedirectToChangeUsersPageCommand}"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Пользователи"/>
+        </Frame>
+        <Frame>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RedirectToChangeEventsPageCommand}"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Мероприятия"/>
+        </Frame>
+
+        <Frame>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RedirectToChangeRepetitionsPageCommand}"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Репетиции"/>
+        </Frame>
+
+        <Frame>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RedirectToChangeUsersRepetitionsPageCommand}"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Пользователи на репетициях"/>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

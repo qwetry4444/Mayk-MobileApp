@@ -36,6 +36,13 @@ namespace Mayk_App.Service
             return user;
         }
 
+        //public async Task<string> GetUserPasswordHash(string userId)
+        //{
+        //    string passwordHash = await connection.Table<User>()
+        //        .Where(u => u.UserId.Equals(userId))
+        //        .FirstOrDefaultAsync();
+        //}
+
         public async Task<int> UpdateAsync(User user)
         {
             return await connection.UpdateAsync(user);
