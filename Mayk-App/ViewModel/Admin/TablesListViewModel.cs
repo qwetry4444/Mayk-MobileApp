@@ -18,7 +18,7 @@ namespace Mayk_App.ViewModel.Admin
         [RelayCommand]
         async Task RedirectToChangeEventsPage()
         {
-            await Shell.Current.GoToAsync(nameof(ChangeEventsPage));
+            await Shell.Current.GoToAsync(nameof(ChangeUsersPage));
         }
 
         [RelayCommand]

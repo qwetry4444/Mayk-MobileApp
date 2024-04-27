@@ -33,7 +33,7 @@ namespace Mayk_App.ViewModel
         [RelayCommand]
         async Task VerifyUser()
         {
-            User user = await _userService.GetUser(UserLogin);
+            User user = await _userService.GetUserByEmail(UserLogin);
             if (user is not null)
             {
                 if (user.Password.Equals(UserPassword))

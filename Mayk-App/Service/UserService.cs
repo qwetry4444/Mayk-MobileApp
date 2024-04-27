@@ -28,7 +28,7 @@ namespace Mayk_App.Service
             return await connection.Table<User>().ToListAsync(); 
         }
 
-        public async Task<User> GetUser(string email)
+        public async Task<User> GetUserByEmail(string email)
         {
             var user = await connection.Table<User>()
                 .Where(u => u.Email.ToLower().Equals(email.ToLower()))
@@ -36,6 +36,13 @@ namespace Mayk_App.Service
             return user;
         }
 
+        public async Task<User> GetUserById(int userId)
+        {
+            var user = await connection.Table<User>()
+                .Where(u => u.UserId.Equals(userId))
+                .FirstOrDefaultAsync();
+            return user;
+        }
         //public async Task<string> GetUserPasswordHash(string userId)
         //{
         //    string passwordHash = await connection.Table<User>()

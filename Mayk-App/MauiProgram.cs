@@ -1,16 +1,21 @@
 ﻿using Mayk_App.View;
-using Mayk_App.ViewModel;
+
 using Microsoft.Extensions.Logging;
 using Mayk_App.Service;
 using Mayk_App.View.Admin;
 using Mayk_App.View.Admin.AddUserToRepetition;
+
+using Mayk_App.ViewModel;
 using Mayk_App.ViewModel.Admin;
 using Mayk_App.ViewModel.Admin.AddUserToRepetitionViewModel;
-using Mayk_App.View.Admin.ChangeTablesPages;
 using Mayk_App.ViewModel.Admin.ChangeTablesViewModel;
 using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel;
+
+using Mayk_App.View.Admin.ChangeTablesPages;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents;
 
 /* Необъединенное слияние из проекта "Mayk-App (net7.0-android)"
 До:
@@ -113,6 +118,10 @@ namespace Mayk_App
 
             mauiAppBuilder.Services.AddSingleton<ChangeUsersViewModel>();
             mauiAppBuilder.Services.AddSingleton<UserChangeFormViewModel>();
+
+            mauiAppBuilder.Services.AddSingleton<ChangeEventsViewModel>();
+            mauiAppBuilder.Services.AddSingleton<ChangeEventsFormViewModel>();
+
 
 
             mauiAppBuilder.Services.AddSingleton<ChangeEventsViewModel>();

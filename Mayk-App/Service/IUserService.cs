@@ -15,6 +15,7 @@ namespace Mayk_App.Service
 
 
         Task<List<User>> GetAsync();
-        Task<User> GetUser(string email);
+        Task<User> GetUserByEmail(string email);
+        Task<User> GetUserById(int userId);
     }
 }

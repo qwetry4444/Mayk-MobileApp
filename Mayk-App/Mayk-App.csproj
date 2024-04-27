@@ -64,6 +64,7 @@
 	  <None Remove="Resources\Images\note.svg" />
 	  <None Remove="Resources\Images\pencil.png" />
 	  <None Remove="Resources\Images\ph_bell.png" />
+	  <None Remove="Resources\Images\plus.png" />
 	  <None Remove="Resources\Images\start.svg" />
 	  <None Remove="Resources\Images\start_png5.png" />
 	</ItemGroup>
@@ -91,22 +92,19 @@
 	  <Compile Update="View\Admin\AddUserToRepetition\RepetitionsListPage.xaml.cs">
 	    <DependentUpon>RepetitionsListPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitionsPage.xaml.cs">
+	  <Compile Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitions\ChangeUsersRepetitionsPage.xaml.cs">
 	    <DependentUpon>ChangeUsersRepetitionsPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="View\Admin\ChangeTablesPages\ChangeUsers\ChangeUsersPage.xaml.cs">
 	    <DependentUpon>ChangeUsersPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="View\Admin\ChangeTablesPages\ChangeRepetitionsPage.xaml.cs">
+	  <Compile Update="View\Admin\ChangeTablesPages\ChangeRepetitions\ChangeRepetitionsPage.xaml.cs">
 	    <DependentUpon>ChangeRepetitionsPage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="View\Admin\ChangeTablesPages\ChangeEventsPage.xaml.cs">
-	    <DependentUpon>ChangeEventsPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="View\Admin\TablesListPage.xaml.cs">
 	    <DependentUpon>TablesListPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="View\EventsSchedulePage.xaml.cs">
+	  <Compile Update="View\App\EventsSchedulePage.xaml.cs">
 	    <DependentUpon>EventsSchedulePage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="View\SingUpPage.xaml.cs">
@@ -127,16 +125,19 @@
 	  <MauiXaml Update="View\Admin\AddRepetitionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeEventsPage.xaml">
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeEvents\ChangeEventForm.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeRepetitionsPage.xaml">
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeEvents\ChangeEventsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeRepetitions\ChangeRepetitionsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsers\ChangeUsersPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitionsPage.xaml">
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitions\ChangeUsersRepetitionsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Admin\AddUserToRepetition\RepetitionsListPage.xaml">
@@ -151,10 +152,10 @@
 	  <MauiXaml Update="View\Admin\TablesListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\DocumentsPage.xaml">
+	  <MauiXaml Update="View\App\DocumentsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\EventDetailsPage.xaml">
+	  <MauiXaml Update="View\App\EventDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\SingInPage.xaml">
@@ -166,7 +167,7 @@
 	  <MauiXaml Update="View\SingUpPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\EventsSchedulePage.xaml">
+	  <MauiXaml Update="View\App\EventsSchedulePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\StartPage.xaml">

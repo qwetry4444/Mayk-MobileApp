@@ -13,6 +13,7 @@ namespace Mayk_App.Service
         Task<int> UpdateAsync(UserRepetition userRepetition);
         Task<int> DeleteAsync(UserRepetition userRepetition);
 
+        Task<UserRepetition> GetUserRepetitionById(int userRepetiionId);
 
         Task<List<UserRepetition>> GetAsync();
     }

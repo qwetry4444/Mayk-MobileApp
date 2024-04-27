@@ -32,6 +32,14 @@ namespace Mayk_App.Service
             return await connection.Table<Event>().ToListAsync();
         }
 
+        public async Task<Event> GetEventById(int eventId)
+        {
+            var _event = await connection.Table<Event>()
+                .Where(u => u.EventId.Equals(eventId))
+                .FirstOrDefaultAsync();
+            return _event;
+        }
+
         public Task<Event> GetUserEvents(string user_id)
         {
             throw new NotImplementedException();

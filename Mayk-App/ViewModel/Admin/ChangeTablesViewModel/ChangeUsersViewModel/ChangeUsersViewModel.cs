@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Mayk_App.Model;
 using Mayk_App.Service;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
@@ -7,7 +8,7 @@ using MvvmHelpers;
 
 namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel
 {
-    public class ChangeUsersViewModel : CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+    public partial class ChangeUsersViewModel : CommunityToolkit.Mvvm.ComponentModel.ObservableObject
     {
         private readonly IUserService _userService;
 
@@ -31,6 +32,7 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel
             await LoadUsers();
         }
 
+        [RelayCommand]
         public async Task ChangeUser(User userToDelete)
         {
             await Shell.Current.GoToAsync(nameof(UserChangeForm), new Dictionary<string, object>
@@ -39,5 +41,10 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel
             });
         }
 
+        [RelayCommand]
+        public async Task RedirectToUserForm()
+        {
+            await Shell.Current.GoToAsync(nameof(UserChangeForm));
+        }
     }
 }

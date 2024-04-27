@@ -33,6 +33,14 @@ namespace Mayk_App.Service
             return await connection.Table<Repetition>().ToListAsync();
         }
 
+        public async Task<Repetition> GetRepetitionById(int repetitionId)
+        {
+            var repetition = await connection.Table<Repetition>()
+                .Where(u => u.RepetitionId.Equals(repetitionId))
+                .FirstOrDefaultAsync();
+            return repetition;
+        }
+
         public async Task<Repetition> GetUserRepetitions(string user_id)
         {
             var user = await connection.Table<User>()

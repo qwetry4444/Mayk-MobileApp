@@ -44,7 +44,7 @@ namespace Mayk_App.ViewModel
         [RelayCommand]
         async Task getUser()
         {
-            Users.Add(await _userService.GetUser("5"));
+            Users.Add(await _userService.GetUserByEmail("5"));
         }
 
 
@@ -54,7 +54,7 @@ namespace Mayk_App.ViewModel
             //IsBusy = true;
             //await Task.Delay(2000);
 
-            //var user = await _userService.GetUser("2");
+            //var user = await _eventService.GetUserByEmail("2");
             //Users.Add(user);
 
             Users.Clear();
