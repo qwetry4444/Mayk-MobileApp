@@ -57,7 +57,7 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel
                     Location = Location,
                     Date = Date
                 });
-            await Shell.Current.GoToAsync(nameof(ChangeEventsPage));
+            await Shell.Current.GoToAsync(nameof(EventsListPage));
         }
 
         [RelayCommand]
@@ -70,7 +70,7 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel
                 Location = Location,
                 Date = Date
             });
-            await Shell.Current.GoToAsync(nameof(ChangeEventsPage));
+            await Shell.Current.GoToAsync(nameof(EventsListPage));
         }
 
         [RelayCommand]

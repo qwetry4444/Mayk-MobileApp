@@ -1,12 +1,59 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel"
+             x:DataType="vm:ChangeEventsFormViewModel"
              x:Class="Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents.ChangeEventForm"
              Title="ChangeEventForm">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid ColumnDefinitions="1*, 1*, 2*, 4*, 2*, 1*, 1*"
+          RowDefinitions="Auto, Auto, Auto, Auto"
+          Padding="20"
+          RowSpacing="30">
+            <VerticalStackLayout Grid.Column="2"
+                             Grid.ColumnSpan="3"
+                             Grid.Row="1"
+                             Spacing="15">
+                <Frame>
+                    <Entry Placeholder="Название"
+                           Text="{Binding Name, Mode=TwoWay}"/>
+                </Frame>
+                <Frame>
+                    <DatePicker Date="{Binding Date, Mode=TwoWay}"/>
+                </Frame>
+                <Frame>
+                    <Entry Placeholder="Место"
+                           Text="{Binding Location, Mode=TwoWay}"/>
+                </Frame>
+                <Frame>
+                    <Entry Placeholder="Описание"
+                           Text="{Binding Description, Mode=TwoWay}"/>
+                </Frame>
+            </VerticalStackLayout>
+
+            <Frame Grid.Column="1"
+                   Grid.ColumnSpan="5"
+                   Grid.Row="2">
+                <Label Text="Добавить">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label"
+                                     Binding="{Binding IsUpdate}"
+                                     Value="true">
+                            <Setter Property="Text"
+                                    Value="Обновить"/>
+                        </DataTrigger>
+                        <DataTrigger TargetType="Label"
+                                     Binding="{Binding IsUpdate}"
+                                     Value="false">
+                            <Setter Property="Text"
+                                Value="Добавить"/>
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ButtonClickCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>

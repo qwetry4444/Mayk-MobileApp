@@ -1,7 +1,6 @@
-using Mayk_App.ViewModel.Admin.AddUserToRepetitionViewModel;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel;
 
-namespace Mayk_App.View.Admin.AddUserToRepetition;
-
+namespace Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
 
 public partial class UsersListPage : ContentPage
 {
@@ -16,12 +15,6 @@ public partial class UsersListPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-
 		await viewModel.LoadUsers();
-    }
-
-    protected override void OnNavigatedTo(NavigatedToEventArgs args)
-    {
-        base.OnNavigatedTo(args);
     }
 }

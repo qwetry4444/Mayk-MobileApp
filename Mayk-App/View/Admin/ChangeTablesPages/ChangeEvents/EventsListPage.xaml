@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel"
              xmlns:model="clr-namespace:Mayk_App.Model"
-             x:DataType="vm:ChangeUsersViewModel"
-             x:Class="Mayk_App.View.Admin.ChangeTablesPages.ChangeUser.ChangeUsersPage"
-             Title="AddToUsers">
+             x:DataType="vm:EventsListViewModel"
+             x:Class="Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents.EventsListPage"
+             Title="ChangeEventsPage">
     <VerticalStackLayout>
-        <ListView ItemsSource="{Binding Users}">
+        <ListView ItemsSource="{Binding Events}">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="model:User">
+                <DataTemplate x:DataType="model:Event">
                     <ViewCell>
                         <Grid ColumnDefinitions="2*, 5*, 5*, 3*, 3*"
                               VerticalOptions="Center">
-                            <Label Text="{Binding UserId}"
+                            <Label Text="{Binding EventId}"
                                    Grid.Column="0"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
-                            <Label Text="{Binding FirstName}"
+                            <Label Text="{Binding Date}"
                                    Grid.Column="1"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
-                            <Label Text="{Binding LastName}"
+                            <Label Text="{Binding Description}"
+                                   Grid.Column="2"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            <Label Text="{Binding Location}"
                                    Grid.Column="2"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
                             <ImageButton Source="pencil.png" 
                                          Grid.Column="3"
                                          HorizontalOptions="Start"
-                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ChangeUsersViewModel}}, Path=ChangeUserCommand}"
+                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:EventsListViewModel}}, Path=ChangeEventCommand}"
                                          CommandParameter="{Binding .}"/>
                             <ImageButton Source="garbage_backet.png" 
                                          Grid.Column="4"
                                          HorizontalOptions="Center"
-                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ChangeUsersViewModel}}, Path=DeleteUserCommand}"
+                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:EventsListViewModel}}, Path=DeleteEventCommand}"
                                          CommandParameter="{Binding .}"/>
                         </Grid>
                     </ViewCell>
@@ -42,6 +46,6 @@
         </ListView>
         <ImageButton Source="plus.png" 
                      HorizontalOptions="Center"
-                     Command="{Binding RedirectToUserFormCommand}"/>
+                     Command="{Binding RedirectToEventFormCommand}"/>
     </VerticalStackLayout>
 </ContentPage>

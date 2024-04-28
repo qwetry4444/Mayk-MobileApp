@@ -54,7 +54,7 @@ namespace Mayk_App.ViewModel
             //IsBusy = true;
             //await Task.Delay(2000);
 
-            //var user = await _eventService.GetUserByEmail("2");
+            //var user = await _repetitionService.GetUserByEmail("2");
             //Users.Add(user);
 
             Users.Clear();

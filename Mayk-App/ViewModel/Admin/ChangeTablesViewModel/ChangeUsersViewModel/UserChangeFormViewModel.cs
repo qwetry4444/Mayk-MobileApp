@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.Model;
 using Mayk_App.Service;
-using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
 
 namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel
 {
@@ -62,7 +62,7 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel
                     PhoneNumber = PhoneNumber,
                     Password = Password
                 });
-            await Shell.Current.GoToAsync(nameof(ChangeUsersPage));
+            await Shell.Current.GoToAsync(nameof(UsersListPage));
         }
 
         [RelayCommand]
@@ -77,7 +77,7 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel
                 PhoneNumber = PhoneNumber,
                 Password = Password
             });
-            await Shell.Current.GoToAsync(nameof(ChangeUsersPage));
+            await Shell.Current.GoToAsync(nameof(UsersListPage));
         }
 
         [RelayCommand]

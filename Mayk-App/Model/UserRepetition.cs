@@ -10,7 +10,7 @@ namespace Mayk_App.Model
         public UserRepetition(int userRepetitionId, int usereId, int repetitionId)
         {
             UserRepetitionId = userRepetitionId;
-            UsereId = usereId;
+            UserId = usereId;
             RepetitionId = repetitionId;
         }
 
@@ -21,7 +21,7 @@ namespace Mayk_App.Model
         [Indexed]
         [NotNull]
         [Column("user_id")]
-        public int UsereId { get; set; }
+        public int UserId { get; set; }
 
         [Indexed]
         [NotNull]

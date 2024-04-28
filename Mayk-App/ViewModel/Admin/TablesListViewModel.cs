@@ -1,7 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.View.Admin.ChangeTablesPages;
-using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
 
 namespace Mayk_App.ViewModel.Admin
 {
@@ -12,25 +13,25 @@ namespace Mayk_App.ViewModel.Admin
         [RelayCommand]
         async Task RedirectToChangeUsersPage()
         {
-            await Shell.Current.GoToAsync(nameof(ChangeUsersPage));
+            await Shell.Current.GoToAsync(nameof(UsersListPage));
         }
 
         [RelayCommand]
         async Task RedirectToChangeEventsPage()
         {
-            await Shell.Current.GoToAsync(nameof(ChangeUsersPage));
+            await Shell.Current.GoToAsync(nameof(EventsListPage));
         }
 
         [RelayCommand]
         async Task RedirectToChangeRepetitionsPage()
         {
-            await Shell.Current.GoToAsync(nameof(ChangeRepetitionsPage));
+            await Shell.Current.GoToAsync(nameof(RepetitionsListPage));
         }
 
         [RelayCommand]
         async Task RedirectToChangeUsersRepetitionsPage()
         {
-            await Shell.Current.GoToAsync(nameof(ChangeUsersRepetitionsPage));
+            await Shell.Current.GoToAsync(nameof(UsersRepetitionsListPage));
         }
     }
 }

@@ -8,6 +8,7 @@ public partial class ChangeEventForm : ContentPage
 	public ChangeEventForm(ChangeEventsFormViewModel vm)
 	{
 		InitializeComponent();
+		BindingContext = vm;
 		viewModel = vm;
 	}
 

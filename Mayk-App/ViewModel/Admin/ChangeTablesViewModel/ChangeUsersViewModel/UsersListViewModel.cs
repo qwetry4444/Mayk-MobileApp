@@ -8,12 +8,12 @@ using MvvmHelpers;
 
 namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel
 {
-    public partial class ChangeUsersViewModel : CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+    public partial class UsersListViewModel : CommunityToolkit.Mvvm.ComponentModel.ObservableObject
     {
         private readonly IUserService _userService;
 
         public ObservableRangeCollection<User> Users { get; set; }
-        public ChangeUsersViewModel(IUserService userService)
+        public UsersListViewModel(IUserService userService)
         {
             _userService = userService;
             Users = new();

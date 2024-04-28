@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel"
-             x:DataType="vm:UserChangeFormViewModel"
-             x:Class="Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers.UserChangeForm"
-             Title="UserChangeForm">
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeRepetitionsViewModel"
+             x:DataType="vm:ChangeRepetitionFormViewModel"
+             x:Class="Mayk_App.View.Admin.ChangeTablesPages.ChangeRepetitions.ChangeRepetitionForm"
+             Title="ChangeRepetitionForm">
     <VerticalStackLayout>
         <Grid ColumnDefinitions="1*, 1*, 2*, 4*, 2*, 1*, 1*"
           RowDefinitions="Auto, Auto, Auto, Auto"
@@ -15,24 +15,15 @@
                              Grid.Row="1"
                              Spacing="15">
                 <Frame>
-                    <Entry Placeholder="Имя"
-                           Text="{Binding FirstName, Mode=TwoWay}"/>
+                    <Entry Placeholder="Место"
+                           Text="{Binding Location, Mode=TwoWay}"/>
                 </Frame>
                 <Frame>
-                    <Entry Placeholder="Фамилия"
-                           Text="{Binding LastName, Mode=TwoWay}"/>
+                    <DatePicker Date="{Binding Date, Mode=TwoWay}"/>
                 </Frame>
                 <Frame>
-                    <Entry Placeholder="Почта"
-                           Text="{Binding Email, Mode=TwoWay}"/>
-                </Frame>
-                <Frame>
-                    <Entry Placeholder="Номер телефона"
-                           Text="{Binding PhoneNumber, Mode=TwoWay}"/>
-                </Frame>
-                <Frame>
-                    <Entry Placeholder="Пароль"
-                           Text="{Binding Password, Mode=TwoWay}"/>
+                    <Entry Placeholder="id мепроприятия"
+                           Text="{Binding EventId, Mode=TwoWay}"/>
                 </Frame>
             </VerticalStackLayout>
 
@@ -50,7 +41,7 @@
                         <DataTrigger TargetType="Label"
                                      Binding="{Binding IsUpdate}"
                                      Value="false">
-                        <Setter Property="Text"
+                            <Setter Property="Text"
                                 Value="Добавить"/>
                         </DataTrigger>
                     </Label.Triggers>

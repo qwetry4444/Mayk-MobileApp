@@ -3,19 +3,19 @@
 using Microsoft.Extensions.Logging;
 using Mayk_App.Service;
 using Mayk_App.View.Admin;
-using Mayk_App.View.Admin.AddUserToRepetition;
 
 using Mayk_App.ViewModel;
 using Mayk_App.ViewModel.Admin;
-using Mayk_App.ViewModel.Admin.AddUserToRepetitionViewModel;
-using Mayk_App.ViewModel.Admin.ChangeTablesViewModel;
 using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel;
 using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel;
 
 using Mayk_App.View.Admin.ChangeTablesPages;
-using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeRepetitions;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsersRepetitions;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeRepetitionsViewModel;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersRepetitionsViewModel;
 
 /* Необъединенное слияние из проекта "Mayk-App (net7.0-android)"
 До:
@@ -111,22 +111,22 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<AddViewModel>();
             mauiAppBuilder.Services.AddSingleton<AddEventViewModel>();
             mauiAppBuilder.Services.AddSingleton<AddRepetitionViewModel>();
-            mauiAppBuilder.Services.AddSingleton<RepetitionsListViewModel>();
             mauiAppBuilder.Services.AddSingleton<UsersListViewModel>();
 
             mauiAppBuilder.Services.AddSingleton<TablesListViewModel>();
 
-            mauiAppBuilder.Services.AddSingleton<ChangeUsersViewModel>();
+            mauiAppBuilder.Services.AddSingleton<UsersListViewModel>();
             mauiAppBuilder.Services.AddSingleton<UserChangeFormViewModel>();
 
-            mauiAppBuilder.Services.AddSingleton<ChangeEventsViewModel>();
+            mauiAppBuilder.Services.AddSingleton<EventsListViewModel>();
             mauiAppBuilder.Services.AddSingleton<ChangeEventsFormViewModel>();
 
+            mauiAppBuilder.Services.AddSingleton<RepetitionsListViewModel>();
+            mauiAppBuilder.Services.AddSingleton<ChangeRepetitionFormViewModel>(); 
+            
+            mauiAppBuilder.Services.AddSingleton<UsersRepetitionsListViewModel>();
+            mauiAppBuilder.Services.AddSingleton<ChangeUserRepetitionFormViewModel>();
 
-
-            mauiAppBuilder.Services.AddSingleton<ChangeEventsViewModel>();
-            mauiAppBuilder.Services.AddSingleton<ChangeRepetitionsViewModel>();
-            mauiAppBuilder.Services.AddSingleton<ChangeUsersRepetitionsViewModel>();
 
 
 
@@ -146,17 +146,21 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddTransient<AddPage>();
             mauiAppBuilder.Services.AddTransient<AddEventPage>();
             mauiAppBuilder.Services.AddTransient<AddRepetitionPage>();
-            mauiAppBuilder.Services.AddTransient<RepetitionsListPage>();
             mauiAppBuilder.Services.AddTransient<UsersListPage>();
 
             mauiAppBuilder.Services.AddTransient<TablesListPage>();
             
-            mauiAppBuilder.Services.AddTransient<ChangeUsersPage>();
+            mauiAppBuilder.Services.AddTransient<UsersListPage>();
             mauiAppBuilder.Services.AddTransient<UserChangeForm>();
 
-            mauiAppBuilder.Services.AddTransient<ChangeEventsPage>();
-            mauiAppBuilder.Services.AddTransient<ChangeRepetitionsPage>();
-            mauiAppBuilder.Services.AddTransient<ChangeUsersRepetitionsPage>();
+            mauiAppBuilder.Services.AddTransient<EventsListPage>();
+            mauiAppBuilder.Services.AddTransient<ChangeEventForm>();
+
+            mauiAppBuilder.Services.AddTransient<RepetitionsListPage>();
+            mauiAppBuilder.Services.AddTransient<ChangeRepetitionForm>();
+
+            mauiAppBuilder.Services.AddTransient<UsersRepetitionsListPage>();
+            mauiAppBuilder.Services.AddTransient<ChangeUserRepetitionForm>();
 
 
             return mauiAppBuilder;

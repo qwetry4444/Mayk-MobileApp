@@ -89,17 +89,20 @@
 	  <Compile Update="View\Admin\AddRepetitionPage.xaml.cs">
 	    <DependentUpon>AddRepetitionPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="View\Admin\AddUserToRepetition\RepetitionsListPage.xaml.cs">
+	  <Compile Update="View\Admin\ChangeTablesPages\ChangeEvents\EventsListPage.xaml.cs">
+	    <DependentUpon>EventsListPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitions\ChangeUserRepetitionForm.xaml.cs">
+	    <DependentUpon>ChangeUserRepetitionForm.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitions\UsersRepetitionsList.xaml.cs">
+	    <DependentUpon>UsersRepetitionsList.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Admin\ChangeTablesPages\ChangeUsers\UsersListPage.xaml.cs">
+	    <DependentUpon>UsersListPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Admin\ChangeTablesPages\ChangeRepetitions\RepetitionsListPage.xaml.cs">
 	    <DependentUpon>RepetitionsListPage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitions\ChangeUsersRepetitionsPage.xaml.cs">
-	    <DependentUpon>ChangeUsersRepetitionsPage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="View\Admin\ChangeTablesPages\ChangeUsers\ChangeUsersPage.xaml.cs">
-	    <DependentUpon>ChangeUsersPage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="View\Admin\ChangeTablesPages\ChangeRepetitions\ChangeRepetitionsPage.xaml.cs">
-	    <DependentUpon>ChangeRepetitionsPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="View\Admin\TablesListPage.xaml.cs">
 	    <DependentUpon>TablesListPage.xaml</DependentUpon>
@@ -128,22 +131,22 @@
 	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeEvents\ChangeEventForm.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeEvents\ChangeEventsPage.xaml">
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeEvents\EventsListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeRepetitions\ChangeRepetitionsPage.xaml">
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeRepetitions\ChangeRepetitionForm.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsers\ChangeUsersPage.xaml">
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeRepetitions\RepetitionsListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitions\ChangeUsersRepetitionsPage.xaml">
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitions\ChangeUserRepetitionForm.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Admin\AddUserToRepetition\RepetitionsListPage.xaml">
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsers\UsersListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Admin\AddUserToRepetition\UsersListPage.xaml">
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsersRepetitions\UsersRepetitionsList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeUsers\UserChangeForm.xaml">
@@ -179,6 +182,6 @@
 	  <Folder Include="Database\" />
 	</ItemGroup>
 
-	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionMaykAppHideInfoBar="True" /></VisualStudio></ProjectExtensions>
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionMaykAppHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarMaykAppHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

@@ -2,10 +2,10 @@ using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel;
 
 namespace Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents;
 
-public partial class ChangeEventsPage : ContentPage
+public partial class EventsListPage : ContentPage
 {
-	private ChangeEventsViewModel viewModel;
-	public ChangeEventsPage(ChangeEventsViewModel vm)
+	private EventsListViewModel viewModel;
+	public EventsListPage(EventsListViewModel vm)
 	{
 		InitializeComponent();
 		BindingContext = vm;

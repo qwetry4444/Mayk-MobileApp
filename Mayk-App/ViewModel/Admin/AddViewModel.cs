@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.View.Admin;
-using Mayk_App.View.Admin.AddUserToRepetition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +26,7 @@ namespace Mayk_App.ViewModel.Admin
         [RelayCommand]
         async Task RedirectToAddUserToRepetitionPage()
         {
-            await Shell.Current.GoToAsync(nameof(RepetitionsListPage));
+           // await Shell.Current.GoToAsync(nameof(RepetitionsListPage));
         }
 
 

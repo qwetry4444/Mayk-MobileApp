@@ -4,15 +4,14 @@ using Mayk_App.Service;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents;
 using MvvmHelpers;
 
-
 namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel
 {
-    public partial class ChangeEventsViewModel : CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+    public partial class EventsListViewModel : CommunityToolkit.Mvvm.ComponentModel.ObservableObject
     {
         private readonly IEventService _eventService;
 
         public ObservableRangeCollection<Event> Events { get; set; }
-        public ChangeEventsViewModel(IEventService eventService)
+        public EventsListViewModel(IEventService eventService)
         {
             _eventService = eventService;
             Events = new();
@@ -25,7 +24,7 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel
             Events.AddRange(Events);
         }
 
-        public async Task DeleteUser(Event eventToDelete)
+        public async Task DeleteEvent(Event eventToDelete)
         {
             await _eventService.DeleteAsync(eventToDelete);
             await LoadEvents();

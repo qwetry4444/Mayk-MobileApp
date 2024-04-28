@@ -1,11 +1,11 @@
 ﻿
 using Mayk_App.View;
 using Mayk_App.View.Admin;
-using Mayk_App.View.Admin.AddUserToRepetition;
 using Mayk_App.View.Admin.ChangeTablesPages;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents;
-using Mayk_App.View.Admin.ChangeTablesPages.ChangeUser;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeRepetitions;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsersRepetitions;
 
 namespace Mayk_App
 {
@@ -22,22 +22,22 @@ namespace Mayk_App
             Routing.RegisterRoute(nameof(AddPage), typeof(AddPage));
             Routing.RegisterRoute(nameof(AddEventPage), typeof(AddEventPage));
             Routing.RegisterRoute(nameof(AddRepetitionPage), typeof(AddRepetitionPage));
-            Routing.RegisterRoute(nameof(RepetitionsListPage), typeof(RepetitionsListPage));
+            //Routing.RegisterRoute(nameof(RepetitionsListPage), typeof(RepetitionsListPage));
             Routing.RegisterRoute(nameof(UsersListPage), typeof(UsersListPage));
 
             Routing.RegisterRoute(nameof(TablesListPage), typeof(TablesListPage));
 
-            Routing.RegisterRoute(nameof(ChangeUsersPage), typeof(ChangeUsersPage));
+            Routing.RegisterRoute(nameof(UsersListPage), typeof(UsersListPage));
             Routing.RegisterRoute(nameof(UserChangeForm), typeof(UserChangeForm));
 
-            Routing.RegisterRoute(nameof(ChangeEventsPage), typeof(ChangeEventsPage));
+            Routing.RegisterRoute(nameof(EventsListPage), typeof(EventsListPage));
             Routing.RegisterRoute(nameof(ChangeEventForm), typeof(ChangeEventForm));
 
+            Routing.RegisterRoute(nameof(UsersRepetitionsListPage), typeof(UsersRepetitionsListPage));
+            Routing.RegisterRoute(nameof(ChangeUserRepetitionForm), typeof(ChangeUserRepetitionForm));
 
-            Routing.RegisterRoute(nameof(ChangeRepetitionsPage), typeof(ChangeRepetitionsPage));
-            Routing.RegisterRoute(nameof(ChangeUsersRepetitionsPage), typeof(ChangeUsersRepetitionsPage));
-
-
+            Routing.RegisterRoute(nameof(RepetitionsListPage), typeof(RepetitionsListPage));
+            Routing.RegisterRoute(nameof(ChangeRepetitionForm), typeof(ChangeRepetitionForm));
         }
     }
 }

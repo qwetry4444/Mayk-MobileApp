@@ -44,7 +44,7 @@ namespace Mayk_App.Service
         public async Task<List<UserRepetition>> GetUserRepetition(string user_id)
         {
             var user = await connection.Table<UserRepetition>()
-                .Where(u => u.UsereId.Equals(user_id)).ToListAsync();
+                .Where(u => u.UserId.Equals(user_id)).ToListAsync();
             return user;
         }
 
