@@ -2,15 +2,11 @@
 using Mayk_App.Model;
 using Mayk_App.Service;
 using MvvmHelpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
 
 
-namespace Mayk_App.ViewModel
+namespace Mayk_App.ViewModel.App
 {
     public partial class EventsScheduleViewModel : ObservableObject
     {

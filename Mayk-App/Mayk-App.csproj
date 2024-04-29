@@ -110,10 +110,10 @@
 	  <Compile Update="View\App\EventsSchedulePage.xaml.cs">
 	    <DependentUpon>EventsSchedulePage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="View\SingUpPage.xaml.cs">
+	  <Compile Update="View\App\SingUpPage.xaml.cs">
 	    <DependentUpon>SingUpPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="View\SingInPage.xaml.cs">
+	  <Compile Update="View\App\SingInPage.xaml.cs">
 	    <DependentUpon>SingInPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
@@ -161,19 +161,19 @@
 	  <MauiXaml Update="View\App\EventDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\SingInPage.xaml">
+	  <MauiXaml Update="View\App\SingInPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\NoteDetailsPage.xaml">
+	  <MauiXaml Update="View\App\NoteDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\SingUpPage.xaml">
+	  <MauiXaml Update="View\App\SingUpPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\App\EventsSchedulePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\StartPage.xaml">
+	  <MauiXaml Update="View\App\StartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

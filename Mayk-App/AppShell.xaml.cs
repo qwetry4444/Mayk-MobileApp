@@ -1,5 +1,5 @@
 ﻿
-using Mayk_App.View;
+using Mayk_App.View.App;
 using Mayk_App.View.Admin;
 using Mayk_App.View.Admin.ChangeTablesPages;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents;

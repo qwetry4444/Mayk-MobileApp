@@ -4,18 +4,20 @@ using Microsoft.Extensions.Logging;
 using Mayk_App.Service;
 using Mayk_App.View.Admin;
 
-using Mayk_App.ViewModel;
+using Mayk_App.ViewModel.App;
 using Mayk_App.ViewModel.Admin;
 using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel;
 using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeRepetitionsViewModel;
+using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersRepetitionsViewModel;
 
 using Mayk_App.View.Admin.ChangeTablesPages;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeRepetitions;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsersRepetitions;
-using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeRepetitionsViewModel;
-using Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersRepetitionsViewModel;
+
+using Mayk_App.View.App;
 
 /* Необъединенное слияние из проекта "Mayk-App (net7.0-android)"
 До:
@@ -136,8 +138,8 @@ namespace Mayk_App
         public static MauiAppBuilder RegisterViews(this MauiAppBuilder mauiAppBuilder)
         {
             mauiAppBuilder.Services.AddTransient<StartPage>();
-            mauiAppBuilder.Services.AddTransient<SingUpPage>();
-            mauiAppBuilder.Services.AddTransient<SingInPage>();
+            mauiAppBuilder.Services.AddTransient<View.App.SingUpPage>();
+            mauiAppBuilder.Services.AddTransient<View.App.SingInPage>();
             mauiAppBuilder.Services.AddTransient<MainPage>();
             mauiAppBuilder.Services.AddTransient<EventsSchedulePage>();
 

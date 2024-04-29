@@ -1,6 +1,6 @@
-﻿using Mayk_App.ViewModel;
+﻿using Mayk_App.ViewModel.App;
 
-namespace Mayk_App.View;
+namespace Mayk_App.View.App;
 
 public partial class MainPage : ContentPage
 {

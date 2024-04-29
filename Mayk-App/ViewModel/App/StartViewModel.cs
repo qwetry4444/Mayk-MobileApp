@@ -1,9 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Mayk_App.View;
+using Mayk_App.View.App;
 using Mayk_App.View.Admin;
 
-namespace Mayk_App.ViewModel
+namespace Mayk_App.ViewModel.App
 {
     public partial class StartViewModel : ObservableObject
     {

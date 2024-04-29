@@ -17,13 +17,15 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel
             Events = new();
         }
 
+        [RelayCommand]
         public async Task LoadEvents()
         {
             Events.Clear();
             List<Event> events = await _eventService.GetAsync();
-            Events.AddRange(Events);
+            Events.AddRange(events);
         }
 
+        [RelayCommand]
         public async Task DeleteEvent(Event eventToDelete)
         {
             await _eventService.DeleteAsync(eventToDelete);

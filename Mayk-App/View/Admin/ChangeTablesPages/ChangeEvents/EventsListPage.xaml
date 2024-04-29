@@ -11,7 +11,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Event">
                     <ViewCell>
-                        <Grid ColumnDefinitions="2*, 5*, 5*, 3*, 3*"
+                        <Grid ColumnDefinitions="2*, 5*, 5*, 5*, 3*, 3*"
                               VerticalOptions="Center">
                             <Label Text="{Binding EventId}"
                                    Grid.Column="0"
@@ -21,21 +21,21 @@
                                    Grid.Column="1"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
-                            <Label Text="{Binding Description}"
+                            <Label Text="{Binding Name}"
                                    Grid.Column="2"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
                             <Label Text="{Binding Location}"
-                                   Grid.Column="2"
+                                   Grid.Column="3"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
                             <ImageButton Source="pencil.png" 
-                                         Grid.Column="3"
+                                         Grid.Column="4"
                                          HorizontalOptions="Start"
                                          Command="{Binding Source={RelativeSource AncestorType={x:Type vm:EventsListViewModel}}, Path=ChangeEventCommand}"
                                          CommandParameter="{Binding .}"/>
                             <ImageButton Source="garbage_backet.png" 
-                                         Grid.Column="4"
+                                         Grid.Column="5"
                                          HorizontalOptions="Center"
                                          Command="{Binding Source={RelativeSource AncestorType={x:Type vm:EventsListViewModel}}, Path=DeleteEventCommand}"
                                          CommandParameter="{Binding .}"/>

@@ -7,7 +7,7 @@ using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
 
 
 
-namespace Mayk_App.ViewModel
+namespace Mayk_App.ViewModel.App
 {
     [QueryProperty(nameof(UserId), "userId")]
     public partial class MainViewModel : ObservableObject

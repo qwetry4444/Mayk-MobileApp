@@ -2,9 +2,9 @@
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.Model;
 using Mayk_App.Service;
-using Mayk_App.View;
+using Mayk_App.View.App;
 
-namespace Mayk_App.ViewModel
+namespace Mayk_App.ViewModel.App
 {
     public partial class SingUpViewModel : ObservableObject
     {
