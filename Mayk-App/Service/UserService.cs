@@ -30,6 +30,7 @@ namespace Mayk_App.Service
 
         public async Task<User> GetUserByEmail(string email)
         {
+            var users = await connection.Table<User>().ToListAsync();
             var user = await connection.Table<User>()
                 .Where(u => u.Email.ToLower().Equals(email.ToLower()))
                 .FirstOrDefaultAsync();

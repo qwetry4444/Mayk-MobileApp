@@ -22,10 +22,10 @@ namespace Mayk_App.ViewModel.App
         }
 
         [ObservableProperty]
-        string userLogin;
+        string userLogin = "1";
 
         [ObservableProperty]
-        string userPassword;
+        string userPassword = "1";
 
         [ObservableProperty]
         bool isWrong = false;
@@ -43,8 +43,15 @@ namespace Mayk_App.ViewModel.App
                         {"userId", user.UserId }
                     });
                 }
+                else
+                {
+                    IsWrong = true;
+                }
             }
-            IsWrong = true;
+            else
+            {
+                IsWrong = true;
+            }
         }
     }
 }

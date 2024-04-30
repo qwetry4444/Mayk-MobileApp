@@ -11,25 +11,25 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:UserRepetition">
                     <ViewCell>
-                        <Grid ColumnDefinitions="2*, 5*, 5*, 3*, 3*"
+                        <Grid ColumnDefinitions="5*, 5*, 1*, 1*"
                               VerticalOptions="Center">
-                            <Label Text="{Binding RepetitionId}"
-                                   Grid.Column="0"
-                                   HorizontalOptions="Center"
-                                   VerticalOptions="Center"/>
                             <Label Text="{Binding UserId}"
                                    Grid.Column="0"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
+                            <Label Text="{Binding RepetitionId}"
+                                   Grid.Column="1"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
                             <ImageButton Source="pencil.png" 
-                                         Grid.Column="3"
+                                         Grid.Column="2"
                                          HorizontalOptions="Start"
-                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:UsersRepetitionsListViewModel}}, Path=ChangeRepetitionCommand}"
+                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:UsersRepetitionsListViewModel}}, Path=ChangeUserRepetitionCommand}"
                                          CommandParameter="{Binding .}"/>
                             <ImageButton Source="garbage_backet.png" 
-                                         Grid.Column="4"
+                                         Grid.Column="3"
                                          HorizontalOptions="Center"
-                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:UsersRepetitionsListViewModel}}, Path=DeleteRepetitionCommand}"
+                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:UsersRepetitionsListViewModel}}, Path=DeleteUserRepetitionCommand}"
                                          CommandParameter="{Binding .}"/>
                         </Grid>
                     </ViewCell>

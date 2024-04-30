@@ -8,13 +8,15 @@ public partial class MainPage : ContentPage
     public MainPage(MainViewModel vm)
     {
         InitializeComponent();
-        this.viewModel = vm;
         BindingContext = vm;
+        viewModel = vm;
     }
 
-    protected override void OnAppearing()
+    protected override async void OnAppearing()
     {
         base.OnAppearing();
+        await viewModel.GetUser();
+        await viewModel.LoadNearestEvent();
     }
 }
 

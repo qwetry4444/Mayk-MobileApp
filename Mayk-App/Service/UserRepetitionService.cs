@@ -41,11 +41,11 @@ namespace Mayk_App.Service
             return userRepetition;
         }
 
-        public async Task<List<UserRepetition>> GetUserRepetition(string user_id)
+        public async Task<List<UserRepetition>> GetUserRepetitionsById(int userId)
         {
-            var user = await connection.Table<UserRepetition>()
-                .Where(u => u.UserId.Equals(user_id)).ToListAsync();
-            return user;
+            var userRepetitionsList = await connection.Table<UserRepetition>()
+                .Where(u => u.UserId.Equals(userId)).ToListAsync();
+            return userRepetitionsList;
         }
 
         public async Task<int> UpdateAsync(UserRepetition userRepetition)

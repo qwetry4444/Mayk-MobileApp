@@ -38,7 +38,7 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersRepetitionsV
         [RelayCommand]
         public async Task ChangeUserRepetition(UserRepetition UserRepetitionToDelete)
         {
-            await Shell.Current.GoToAsync(nameof(ChangeUserRepetition), new Dictionary<string, object>
+            await Shell.Current.GoToAsync(nameof(ChangeUserRepetitionForm), new Dictionary<string, object>
             {
                 { "UserRepetitionId", UserRepetitionToDelete.UserRepetitionId }
             });

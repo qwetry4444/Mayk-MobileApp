@@ -11,31 +11,32 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Repetition">
                     <ViewCell>
-                        <Grid ColumnDefinitions="2*, 5*, 5*, 3*, 3*"
+                        <Grid ColumnDefinitions="1*, 1*, 5*, 3*, 1*, 1*"
                               VerticalOptions="Center">
+                            
                             <Label Text="{Binding RepetitionId}"
                                    Grid.Column="0"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
                             <Label Text="{Binding EventId}"
-                                   Grid.Column="0"
-                                   HorizontalOptions="Center"
-                                   VerticalOptions="Center"/>
-                            <Label Text="{Binding Location}"
                                    Grid.Column="1"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
-                            <DatePicker Date="{Binding Date}"
+                            <Label Text="{Binding Location}"
                                    Grid.Column="2"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
+                            <DatePicker Date="{Binding Date}"
+                                   Grid.Column="3"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
                             <ImageButton Source="pencil.png" 
-                                         Grid.Column="3"
+                                         Grid.Column="4"
                                          HorizontalOptions="Start"
                                          Command="{Binding Source={RelativeSource AncestorType={x:Type vm:RepetitionsListViewModel}}, Path=ChangeRepetitionCommand}"
                                          CommandParameter="{Binding .}"/>
                             <ImageButton Source="garbage_backet.png" 
-                                         Grid.Column="4"
+                                         Grid.Column="5"
                                          HorizontalOptions="Center"
                                          Command="{Binding Source={RelativeSource AncestorType={x:Type vm:RepetitionsListViewModel}}, Path=DeleteRepetitionCommand}"
                                          CommandParameter="{Binding .}"/>

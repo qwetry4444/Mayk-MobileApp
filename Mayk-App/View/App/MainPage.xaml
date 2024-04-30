@@ -5,6 +5,61 @@
              xmlns:vm="clr-namespace:Mayk_App.ViewModel.App"
              x:DataType="vm:MainViewModel"
              x:Class="Mayk_App.View.App.MainPage">
+    <ContentPage.Resources>
+        <LayoutOptions x:Key="horzOptions"
+           Alignment="Center" />
+        <LayoutOptions x:Key="vertOptions"
+           Alignment="Center" />
+
+        <ResourceDictionary>
+            <Style x:Key="GreetLabelStyle"
+                   TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemibold"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="TextColor" Value="{StaticResource Black}"/>
+            </Style>
+            
+            <Style x:Key="UsernameLabelStyle"
+                   TargetType="Label"
+                    BasedOn="{StaticResource GreetLabelStyle}">
+                <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+            </Style>
+
+            <Style x:Key="NearestEventsTitleLabelStyle"
+                   TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemibold"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="TextColor" Value="{StaticResource Black}"/>
+            </Style>
+            <Style x:Key="NearestEventsTitleOrangeLabelStyle"
+                   TargetType="Label"
+                   BasedOn="{StaticResource NearestEventsTitleLabelStyle}">
+                <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+            </Style>
+
+
+            <Style x:Key="EventTypeLabelStyle"
+               TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemibold"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+            </Style>
+
+            <Style x:Key="EventNameLabelStyle"
+               TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemibold"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="TextColor" Value="{StaticResource Black}"/>
+            </Style>
+
+            <Style x:Key="EventDateLabelStyle"
+                   TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemibold"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="TextColor" Value="{StaticResource Gray400}"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
         <Grid
@@ -12,36 +67,79 @@
             RowDefinitions="Auto, Auto, Auto">
             <HorizontalStackLayout Grid.Column="1"
                                    Grid.ColumnSpan="3"
-                                   Grid.Row="0">
-                <Label Text="Здравствуйте, "/>
-                <Label Text="NAME"/>
+                                   Grid.Row="0"
+                                   HorizontalOptions="Center"
+                                   Margin="0, 32, 0, 0">
+                <Label Text="Здравствуйте, "
+                       Style="{StaticResource GreetLabelStyle}"/>
+                <Label Text="{Binding CurrentUser.FirstName}"
+                       Style="{StaticResource UsernameLabelStyle}"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Grid.Column="1"
-                       Grid.ColumnSpan="3"
-                       Grid.Row="1">
-                <Label Text="Ближайшие "/>
-                <Label Text="события"/>
+                                   Grid.ColumnSpan="3"
+                                   Grid.Row="1"
+                                   HorizontalOptions="Center"
+                                   Margin="0, 32, 0, 32">
+                <Label Text="Ближайшие "
+                       Style="{StaticResource NearestEventsTitleOrangeLabelStyle}"/>
+                <Label Text="события"
+                       Margin="0, 0, 4, 0"
+                       Style="{StaticResource NearestEventsTitleLabelStyle}"/>
+                <Image Source="bell_orange.png"
+                       HeightRequest="28"/>
             </HorizontalStackLayout>
-            <Button Command="{Binding RefreshCommand}"/>
 
-            <VerticalStackLayout Grid.Column="0"
-                                 Grid.ColumnSpan="5"
-                                 Grid.Row="2">
-                <Label Text="{Binding Users.Count}"/>
-                <ListView ItemsSource="{Binding Users}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="model:User">
-                            <ViewCell>
-                                <Grid>
-                                    <Label Text="{Binding UserId}"/>
-                                    <Label Text="{Binding FirstName}"/>
-                                    <Label Text="{Binding LastName}"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+            <VerticalStackLayout Grid.Row="2"
+                                 Grid.Column="2">
+                <Grid ColumnDefinitions="8*, 2*"
+                      RowDefinitions="40, 32, 32">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Grid.GestureRecognizers>
+                    <Label Grid.Column="0"
+                           Grid.Row="0"
+                           Text="Мероприятие"
+                           Style="{StaticResource EventTypeLabelStyle}"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="1"
+                           Text="{Binding NearestEvent.Name}"
+                           Style="{StaticResource EventNameLabelStyle}"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="2"
+                           Text="{Binding NearestEvent.Date}"
+                           Style="{StaticResource EventDateLabelStyle}"/>
+                    <Image Grid.Column="1"
+                           Grid.Row="0"
+                           Grid.RowSpan="2"
+                           Source="arrow4.png"
+                           HeightRequest="20"
+                           VerticalOptions="Center"/>
+                </Grid>
+                <Grid ColumnDefinitions="8*, 2*"
+                      RowDefinitions="40, 32, 32">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Grid.GestureRecognizers>
+                    <Label Grid.Column="0"
+                           Grid.Row="0"
+                           Text="Репетиция"
+                           Style="{StaticResource EventTypeLabelStyle}"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="1"
+                           Text="{Binding NearestRepetition.Location}"
+                           Style="{StaticResource EventNameLabelStyle}"/>
+                    <Label Grid.Column="0"
+                           Grid.Row="2"
+                           Text="{Binding NearestRepetition.Date}"
+                           Style="{StaticResource EventDateLabelStyle}"/>
+                    <Image Grid.Column="1"
+                           Grid.Row="0"
+                           Grid.RowSpan="2"
+                           Source="arrow4.png"
+                           HeightRequest="20"
+                           VerticalOptions="Center"/>
+                </Grid>
             </VerticalStackLayout>
         </Grid>
 

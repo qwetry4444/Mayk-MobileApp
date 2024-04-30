@@ -50,6 +50,14 @@ namespace Mayk_App.Service
             return await connection.UpdateAsync(_event);
         }
 
+        public async Task<Event> GetNearestEvent()
+        {
+            return await connection.Table<Event>()
+                .Where(u => DateTime.Now < u.Date)
+                .OrderBy(u => u.Date)
+                .FirstOrDefaultAsync();
+        }
+
         private async void SetupDatabase()
         {
             if (connection is not null)

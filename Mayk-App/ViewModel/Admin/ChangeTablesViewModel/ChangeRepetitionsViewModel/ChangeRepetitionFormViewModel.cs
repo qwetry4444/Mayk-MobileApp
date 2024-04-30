@@ -89,7 +89,6 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeRepetitionsViewMo
             if (IsUpdate)
             {
                 await UpdateRepetition();
-                return;
             }
             await AddRepetition();
         }

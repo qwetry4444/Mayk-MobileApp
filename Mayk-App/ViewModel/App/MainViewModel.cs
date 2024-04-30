@@ -13,56 +13,54 @@ namespace Mayk_App.ViewModel.App
     public partial class MainViewModel : ObservableObject
     {
         private readonly IUserService _userService;
+        private readonly IUserRepetitionService _userRepetitionService;
+        private readonly IEventService _eventService;
         private readonly IRepetitionService _repetitionService;
+        private readonly User user;
 
-
-        public ObservableRangeCollection<User> Users { get; set; }
         public ObservableRangeCollection<Repetition> Repetitions { get; set; }
 
-        public MainViewModel(IUserService userService, IRepetitionService repetitionService)
+        public MainViewModel(
+                IUserService userService, 
+                IRepetitionService repetitionService, 
+                IUserRepetitionService userRepetitionService, 
+                IEventService eventService)
         {
             _userService = userService;
             _repetitionService = repetitionService;
-            Users = new ObservableRangeCollection<User>();
-            Repetitions = new ObservableRangeCollection<Repetition>();
+            _userRepetitionService = userRepetitionService;
+            _eventService = eventService;
         }
 
 
         [ObservableProperty]
         int userId;
 
-        [RelayCommand]
-        async Task getUsers()
-        {
-            Users.AddRange(await _userService.GetAsync());
+        [ObservableProperty]
+        User currentUser;
 
-            Console.WriteLine("!!!!![");
-            Console.WriteLine(Users);
-            Console.WriteLine("]!!!!!");
+        [ObservableProperty]
+        Event nearestEvent;
+
+        [ObservableProperty]
+        Repetition nearestRepetition;
+
+        public async Task LoadNearestEvent()
+        {
+            NearestEvent = await _eventService.GetNearestEvent();
         }
 
-        [RelayCommand]
-        async Task getUser()
+        public async Task LoadNearestRepetition()
         {
-            Users.Add(await _userService.GetUserByEmail("5"));
+            List<UserRepetition> userRepetitions = await _userRepetitionService.GetUserRepetitionsById(UserId);
+            NearestRepetition = await _repetitionService.GetRepetitionById(1);
         }
 
-
-        [RelayCommand]
-        async Task Refresh()
+        public async Task GetUser()
         {
-            //IsBusy = true;
-            //await Task.Delay(2000);
-
-            //var user = await _repetitionService.GetUserByEmail("2");
-            //Users.Add(user);
-
-            Users.Clear();
-            List<User> users = await _userService.GetAsync();
-            Users.AddRange(users);
-
-            //IsBusy = false;
+            CurrentUser = await _userService.GetUserById(UserId);
         }
+
 
         [RelayCommand]
         async Task GetRepetition()

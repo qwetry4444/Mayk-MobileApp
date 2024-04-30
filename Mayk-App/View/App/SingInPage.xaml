@@ -133,10 +133,12 @@
                              Spacing="15">
             <Frame Style="{StaticResource InputPanelStyle}">
                 <Entry Placeholder="Почта"
+                       Text="{Binding UserLogin}"
                        Style="{StaticResource EntryStyle}"/>
             </Frame>
             <Frame Style="{StaticResource InputPanelStyle}">
                 <Entry Placeholder="Пароль"
+                       Text="{Binding UserPassword}"
                        Style="{StaticResource EntryStyle}"/>
             </Frame>
             <Frame IsVisible="{Binding IsWrong}"
