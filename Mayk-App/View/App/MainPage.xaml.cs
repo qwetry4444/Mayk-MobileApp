@@ -17,6 +17,7 @@ public partial class MainPage : ContentPage
         base.OnAppearing();
         await viewModel.GetUser();
         await viewModel.LoadNearestEvent();
+        await viewModel.LoadNearestRepetition();
     }
 }
 

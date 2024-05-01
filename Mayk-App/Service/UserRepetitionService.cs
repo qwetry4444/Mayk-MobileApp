@@ -48,6 +48,16 @@ namespace Mayk_App.Service
             return userRepetitionsList;
         }
 
+        public async Task<List<UserRepetition>> GetFutherUserRepetitionsById(int userId)
+        {
+            var userRepetitionsList = await connection.Table<UserRepetition>()
+                .Where(u => u.UserId.Equals(userId)).ToListAsync();
+            Predicate<Repetition> condition = repetition => repetition.Date < DateTime.Now;
+            //userRepetitionsList.RemoveAll()
+            return userRepetitionsList;
+        }
+
+
         public async Task<int> UpdateAsync(UserRepetition userRepetition)
         {
             return await connection.UpdateAsync(userRepetition);

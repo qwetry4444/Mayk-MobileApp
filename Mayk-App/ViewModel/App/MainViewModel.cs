@@ -52,8 +52,10 @@ namespace Mayk_App.ViewModel.App
 
         public async Task LoadNearestRepetition()
         {
-            List<UserRepetition> userRepetitions = await _userRepetitionService.GetUserRepetitionsById(UserId);
-            NearestRepetition = await _repetitionService.GetRepetitionById(1);
+            List<UserRepetition> userRepetitions = await _userRepetitionService.GetFutherUserRepetitionsById(UserId);
+            List<Repetition> repetitions = await _repetitionService.GetFutherUserRepetitionsById(userRepetitions);
+            
+            NearestRepetition = repetitions.FirstOrDefault();
         }
 
         public async Task GetUser()

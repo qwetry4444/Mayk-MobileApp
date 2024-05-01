@@ -17,6 +17,9 @@ namespace Mayk_App.Service
         Task<List<Repetition>> GetAsync();
         Task<Repetition> GetRepetitionById(int repetitionId);
 
-        Task<Repetition> GetUserRepetitions(string user_id);
+        Task<Repetition> GetUserRepetitions(int userId);
+        Task<List<Repetition>> GetFutherUserRepetitionsById(List<UserRepetition> userRepetitions);
+        Task<Repetition> GetNearestUserRepetition(int userId);
+
     }
 }

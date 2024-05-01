@@ -41,16 +41,33 @@ namespace Mayk_App.Service
             return repetition;
         }
 
-        public async Task<Repetition> GetUserRepetitions(string user_id)
+        public async Task<Repetition> GetUserRepetitions(int user_id)
         {
             var user = await connection.Table<User>()
-                .Where(u => u.Email.ToLower().Equals(user_id.ToLower()))
+                .Where(u => u.UserId.Equals(user_id))
                 .FirstOrDefaultAsync();
             //var user = await connection.Table<User>()
             //    .FirstOrDefaultAsync();
             //return user;
             throw new NotImplementedException();
         }
+
+        public async Task<List<Repetition>> GetFutherUserRepetitionsById(List<UserRepetition> userRepetitions)
+        {
+            List<int> repetitionsIds = userRepetitions.Select(ur => ur.RepetitionId).ToList();
+            DateTime now = DateTime.Now;
+            List<Repetition> futherRepetitions = await connection.Table<Repetition>()
+                .Where(repetition => repetitionsIds.Contains(repetition.RepetitionId) && repetition.Date > now)
+                .ToListAsync();
+            return futherRepetitions;   
+        }
+
+        public Task<Repetition> GetNearestUserRepetition(int userId)
+        {
+            return null;
+        }
+
+
 
         public Task<int> UpdateAsync(Repetition repetition)
         {
