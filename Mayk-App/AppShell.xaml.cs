@@ -18,12 +18,17 @@ namespace Mayk_App
             Routing.RegisterRoute(nameof(SingInPage), typeof(SingInPage));
             Routing.RegisterRoute(nameof(SingUpPage), typeof(SingUpPage));
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
+            Routing.RegisterRoute(nameof(EventDetailsPage), typeof(EventDetailsPage));
+            Routing.RegisterRoute(nameof(EventsSchedulePage), typeof(EventsSchedulePage));
+            Routing.RegisterRoute(nameof(NotesListPage), typeof(NotesListPage));
 
             Routing.RegisterRoute(nameof(AddPage), typeof(AddPage));
             Routing.RegisterRoute(nameof(AddEventPage), typeof(AddEventPage));
             Routing.RegisterRoute(nameof(AddRepetitionPage), typeof(AddRepetitionPage));
-            //Routing.RegisterRoute(nameof(RepetitionsListPage), typeof(RepetitionsListPage));
             Routing.RegisterRoute(nameof(UsersListPage), typeof(UsersListPage));
+
+
+
 
             Routing.RegisterRoute(nameof(TablesListPage), typeof(TablesListPage));
 

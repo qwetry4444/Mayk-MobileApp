@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Mayk_App.Model;
 using Mayk_App.Service;
 using MvvmHelpers;
@@ -8,24 +9,57 @@ using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
 
 namespace Mayk_App.ViewModel.App
 {
+    [QueryProperty(nameof(UserId), "userId")]
     public partial class EventsScheduleViewModel : ObservableObject
     {
-        private readonly IRepetitionService RepetitionService;
-        
-        private readonly IEventService EventService;
+        private readonly IRepetitionService _repetitionService;
+        private readonly IUserRepetitionService _userRepetitionService;
+        private readonly IEventService _eventService;
 
         public ObservableRangeCollection<Event> Events { get; set; }
         public ObservableRangeCollection<Repetition> Repetitions { get; set; }
 
 
 
-        public EventsScheduleViewModel(RepetitionService repetitionService, EventService eventService)
+        public EventsScheduleViewModel(
+            IRepetitionService repetitionService, 
+            IEventService eventService,
+            IUserRepetitionService userRepetitionService)
         {
             Events = new();
             Repetitions = new();
-            RepetitionService = repetitionService;
-            EventService = eventService;
+            _repetitionService = repetitionService;
+            _eventService = eventService;
+            _userRepetitionService = userRepetitionService;
         }
 
+        [ObservableProperty]
+        int userId;
+
+        [ObservableProperty]
+        ActivityType whatToDisplay = ActivityType.All;
+
+        [RelayCommand]
+        public async Task LoadEvents()
+        {
+            Events.Clear();
+            List<Event> events = await _eventService.GetFutherEvents();
+            Events.AddRange(events);
+        }
+
+        [RelayCommand]
+        public async Task LoadRepetitions()
+        {
+            Repetitions.Clear();
+            List<UserRepetition> userRepetitions = await _userRepetitionService.GetFutherUserRepetitionsById(UserId);
+            List<Repetition> repetitions = await _repetitionService.GetFutherUserRepetitionsById(userRepetitions);
+            Repetitions.AddRange(repetitions);
+        }
+    }
+    public enum ActivityType
+    {
+        Event = 0,
+        Repetition = 1,
+        All = 2
     }
 }

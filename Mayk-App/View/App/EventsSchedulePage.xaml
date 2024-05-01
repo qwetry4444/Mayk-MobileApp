@@ -1,12 +1,92 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.App"
+             xmlns:model="clr-namespace:Mayk_App.Model"
+             x:DataType="vm:EventsScheduleViewModel"
              x:Class="Mayk_App.View.App.EventsSchedulePage"
              Title="SchedulePage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid
+            ColumnDefinitions="1*, 1*, 8*, 1*, 1*"
+            RowDefinitions="Auto, Auto, Auto">
+            <HorizontalStackLayout Spacing="12"
+                                   Grid.Column="2"
+                                   Grid.Row="0">
+                <Label Text="Все"/>
+                <Label Text="Реп."/>
+                <Label Text="Мер."/>
+            </HorizontalStackLayout>
+
+            <CollectionView ItemsSource="{Binding Events}"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="3"
+                            Grid.Row="1">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Event">
+                        <Grid ColumnDefinitions="8*, 2*"
+                              RowDefinitions="40, 32, 32">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Grid.GestureRecognizers>
+                            <Label Grid.Column="0"
+                                   Grid.Row="0"
+                                   Text="Мероприятие"
+                                   Style="{StaticResource EventTypeLabelStyle}"/>
+                            <Label Grid.Column="0"
+                                   Grid.Row="1"
+                                   Text="{Binding Name}"
+                                   Style="{StaticResource EventNameLabelStyle}"/>
+                            <Label Grid.Column="0"
+                                   Grid.Row="2"
+                                   Text="{Binding Date}"
+                                   Style="{StaticResource EventDateLabelStyle}"/>
+                            <Image Grid.Column="1"
+                                   Grid.Row="0"
+                                   Grid.RowSpan="2"
+                                   Source="arrow4.png"
+                                   HeightRequest="20"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <CollectionView ItemsSource="{Binding Repetitions}"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="3"
+                            Grid.Row="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Repetition">
+                        <Grid ColumnDefinitions="8*, 2*"
+                      RowDefinitions="40, 32, 32">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Grid.GestureRecognizers>
+                            <Label Grid.Column="0"
+                           Grid.Row="0"
+                           Text="Репетиция"
+                           Style="{StaticResource EventTypeLabelStyle}"/>
+                            <Label Grid.Column="0"
+                           Grid.Row="1"
+                           Text="{Binding Location}"
+                           Style="{StaticResource EventNameLabelStyle}"/>
+                            <Label Grid.Column="0"
+                           Grid.Row="2"
+                           Text="{Binding Date}"
+                           Style="{StaticResource EventDateLabelStyle}"/>
+                            <Image Grid.Column="1"
+                           Grid.Row="0"
+                           Grid.RowSpan="2"
+                           Source="arrow4.png"
+                           HeightRequest="20"
+                           VerticalOptions="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+
     </VerticalStackLayout>
 </ContentPage>

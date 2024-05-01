@@ -61,6 +61,7 @@
 	  <None Remove="Resources\Images\closed_eye.png" />
 	  <None Remove="Resources\Images\docs.svg" />
 	  <None Remove="Resources\Images\garbage_backet.png" />
+	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\library.png" />
 	  <None Remove="Resources\Images\logo.svg" />
 	  <None Remove="Resources\Images\note.png" />

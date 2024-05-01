@@ -109,6 +109,7 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<SingUpViewModel>();
             mauiAppBuilder.Services.AddSingleton<MainViewModel>();
             mauiAppBuilder.Services.AddSingleton<EventsScheduleViewModel>();
+            mauiAppBuilder.Services.AddSingleton<EventDetailsViewModel>();
 
             mauiAppBuilder.Services.AddSingleton<AddViewModel>();
             mauiAppBuilder.Services.AddSingleton<AddEventViewModel>();
@@ -142,6 +143,7 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddTransient<View.App.SingInPage>();
             mauiAppBuilder.Services.AddTransient<MainPage>();
             mauiAppBuilder.Services.AddTransient<EventsSchedulePage>();
+            mauiAppBuilder.Services.AddTransient<EventDetailsPage>();
 
 
 

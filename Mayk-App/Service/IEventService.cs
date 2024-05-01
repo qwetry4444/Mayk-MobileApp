@@ -18,6 +18,7 @@ namespace Mayk_App.Service
         Task<Event> GetEventById(int eventId);
 
         Task<Event> GetUserEvents(string user_id);
+        Task<List<Event>> GetFutherEvents();
         Task<Event> GetNearestEvent();
     }
 }

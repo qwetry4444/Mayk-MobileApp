@@ -3,6 +3,57 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <LayoutOptions x:Key="horzOptions"
+           Alignment="Center" />
+        <LayoutOptions x:Key="vertOptions"
+           Alignment="Center" />
+
+    <Style x:Key="GreetLabelStyle"
+            TargetType="Label">
+        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="TextColor" Value="{StaticResource Black}"/>
+    </Style>
+
+    <Style x:Key="UsernameLabelStyle"
+            TargetType="Label"
+            BasedOn="{StaticResource GreetLabelStyle}">
+        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+    </Style>
+
+    <Style x:Key="NearestEventsTitleLabelStyle"
+            TargetType="Label">
+        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="TextColor" Value="{StaticResource Black}"/>
+    </Style>
+    <Style x:Key="NearestEventsTitleOrangeLabelStyle"
+            TargetType="Label"
+            BasedOn="{StaticResource NearestEventsTitleLabelStyle}">
+        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+    </Style>
+
+
+    <Style x:Key="EventTypeLabelStyle"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+    </Style>
+
+    <Style x:Key="EventNameLabelStyle"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextColor" Value="{StaticResource Black}"/>
+    </Style>
+
+    <Style x:Key="EventDateLabelStyle"
+            TargetType="Label">
+        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="TextColor" Value="{StaticResource Gray400}"/>
+    </Style>
 
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />

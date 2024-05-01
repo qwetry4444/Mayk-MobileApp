@@ -1,10 +1,5 @@
 ﻿using Mayk_App.Model;
 using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mayk_App.Service
 {
@@ -49,6 +44,15 @@ namespace Mayk_App.Service
         {
             return await connection.UpdateAsync(_event);
         }
+
+        public async Task<List<Event>> GetFutherEvents()
+        {
+            return await connection.Table<Event>()
+                .Where(e => e.Date > DateTime.Now)
+                .OrderByDescending(e => e.Date)
+                .ToListAsync();
+        }
+
 
         public async Task<Event> GetNearestEvent()
         {
