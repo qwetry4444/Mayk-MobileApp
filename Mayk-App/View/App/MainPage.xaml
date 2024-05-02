@@ -42,7 +42,7 @@
                 <Grid ColumnDefinitions="8*, 2*"
                       RowDefinitions="40, 32, 32">
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer/>
+                        <TapGestureRecognizer Command="{Binding RedirectToEventCommand}"/>
                     </Grid.GestureRecognizers>
                     <Label Grid.Column="0"
                            Grid.Row="0"
@@ -66,7 +66,7 @@
                 <Grid ColumnDefinitions="8*, 2*"
                       RowDefinitions="40, 32, 32">
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer/>
+                        <TapGestureRecognizer Command="{Binding RedirectToRepetitionCommand}"/>
                     </Grid.GestureRecognizers>
                     <Label Grid.Column="0"
                            Grid.Row="0"

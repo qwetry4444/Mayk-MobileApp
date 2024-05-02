@@ -10,9 +10,12 @@
         <Grid
             ColumnDefinitions="1*, 1*, 8*, 1*, 1*"
             RowDefinitions="Auto, Auto, Auto">
-            <HorizontalStackLayout Spacing="12"
-                                   Grid.Column="2"
-                                   Grid.Row="0">
+            <HorizontalStackLayout Grid.Column="2"
+                                   Grid.Row="0"
+                                   HorizontalOptions="Center"
+                                   Spacing="32"
+                                   Padding="16"
+                                   Margin="0, 0, 0, 32">
                 <Label Text="Все"/>
                 <Label Text="Реп."/>
                 <Label Text="Мер."/>
@@ -21,11 +24,13 @@
             <CollectionView ItemsSource="{Binding Events}"
                             Grid.Column="1"
                             Grid.ColumnSpan="3"
-                            Grid.Row="1">
+                            Grid.Row="1"
+                            >
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Event">
                         <Grid ColumnDefinitions="8*, 2*"
-                              RowDefinitions="40, 32, 32">
+                              RowDefinitions="40, 32, 32"
+                              Padding="16">
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer/>
                             </Grid.GestureRecognizers>
@@ -59,11 +64,13 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Repetition">
                         <Grid ColumnDefinitions="8*, 2*"
-                      RowDefinitions="40, 32, 32">
+                              RowDefinitions="40, 32, 32"
+                              Padding="16">
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer/>
                             </Grid.GestureRecognizers>
                             <Label Grid.Column="0"
+                                   
                            Grid.Row="0"
                            Text="Репетиция"
                            Style="{StaticResource EventTypeLabelStyle}"/>

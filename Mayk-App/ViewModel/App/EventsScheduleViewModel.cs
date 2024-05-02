@@ -16,7 +16,7 @@ namespace Mayk_App.ViewModel.App
         private readonly IUserRepetitionService _userRepetitionService;
         private readonly IEventService _eventService;
 
-        public ObservableRangeCollection<Event> Events { get; set; }
+        public ObservableRangeCollection<Model.Event> Events { get; set; }
         public ObservableRangeCollection<Repetition> Repetitions { get; set; }
 
 
@@ -34,7 +34,7 @@ namespace Mayk_App.ViewModel.App
         }
 
         [ObservableProperty]
-        int userId;
+        int userId = 6;
 
         [ObservableProperty]
         ActivityType whatToDisplay = ActivityType.All;
@@ -43,7 +43,7 @@ namespace Mayk_App.ViewModel.App
         public async Task LoadEvents()
         {
             Events.Clear();
-            List<Event> events = await _eventService.GetFutherEvents();
+            List<Model.Event> events = await _eventService.GetFutherEvents();
             Events.AddRange(events);
         }
 

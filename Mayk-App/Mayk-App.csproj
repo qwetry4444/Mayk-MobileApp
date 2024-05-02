@@ -58,14 +58,17 @@
 	  <None Remove="Resources\Images\arrow4.png" />
 	  <None Remove="Resources\Images\bell_orange.png" />
 	  <None Remove="Resources\Images\calendar.svg" />
+	  <None Remove="Resources\Images\clock.png" />
 	  <None Remove="Resources\Images\closed_eye.png" />
 	  <None Remove="Resources\Images\docs.svg" />
 	  <None Remove="Resources\Images\garbage_backet.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\library.png" />
+	  <None Remove="Resources\Images\location.png" />
 	  <None Remove="Resources\Images\logo.svg" />
 	  <None Remove="Resources\Images\note.png" />
 	  <None Remove="Resources\Images\pencil.png" />
+	  <None Remove="Resources\Images\people.png" />
 	  <None Remove="Resources\Images\ph_bell.png" />
 	  <None Remove="Resources\Images\plus.png" />
 	  <None Remove="Resources\Images\start.svg" />
@@ -161,7 +164,13 @@
 	  <MauiXaml Update="View\App\DocumentsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\App\EventDetailsPage.xaml">
+	  <MauiXaml Update="View\App\Event\EventDetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\App\Event\EventDocumentsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\App\Event\EventNotesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\App\SingInPage.xaml">

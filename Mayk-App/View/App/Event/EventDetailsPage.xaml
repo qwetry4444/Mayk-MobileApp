@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.App.Event"
+             x:DataType="vm:EventDetailsViewModel"
+             x:Class="Mayk_App.View.App.Event.EventDetailsPage"
+             Title="EventDetailsPage">
+    <Grid ColumnDefinitions="1*, 1*, 2*, 4*, 2*, 1*, 1*"
+          RowDefinitions="Auto, Auto, Auto">
+
+        <HorizontalStackLayout Grid.Row="0"
+                               Grid.Column="1"
+                               Grid.ColumnSpan="5"
+                               Spacing="32"
+                               Padding="24"
+                               Margin="0, 0, 0, 32">
+            <Label Text="Данные"/>
+            <Label Text="Документы"/>
+            <Label Text="Заметки"/>
+        </HorizontalStackLayout>
+        
+        <VerticalStackLayout Grid.Row="1"
+                             Grid.Column="2"
+                             Grid.ColumnSpan="3"
+                             HorizontalOptions="Center"
+                             Margin="0, 0, 0, 54"
+                             >
+            <Label Text="Мероприятие" HorizontalOptions="Center"/>
+            <Label Text="{Binding Event.Name}" HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+
+
+        <VerticalStackLayout Grid.Row="2"
+                             Grid.Column="1"
+                             Grid.ColumnSpan="5"
+                             Spacing="32">
+            <HorizontalStackLayout Spacing="12">
+                <Image Source="clock.png"
+                       HeightRequest="32"/>
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Дата и время"/>
+                    <Label Text="{Binding Event.Date}"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout Spacing="12">
+                <Image Source="location.png"
+                    HeightRequest="32"/>
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Место"/>
+                    <Label Text="{Binding Event.Location}"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout Spacing="12" VerticalOptions="Center">
+                <Image Source="people.png"
+                       HeightRequest="32"
+                       VerticalOptions="Center"/>
+                <Label Text="Список участников"
+                       VerticalOptions="Center"/>
+                <Image Source="arrow4.png"
+                   HeightRequest="20"/>
+                <!--<Label Text="{Binding Event.Date}"/> FIXME!!-->
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>
