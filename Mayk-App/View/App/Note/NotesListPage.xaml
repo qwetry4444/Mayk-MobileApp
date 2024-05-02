@@ -11,6 +11,10 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Note">
                     <HorizontalStackLayout>
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:NotesListViewModel}}, Path=RedirectToNote}"
+                                                  CommandParameter="{Binding .}"/>
+                        </HorizontalStackLayout.GestureRecognizers>
                         <VerticalStackLayout>
                             <Label Text="{Binding Title}"/>
                             <Label Text="{Binding Date}"/>
@@ -20,5 +24,8 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <ImageButton Source="plus.png" 
+                     HorizontalOptions="Center"
+                     Command="{Binding Source={RelativeSource AncestorType={x:Type vm:NotesListViewModel}}, Path=RedirectToAddNote}"/>
     </VerticalStackLayout>
 </ContentPage>

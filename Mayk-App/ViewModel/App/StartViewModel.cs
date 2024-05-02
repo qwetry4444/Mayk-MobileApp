@@ -10,7 +10,7 @@ namespace Mayk_App.ViewModel.App
         [RelayCommand]
         async Task RedirectToSingUpPage()
         {
-            await Shell.Current.GoToAsync(nameof(SingUpPage));
+            await Shell.Current.GoToAsync(nameof(SingInPage));
         }
 
         [RelayCommand]

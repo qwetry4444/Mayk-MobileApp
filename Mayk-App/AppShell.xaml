@@ -3,14 +3,21 @@
     x:Class="Mayk_App.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:view="clr-namespace:Mayk_App.View.App">
-
-    <!--<ShellContent
-        Title="Home"
+    xmlns:view="clr-namespace:Mayk_App.View.App"
+    Shell.FlyoutBehavior="Flyout">
+    <ShellContent
+        Title="Start"
         ContentTemplate="{DataTemplate view:StartPage}"
-        Route="StartPage" />-->
+        Route="StartPage"
+        Shell.FlyoutBehavior="Disabled"
+        Shell.FlyoutItemIsVisible="False" />
 
-    <TabBar>
+    <!--<FlyoutItem>
+        <ShellContent ContentTemplate="{DataTemplate view:StartPage}" Route="StartPage"/>
+    </FlyoutItem >-->
+
+    <TabBar Route="Main"
+            FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Главная"
                       Icon="home.png"
                       ContentTemplate="{DataTemplate view:MainPage}"

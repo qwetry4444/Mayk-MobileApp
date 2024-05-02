@@ -1,10 +1,9 @@
-﻿
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.Model;
 using Mayk_App.Service;
+using Mayk_App.View.App.Note;
 using MvvmHelpers;
-using Org.BouncyCastle.Bcpg;
 
 namespace Mayk_App.ViewModel.App.Notes
 {
@@ -31,6 +30,20 @@ namespace Mayk_App.ViewModel.App.Notes
             Notes.AddRange(notes);
         }
 
+        [RelayCommand]
+        public async Task RedirectToNote(Note note)
+        {
+            await Shell.Current.GoToAsync(nameof(NoteDetailsPage), new Dictionary<string, object>
+            {
+                {"noteId",  note.NoteId }
+            });
+        }
+
+        [RelayCommand]
+        public async Task RedirectAddToNote()
+        {
+            await Shell.Current.GoToAsync(nameof(NoteDetailsPage));
+        }
 
     }
 }
