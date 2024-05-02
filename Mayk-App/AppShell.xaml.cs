@@ -7,6 +7,7 @@ using Mayk_App.View.Admin.ChangeTablesPages.ChangeRepetitions;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsersRepetitions;
 using Mayk_App.View.App.Event;
+using Mayk_App.View.App.Note;
 
 namespace Mayk_App
 {
@@ -20,11 +21,13 @@ namespace Mayk_App
             Routing.RegisterRoute(nameof(SingUpPage), typeof(SingUpPage));
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(EventsSchedulePage), typeof(EventsSchedulePage));
-            Routing.RegisterRoute(nameof(NotesListPage), typeof(NotesListPage));
 
             Routing.RegisterRoute(nameof(EventDetailsPage), typeof(EventDetailsPage));
             Routing.RegisterRoute(nameof(EventDocumentsPage), typeof(EventDocumentsPage));
             Routing.RegisterRoute(nameof(EventNotesPage), typeof(EventNotesPage));
+
+            Routing.RegisterRoute(nameof(NotesListPage), typeof(NotesListPage));
+            Routing.RegisterRoute(nameof(NoteDetailsPage), typeof(NoteDetailsPage));
 
 
             Routing.RegisterRoute(nameof(AddPage), typeof(AddPage));

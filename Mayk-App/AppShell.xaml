@@ -21,7 +21,7 @@
                       Route="EventsSchedulePage"/>
         <ShellContent Title="Заметки"
                       Icon="docs.svg"
-                      ContentTemplate="{DataTemplate view:NotesListPage}"
-                      Route="NotesListPage"/>
+                      ContentTemplate="{DataTemplate view:Note.NotesListPage}"
+                      Route="Note.NotesListPage"/>
     </TabBar>
 </Shell>

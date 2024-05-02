@@ -20,6 +20,8 @@ using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsersRepetitions;
 using Mayk_App.View.App;
 using Mayk_App.ViewModel.App.Event;
 using Mayk_App.View.App.Event;
+using Mayk_App.ViewModel.App.Notes;
+using Mayk_App.View.App.Note;
 
 namespace Mayk_App
 {
@@ -66,6 +68,7 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<IRepetitionService, RepetitionService>();
             mauiAppBuilder.Services.AddSingleton<IUserActivityRepetitionService, UserActivityRepetitionService>();
             mauiAppBuilder.Services.AddSingleton<IUserRepetitionService, UserRepetitionService>();
+            mauiAppBuilder.Services.AddSingleton<INoteService, NoteService>();
 
             return mauiAppBuilder;
         }
@@ -82,6 +85,10 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<EventDetailsViewModel>();
             mauiAppBuilder.Services.AddSingleton<EventDocumentsViewModel>();
             mauiAppBuilder.Services.AddSingleton<EventNotesViewModel>();
+
+            mauiAppBuilder.Services.AddSingleton<NotesListViewModel>();
+            mauiAppBuilder.Services.AddSingleton<NoteDetailsViewModel>();
+
 
             mauiAppBuilder.Services.AddSingleton<AddViewModel>();
             mauiAppBuilder.Services.AddSingleton<AddEventViewModel>();
@@ -119,6 +126,9 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddTransient<EventDetailsPage>();
             mauiAppBuilder.Services.AddTransient<EventDocumentsPage>();
             mauiAppBuilder.Services.AddTransient<EventNotesPage>();
+
+            mauiAppBuilder.Services.AddTransient<NotesListPage>();
+            mauiAppBuilder.Services.AddTransient<NoteDetailsPage>();
 
 
             mauiAppBuilder.Services.AddTransient<AddPage>();

@@ -1,4 +1,4 @@
-namespace Mayk_App.View.App;
+namespace Mayk_App.View.App.Note;
 
 public partial class NoteDetailsPage : ContentPage
 {
