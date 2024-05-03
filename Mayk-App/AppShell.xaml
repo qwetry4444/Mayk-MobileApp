@@ -12,11 +12,11 @@
         Shell.FlyoutBehavior="Disabled"
         Shell.FlyoutItemIsVisible="False" />
 
-    <!--<FlyoutItem>
+    <FlyoutItem>
         <ShellContent ContentTemplate="{DataTemplate view:StartPage}" Route="StartPage"/>
-    </FlyoutItem >-->
+    </FlyoutItem >
 
-    <TabBar Route="Main"
+    <TabBar Route="MainTabBar"
             FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Главная"
                       Icon="home.png"

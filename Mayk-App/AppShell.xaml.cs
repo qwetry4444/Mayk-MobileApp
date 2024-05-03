@@ -19,6 +19,7 @@ namespace Mayk_App
 
             Routing.RegisterRoute(nameof(SingInPage), typeof(SingInPage));
             Routing.RegisterRoute(nameof(SingUpPage), typeof(SingUpPage));
+            Routing.RegisterRoute($"///MainTabBar/{nameof(MainPage)}", typeof(MainPage));
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(EventsSchedulePage), typeof(EventsSchedulePage));
 

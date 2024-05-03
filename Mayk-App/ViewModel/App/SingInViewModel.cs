@@ -38,7 +38,7 @@ namespace Mayk_App.ViewModel.App
             {
                 if (user.Password.Equals(UserPassword))
                 {
-                    await Shell.Current.GoToAsync(nameof(MainPage), new Dictionary<string, object>
+                    await Shell.Current.GoToAsync($"///MainTabBar/{nameof(MainPage)}", new Dictionary<string, object>
                     {
                         {"userId", user.UserId }
                     });
