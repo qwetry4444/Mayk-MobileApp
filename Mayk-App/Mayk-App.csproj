@@ -135,6 +135,9 @@
 	  <MauiXaml Update="View\Admin\AddRepetitionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeEventDocuments\ChangeEventDocumentForm.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\Admin\ChangeTablesPages\ChangeEvents\ChangeEventForm.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

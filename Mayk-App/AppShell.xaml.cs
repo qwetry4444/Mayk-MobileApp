@@ -8,6 +8,7 @@ using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeUsersRepetitions;
 using Mayk_App.View.App.Event;
 using Mayk_App.View.App.Note;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeEventDocuments;
 
 namespace Mayk_App
 {
@@ -67,6 +68,9 @@ namespace Mayk_App
 
             Routing.RegisterRoute(nameof(RepetitionsListPage), typeof(RepetitionsListPage));
             Routing.RegisterRoute(nameof(ChangeRepetitionForm), typeof(ChangeRepetitionForm));
+
+            Routing.RegisterRoute(nameof(ChangeEventDocumentForm), typeof(ChangeEventDocumentForm));
+
         }
     }
 }

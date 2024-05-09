@@ -2,6 +2,7 @@
 using Mayk_App.Model;
 using Mayk_App.Service;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents;
+using Mayk_App.View.App.Event;
 using MvvmHelpers;
 
 namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel
@@ -45,6 +46,16 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel
         public async Task RedirectToEventForm()
         {
             await Shell.Current.GoToAsync(nameof(ChangeEventForm));
+        }
+
+
+        [RelayCommand]
+        public async Task RedirectToEventDocumentsList(Event eventToAddDocs)
+        {
+            await Shell.Current.GoToAsync(nameof(EventDocumentsPage), new Dictionary<string, object>
+            {
+                { "eventId", eventToAddDocs.EventId }
+            });
         }
     }
 }

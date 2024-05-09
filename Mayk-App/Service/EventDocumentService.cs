@@ -4,11 +4,11 @@ using SQLite;
 
 namespace Mayk_App.Service
 {
-    public class DocumentEventService : IEventDocumentService
+    public class EventDocumentService : IEventDocumentService
     {
         private SQLiteAsyncConnection connection;
 
-        public DocumentEventService()
+        public EventDocumentService()
         {
             SetupDatabase();
         }

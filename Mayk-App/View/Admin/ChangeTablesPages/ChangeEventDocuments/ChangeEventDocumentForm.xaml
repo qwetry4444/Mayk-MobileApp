@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventDocuments"
+             x:DataType="vm:ChangeEventDocumentsFormViewModel"
+             x:Class="Mayk_App.View.Admin.ChangeTablesPages.ChangeEventDocuments.ChangeEventDocumentForm"
+             Title="ChangeEventDocumentForm">
+    <Grid>
+        <Label Text="Добавление документа"/>
+        <HorizontalStackLayout>
+            <Label Text="Мероприятие: "/>
+            <Label Text="{Binding EventId}"/>
+        </HorizontalStackLayout>
+        
+        <StackLayout>
+            <Button Text="Выбрать файлы" Command="{Binding PickFileCommand}" />
+            <Label Text="Выбранные файлы:" />
+            <!--<CollectionView ItemsSource="{Binding SelectedFiles}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>-->
+        </StackLayout>
+        
+        
+
+
+        <!--<Entry Placeholder="Название файла"
+               Text="{Binding }"/>-->
+    </Grid>
+</ContentPage>

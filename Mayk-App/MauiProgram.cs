@@ -24,6 +24,7 @@ using Mayk_App.ViewModel.App.Notes;
 using Mayk_App.View.App.Note;
 
 using Sharpnado.Tabs;
+using Mayk_App.View.Admin.ChangeTablesPages.ChangeEventDocuments;
 
 namespace Mayk_App
 {
@@ -73,6 +74,10 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<IUserRepetitionService, UserRepetitionService>();
             mauiAppBuilder.Services.AddSingleton<INoteService, NoteService>();
 
+            mauiAppBuilder.Services.AddSingleton<IEventDocumentService, EventDocumentService>();
+            mauiAppBuilder.Services.AddSingleton<IDocumentService, DocumentService>();
+
+
             return mauiAppBuilder;
         }
 
@@ -112,6 +117,7 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<UsersRepetitionsListViewModel>();
             mauiAppBuilder.Services.AddSingleton<ChangeUserRepetitionFormViewModel>();
 
+            mauiAppBuilder.Services.AddSingleton<ChangeEventsFormViewModel>();
 
 
 
@@ -152,6 +158,8 @@ namespace Mayk_App
 
             mauiAppBuilder.Services.AddTransient<UsersRepetitionsListPage>();
             mauiAppBuilder.Services.AddTransient<ChangeUserRepetitionForm>();
+
+            mauiAppBuilder.Services.AddTransient<ChangeEventDocumentForm>();
 
 
             return mauiAppBuilder;
