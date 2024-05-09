@@ -16,13 +16,28 @@ namespace Mayk_App
         public AppShell()
         {
             InitializeComponent();
-
+            
             Routing.RegisterRoute(nameof(SingInPage), typeof(SingInPage));
             Routing.RegisterRoute(nameof(SingUpPage), typeof(SingUpPage));
-            Routing.RegisterRoute($"///MainTabBar/{nameof(MainPage)}", typeof(MainPage));
+            //Routing.RegisterRoute($"///MainTabBar", typeof(MainPage));
+            //Routing.RegisterRoute($"///MainTabBar/{nameof(MainPage)}", typeof(MainPage));
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(EventsSchedulePage), typeof(EventsSchedulePage));
 
+            //Routing.RegisterRoute($"///MainTabBar/EventTabBar/{nameof(EventDetailsPage)}", typeof(EventDetailsPage));
+            //Routing.RegisterRoute($"///MainTabBar/EventTabBar", typeof(EventDetailsPage));
+
+            //Routing.RegisterRoute($"///EventTabBar/{nameof(EventDetailsPage)}", typeof(EventDetailsPage));
+            //Routing.RegisterRoute($"///EventTabBar", typeof(EventDetailsPage));
+
+            //Routing.RegisterRoute($"EventTabBar", typeof(EventDetailsPage));
+
+            //Routing.RegisterRoute($"///EventTabBar/{nameof(EventDetailsPage)}", typeof(EventDetailsPage));
+            //Routing.RegisterRoute(nameof(EventDetailsPage), typeof(EventDetailsPage));
+
+            //Routing.RegisterRoute($"///EventTabBar/{nameof(EventDocumentsPage)}", typeof(EventDocumentsPage));
+            //Routing.RegisterRoute($"///EventTabBar/{nameof(EventNotesPage)}", typeof(EventNotesPage));
+            
             Routing.RegisterRoute(nameof(EventDetailsPage), typeof(EventDetailsPage));
             Routing.RegisterRoute(nameof(EventDocumentsPage), typeof(EventDocumentsPage));
             Routing.RegisterRoute(nameof(EventNotesPage), typeof(EventNotesPage));

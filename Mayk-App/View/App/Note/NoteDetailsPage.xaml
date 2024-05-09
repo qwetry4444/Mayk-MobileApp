@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.App.Notes"
              x:Class="Mayk_App.View.App.Note.NoteDetailsPage"
+             x:DataType="vm:NoteDetailsViewModel"
              Title="NoteDetailsPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Entry Text="{Binding NoteTitle}"/>
+        <Editor Text="{Binding NoteDescription}"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -3,32 +3,80 @@
     x:Class="Mayk_App.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:view="clr-namespace:Mayk_App.View.App"
-    Shell.FlyoutBehavior="Flyout">
+    xmlns:view="clr-namespace:Mayk_App.View.App">
     <ShellContent
         Title="Start"
         ContentTemplate="{DataTemplate view:StartPage}"
-        Route="StartPage"
-        Shell.FlyoutBehavior="Disabled"
-        Shell.FlyoutItemIsVisible="False" />
-
-    <FlyoutItem>
-        <ShellContent ContentTemplate="{DataTemplate view:StartPage}" Route="StartPage"/>
-    </FlyoutItem >
+        Route="StartPage" />
 
     <TabBar Route="MainTabBar"
             FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Главная"
-                      Icon="home.png"
-                      ContentTemplate="{DataTemplate view:MainPage}"
-                      Route="MainPage"/>
-        <ShellContent Title="Расписание"
-                      Icon="calendar.svg"
-                      ContentTemplate="{DataTemplate view:EventsSchedulePage}"
-                      Route="EventsSchedulePage"/>
-        <ShellContent Title="Заметки"
-                      Icon="docs.svg"
-                      ContentTemplate="{DataTemplate view:Note.NotesListPage}"
-                      Route="Note.NotesListPage"/>
+        <Tab Title="Главная"
+             Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate view:MainPage}"
+                        Route="MainPage"/>
+        </Tab>
+
+        <Tab Title="Расписание"
+             Icon="calendar.svg">
+            <ShellContent ContentTemplate="{DataTemplate view:EventsSchedulePage}"
+                        Route="EventsSchedulePage"/>
+        </Tab>
+
+        <Tab Title="Заметки"
+             Icon="docs.svg">
+            <ShellContent ContentTemplate="{DataTemplate view:Note.NotesListPage}"
+                        Route="Note.NotesListPage"/>
+        </Tab>
     </TabBar>
+
+    <!--<TabBar Route="EventTabBar">
+        <Tab Title="1">
+            <ShellContent Title="Данные"
+                    ContentTemplate="{DataTemplate view:Event.EventDetailsPage}"
+                    Route="Event.EventDetailsPage"/>
+        --><!--</Tab>-->
+        <!--<Tab Title="2">--><!--
+            <ShellContent Title="Документы"
+                    ContentTemplate="{DataTemplate view:Event.EventDocumentsPage}"
+                    Route="Event.EventDocumentsPage"/>
+        --><!--</Tab>-->
+        <!--<Tab Title="3">--><!--
+            <ShellContent Title="Заметки"
+                    ContentTemplate="{DataTemplate view:Event.EventNotesPage}"
+                    Route="Event.EventNotesPage"/>
+        </Tab>
+    </TabBar>-->
+
+
+    <!--<TabBar Route="EventTabBar">
+        <Tab Title="1">
+            <ShellContent Title="Данные"
+                          Route="EventDetailsPage"
+                          ContentTemplate="{DataTemplate view:Event.EventDetailsPage}"/>
+            --><!--</Tab>-->
+            <!--<Tab Title="2">--><!--
+            <ShellContent Title="Документы"
+                          Route="EventDocumentsPage"
+                          ContentTemplate="{DataTemplate view:Event.EventDocumentsPage}"/>
+            --><!--</Tab>-->
+            <!--<Tab Title="3">--><!--
+            <ShellContent Title="Заметки"
+                          Route="EventNotesPage"
+                          ContentTemplate="{DataTemplate view:Event.EventNotesPage}"/>
+        </Tab>
+    </TabBar>-->
+
+
+    <!--<Tab Route="EventTabBar">
+        <ShellContent Title="Данные"
+                      ContentTemplate="{DataTemplate view:Event.EventDetailsPage}"
+                      Route="Event.EventDetailsPage"/>
+        <ShellContent Title="Документы"
+                      ContentTemplate="{DataTemplate view:Event.EventDocumentsPage}"
+                      Route="Event.EventDocumentsPage"/>
+        <ShellContent Title="Заметки"
+                      ContentTemplate="{DataTemplate view:Event.EventNotesPage}"
+                      Route="Event.EventNotesPage"/>
+    </Tab>-->
 </Shell>

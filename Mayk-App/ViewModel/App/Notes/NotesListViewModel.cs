@@ -35,15 +35,18 @@ namespace Mayk_App.ViewModel.App.Notes
         {
             await Shell.Current.GoToAsync(nameof(NoteDetailsPage), new Dictionary<string, object>
             {
-                {"noteId",  note.NoteId }
+                {"noteId",  note.NoteId },
+                {"userId",  UserId }
             });
         }
 
         [RelayCommand]
         public async Task RedirectAddToNote()
         {
-            await Shell.Current.GoToAsync(nameof(NoteDetailsPage));
+            await Shell.Current.GoToAsync(nameof(NoteDetailsPage), new Dictionary<string, object>
+            {
+                {"userId",  UserId }
+            });
         }
-
     }
 }

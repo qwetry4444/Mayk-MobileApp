@@ -78,6 +78,8 @@ namespace Mayk_App.ViewModel.App
         [RelayCommand]
         async Task RedirectToEvent()
         {
+            var x = Shell.Current.Navigation.NavigationStack;
+
             await Shell.Current.GoToAsync(nameof(EventDetailsPage), new Dictionary<string, object>
             {
                 {"eventId", NearestEvent.EventId }

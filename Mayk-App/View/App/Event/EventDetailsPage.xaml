@@ -9,14 +9,30 @@
           RowDefinitions="Auto, Auto, Auto">
 
         <HorizontalStackLayout Grid.Row="0"
-                               Grid.Column="1"
-                               Grid.ColumnSpan="5"
-                               Spacing="32"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="7"
+                               Spacing="0"
                                Padding="24"
-                               Margin="0, 0, 0, 32">
-            <Label Text="Данные"/>
-            <Label Text="Документы"/>
-            <Label Text="Заметки"/>
+                               Margin="0, 0, 0, 32"
+                               HorizontalOptions="Center">
+            <Frame Style="{StaticResource EventPageSwitchActivePanel}">
+                <Label Text="Данные"
+                       Style="{StaticResource EventPageSwitchActiveLabel}"/>
+            </Frame>
+            <Frame Style="{StaticResource EventPageSwitchPassivePanel}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RedirectToEventDocumentsCommand}"/>
+                </Frame.GestureRecognizers>
+                <Label Text="Документы"
+                       Style="{StaticResource EventPageSwitchPassiveLabel}"/>
+            </Frame>
+            <Frame Style="{StaticResource EventPageSwitchPassivePanel}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RedirectToEventNotesCommand}"/>
+                </Frame.GestureRecognizers>
+                <Label Text="Заметки"
+                       Style="{StaticResource EventPageSwitchPassiveLabel}"/>
+            </Frame>
         </HorizontalStackLayout>
         
         <VerticalStackLayout Grid.Row="1"

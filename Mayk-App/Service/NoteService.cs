@@ -43,6 +43,15 @@ namespace Mayk_App.Service
                 .ToListAsync();
         }
 
+        public async Task<int> GetUserNotesCount(int userId)
+        {
+            return await connection.Table<Note>()
+                .Where(n => n.UserId.Equals(userId))
+                .CountAsync();
+        }
+
+
+
         public async Task<int> UpdateAsync(Note note)
         {
             return await connection.UpdateAsync(note);

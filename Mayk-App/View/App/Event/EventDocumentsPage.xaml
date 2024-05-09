@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.App.Event"
+             x:DataType="vm:EventDocumentsViewModel"
              x:Class="Mayk_App.View.App.Event.EventDocumentsPage"
              Title="EventDocumentsPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <HorizontalStackLayout Grid.Row="0"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="7"
+                               Spacing="0"
+                               Padding="24"
+                               Margin="0, 0, 0, 32"
+                               HorizontalOptions="Center">
+            <Frame Style="{StaticResource EventPageSwitchPassivePanel}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding}"/>
+                </Frame.GestureRecognizers>
+                <Label Text="Данные"
+                       Style="{StaticResource EventPageSwitchPassiveLabel}"/>
+            </Frame>
+            <Frame Style="{StaticResource EventPageSwitchActivePanel}">
+                <Label Text="Документы"
+                       Style="{StaticResource EventPageSwitchActiveLabel}"/>
+            </Frame>
+            <Frame Style="{StaticResource EventPageSwitchPassivePanel}">
+                <Label Text="Заметки"
+                       Style="{StaticResource EventPageSwitchPassiveLabel}"/>
+            </Frame>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

@@ -16,6 +16,7 @@ namespace Mayk_App.Service
         Task<List<Note>> GetUserNotes(int userId);
         Task<List<Note>> GetUserEventNotes(int userId, int eventId);
 
+        Task<int> GetUserNotesCount(int userId);
 
         Task<List<Note>> GetAsync();
     }

@@ -47,7 +47,7 @@ namespace Mayk_App.ViewModel.App
                 IsAdmin = false
             };
             await _userService.AddAsync(user);
-            await Shell.Current.GoToAsync(nameof(MainPage), new Dictionary<string, object>
+            await Shell.Current.GoToAsync($"///MainTabBar/{nameof(MainPage)}", new Dictionary<string, object>
             {
                 { "userId", user.UserId }
             });

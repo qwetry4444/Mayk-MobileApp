@@ -23,6 +23,8 @@ using Mayk_App.View.App.Event;
 using Mayk_App.ViewModel.App.Notes;
 using Mayk_App.View.App.Note;
 
+using Sharpnado.Tabs;
+
 namespace Mayk_App
 {
     public static class MauiProgram
@@ -32,6 +34,7 @@ namespace Mayk_App
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseSharpnadoTabs(loggerEnable: true)
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
