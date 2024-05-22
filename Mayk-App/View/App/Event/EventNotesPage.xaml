@@ -6,17 +6,31 @@
              x:Class="Mayk_App.View.App.Event.EventNotesPage"
              Title="EventNotesPage">
     <VerticalStackLayout>
-        <Frame Style="{StaticResource EventPageSwitchPassivePanel}">
-            <Label Text="Данные"
+        <HorizontalStackLayout Grid.Row="0"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="7"
+                               Spacing="0"
+                               Padding="24"
+                               Margin="0, 0, 0, 32"
+                               HorizontalOptions="Center">
+            <Frame Style="{StaticResource EventPageSwitchPassivePanel}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RedirectToEventDetailsCommand}"/>
+                </Frame.GestureRecognizers>
+                <Label Text="Данные"
                        Style="{StaticResource EventPageSwitchPassiveLabel}"/>
-        </Frame>
-        <Frame Style="{StaticResource EventPageSwitchPassivePanel}">
-            <Label Text="Документы"
+            </Frame>
+            <Frame Style="{StaticResource EventPageSwitchPassivePanel}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RedirectToEventDocumentsCommand}"/>
+                </Frame.GestureRecognizers>
+                <Label Text="Документы"
                        Style="{StaticResource EventPageSwitchPassiveLabel}"/>
-        </Frame>
-        <Frame Style="{StaticResource EventPageSwitchActivePanel}">
-            <Label Text="Заметки"
+            </Frame>
+            <Frame Style="{StaticResource EventPageSwitchActivePanel}">
+                <Label Text="Заметки"
                        Style="{StaticResource EventPageSwitchActiveLabel}"/>
-        </Frame>
+            </Frame>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

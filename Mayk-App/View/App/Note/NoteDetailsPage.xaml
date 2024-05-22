@@ -6,7 +6,40 @@
              x:DataType="vm:NoteDetailsViewModel"
              Title="NoteDetailsPage">
     <VerticalStackLayout>
-        <Entry Text="{Binding NoteTitle}"/>
-        <Editor Text="{Binding NoteDescription}"/>
+        <Frame>
+            <Entry Text="{Binding NoteTitle}"
+                   Placeholder="Название"
+                   FontSize="Title"/>
+        </Frame>
+        <Frame>
+            <Editor Text="{Binding NoteDescription}"
+                    Placeholder="Текст"
+                    HeightRequest="360"/>
+        </Frame>
+
+        <HorizontalStackLayout HorizontalOptions="Center"
+                               Spacing="55">
+
+            <Frame>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding LoadOrCreateNoteCommand}"/>
+                </Frame.GestureRecognizers>
+                <VerticalStackLayout Spacing="10">
+                    <Image Source="check.png"
+                           HeightRequest="32"
+                           WidthRequest="32"/>
+                    <Label Text="Сохранить"/>
+                </VerticalStackLayout>
+
+            </Frame>
+            <Frame>
+                <VerticalStackLayout Spacing="14">
+                    <Image Source="garbage_backet.png"
+                           HeightRequest="28"
+                           WidthRequest="28"/>
+                    <Label Text="Удалить"/>
+                </VerticalStackLayout>
+            </Frame>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

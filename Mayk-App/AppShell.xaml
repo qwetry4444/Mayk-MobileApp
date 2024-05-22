@@ -14,19 +14,19 @@
         <Tab Title="Главная"
              Icon="home.png">
             <ShellContent ContentTemplate="{DataTemplate view:MainPage}"
-                        Route="MainPage"/>
+                        Route="MainPageTabBar"/>
         </Tab>
 
         <Tab Title="Расписание"
              Icon="calendar.svg">
             <ShellContent ContentTemplate="{DataTemplate view:EventsSchedulePage}"
-                        Route="EventsSchedulePage"/>
+                        Route="EventsSchedulePageTabBar"/>
         </Tab>
 
         <Tab Title="Заметки"
-             Icon="docs.svg">
+             Icon="note2.png">
             <ShellContent ContentTemplate="{DataTemplate view:Note.NotesListPage}"
-                        Route="Note.NotesListPage"/>
+                        Route="Note.NotesListPageTabBar"/>
         </Tab>
     </TabBar>
 

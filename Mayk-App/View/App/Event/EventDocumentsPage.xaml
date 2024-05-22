@@ -15,7 +15,7 @@
                                HorizontalOptions="Center">
             <Frame Style="{StaticResource EventPageSwitchPassivePanel}">
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding}"/>
+                    <TapGestureRecognizer Command="{Binding RedirectToEventDetailsCommand}"/>
                 </Frame.GestureRecognizers>
                 <Label Text="Данные"
                        Style="{StaticResource EventPageSwitchPassiveLabel}"/>
@@ -25,6 +25,9 @@
                        Style="{StaticResource EventPageSwitchActiveLabel}"/>
             </Frame>
             <Frame Style="{StaticResource EventPageSwitchPassivePanel}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RedirectToEventNotesCommand}"/>
+                </Frame.GestureRecognizers>
                 <Label Text="Заметки"
                        Style="{StaticResource EventPageSwitchPassiveLabel}"/>
             </Frame>

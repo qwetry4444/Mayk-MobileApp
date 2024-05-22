@@ -50,8 +50,6 @@ namespace Mayk_App.Service
                 .CountAsync();
         }
 
-
-
         public async Task<int> UpdateAsync(Note note)
         {
             return await connection.UpdateAsync(note);
@@ -63,7 +61,8 @@ namespace Mayk_App.Service
                 return;
 
             string dbName = "MaykDatabase1.db3";
-            string dbFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), dbName);
+            string dbFile = Path.Combine(Environment.GetFolderPath(
+                Environment.SpecialFolder.LocalApplicationData), dbName);
             connection = new SQLiteAsyncConnection(dbFile);
             await connection.CreateTableAsync<Note>();
         }

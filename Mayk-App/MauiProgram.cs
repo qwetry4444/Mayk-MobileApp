@@ -25,6 +25,7 @@ using Mayk_App.View.App.Note;
 
 using Sharpnado.Tabs;
 using Mayk_App.View.Admin.ChangeTablesPages.ChangeEventDocuments;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Mayk_App
 {
@@ -77,6 +78,9 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<IEventDocumentService, EventDocumentService>();
             mauiAppBuilder.Services.AddSingleton<IDocumentService, DocumentService>();
 
+
+            mauiAppBuilder.Services.AddSingleton<INavigationService, NavigationService>(sp =>
+                    new NavigationService(Application.Current.MainPage.Navigation));
 
             return mauiAppBuilder;
         }

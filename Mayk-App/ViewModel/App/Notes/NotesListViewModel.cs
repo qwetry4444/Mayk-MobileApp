@@ -45,6 +45,7 @@ namespace Mayk_App.ViewModel.App.Notes
         {
             await Shell.Current.GoToAsync(nameof(NoteDetailsPage), new Dictionary<string, object>
             {
+                {"noteId",  0 },
                 {"userId",  UserId }
             });
         }

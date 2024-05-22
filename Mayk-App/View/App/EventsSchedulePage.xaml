@@ -10,21 +10,77 @@
         <Grid
             ColumnDefinitions="1*, 1*, 8*, 1*, 1*"
             RowDefinitions="Auto, Auto, Auto">
-            <HorizontalStackLayout Grid.Column="2"
+            <HorizontalStackLayout Grid.Column="1"
+                                   Grid.ColumnSpan="3"
                                    Grid.Row="0"
                                    HorizontalOptions="Center"
                                    Spacing="32"
-                                   Padding="16"
-                                   Margin="0, 0, 0, 32">
-                <Label Text="Все"/>
-                <Label Text="Реп."/>
-                <Label Text="Мер."/>
+                                   Padding="0"
+                                   Margin="6, 18, 6, 32">
+
+
+                <Frame Style="{StaticResource SwitchWhatToDisplayPanelStyle}">
+                    <Frame.Triggers>
+                        <DataTrigger TargetType="Frame" Binding="{Binding WhatToDisplay}" Value="All">
+                            <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+                        </DataTrigger>
+                    </Frame.Triggers>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ShowAllCommand}"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="Все"
+                           Style="{StaticResource SwitchWhatToDisplayLabelStyle}">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding WhatToDisplay}" Value="All">
+                                <Setter Property="TextColor" Value="{StaticResource White}"/>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </Frame>
+
+                <Frame Style="{StaticResource SwitchWhatToDisplayPanelStyle}">
+                    <Frame.Triggers>
+                        <DataTrigger TargetType="Frame" Binding="{Binding WhatToDisplay}" Value="Repetition">
+                            <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+                        </DataTrigger>
+                    </Frame.Triggers>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ShowRepetitionsCommand}"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="Реп"
+                           Style="{StaticResource SwitchWhatToDisplayLabelStyle}">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding WhatToDisplay}" Value="Repetition">
+                                <Setter Property="TextColor" Value="{StaticResource White}"/>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </Frame>
+                <Frame Style="{StaticResource SwitchWhatToDisplayPanelStyle}">
+                    <Frame.Triggers>
+                        <DataTrigger TargetType="Frame" Binding="{Binding WhatToDisplay}" Value="Event">
+                            <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+                        </DataTrigger>
+                    </Frame.Triggers>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ShowEventsCommand}"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="Мер"
+                           Style="{StaticResource SwitchWhatToDisplayLabelStyle}">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding WhatToDisplay}" Value="Event">
+                                <Setter Property="TextColor" Value="{StaticResource White}"/>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </Frame>
             </HorizontalStackLayout>
 
             <CollectionView ItemsSource="{Binding Events}"
                             Grid.Column="1"
                             Grid.ColumnSpan="3"
                             Grid.Row="1"
+                            IsVisible="{Binding IsEventsVisible}"
                             >
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Event">
@@ -60,7 +116,8 @@
             <CollectionView ItemsSource="{Binding Repetitions}"
                             Grid.Column="1"
                             Grid.ColumnSpan="3"
-                            Grid.Row="2">
+                            Grid.Row="2"
+                            IsVisible="{Binding IsRepetitionsVisible}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Repetition">
                         <Grid ColumnDefinitions="8*, 2*"

@@ -9,9 +9,9 @@ namespace Mayk_App.ViewModel.App.Notes
     [QueryProperty(nameof(UserId), "userId")]
     public partial class NoteDetailsViewModel : ObservableObject
     {
-        private readonly NoteService _noteService;
+        private readonly INoteService _noteService;
 
-        public NoteDetailsViewModel(NoteService noteService)
+        public NoteDetailsViewModel(INoteService noteService)
         {
             _noteService = noteService;
         }

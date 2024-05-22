@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.Model;
 using Mayk_App.Service;
+using Mayk_App.View.App;
 using Mayk_App.View.App.Event;
 
 namespace Mayk_App.ViewModel.App.Event
@@ -11,10 +12,17 @@ namespace Mayk_App.ViewModel.App.Event
     public partial class EventDetailsViewModel : ObservableObject
     {
         private readonly IEventService _eventService;
+        private readonly INavigationService _navigationService;
+        private readonly EventDocumentsPage _eventDocumentsPage;
+        private readonly EventNotesPage _eventNotesPage;
 
-        public EventDetailsViewModel(IEventService eventService)
+        public EventDetailsViewModel(IEventService eventService, INavigationService navigationService, EventDocumentsPage eventDocumentsPage, EventNotesPage eventNotesPage)
         {
             _eventService = eventService;
+            _navigationService = navigationService;
+
+            _eventDocumentsPage = eventDocumentsPage;
+            _eventNotesPage = eventNotesPage;
         }
 
         [ObservableProperty]
@@ -29,13 +37,13 @@ namespace Mayk_App.ViewModel.App.Event
         [RelayCommand]
         async Task RedirectToEventDocuments()
         {
-            await Shell.Current.GoToAsync(nameof(EventDocumentsPage));
+            await _navigationService.InsertBeforeAndGoBack(_eventDocumentsPage);
         }
 
         [RelayCommand]
         async Task RedirectToEventNotes()
         {
-            await Shell.Current.GoToAsync(nameof(EventNotesPage));
+            await _navigationService.InsertBeforeAndGoBack(_eventNotesPage);
         }
     }
 }

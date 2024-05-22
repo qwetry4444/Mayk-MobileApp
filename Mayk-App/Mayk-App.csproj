@@ -58,6 +58,7 @@
 	  <None Remove="Resources\Images\arrow4.png" />
 	  <None Remove="Resources\Images\bell_orange.png" />
 	  <None Remove="Resources\Images\calendar.svg" />
+	  <None Remove="Resources\Images\check.png" />
 	  <None Remove="Resources\Images\clock.png" />
 	  <None Remove="Resources\Images\closed_eye.png" />
 	  <None Remove="Resources\Images\docs.svg" />
@@ -67,6 +68,7 @@
 	  <None Remove="Resources\Images\location.png" />
 	  <None Remove="Resources\Images\logo.svg" />
 	  <None Remove="Resources\Images\note.png" />
+	  <None Remove="Resources\Images\note2.png" />
 	  <None Remove="Resources\Images\pencil.png" />
 	  <None Remove="Resources\Images\people.png" />
 	  <None Remove="Resources\Images\ph_bell.png" />

@@ -20,7 +20,6 @@ namespace Mayk_App.ViewModel.App
         public ObservableRangeCollection<Repetition> Repetitions { get; set; }
 
 
-
         public EventsScheduleViewModel(
             IRepetitionService repetitionService, 
             IEventService eventService,
@@ -31,7 +30,17 @@ namespace Mayk_App.ViewModel.App
             _repetitionService = repetitionService;
             _eventService = eventService;
             _userRepetitionService = userRepetitionService;
+
+            isEventsVisible = true;
+            isRepetitionsVisible = true;
+            WhatToDisplay = ActivityType.All;
         }
+
+        [ObservableProperty]
+        bool isEventsVisible;
+
+        [ObservableProperty]
+        bool isRepetitionsVisible;
 
         [ObservableProperty]
         int userId = 6;
@@ -55,6 +64,33 @@ namespace Mayk_App.ViewModel.App
             List<Repetition> repetitions = await _repetitionService.GetFutherUserRepetitionsById(userRepetitions);
             Repetitions.AddRange(repetitions);
         }
+
+        [RelayCommand]
+        public void ShowAll()
+        {
+            WhatToDisplay = ActivityType.All;
+            IsEventsVisible = true;
+            IsRepetitionsVisible = true;
+        }
+
+        [RelayCommand]
+        public void ShowEvents()
+        {
+            WhatToDisplay = ActivityType.Event;
+            IsEventsVisible = true;
+            IsRepetitionsVisible = false;
+        }
+
+        [RelayCommand]
+        public void ShowRepetitions()
+        {
+            WhatToDisplay = ActivityType.Repetition;
+            IsEventsVisible = false;
+            IsRepetitionsVisible = true;
+        }
+
+
+
     }
     public enum ActivityType
     {

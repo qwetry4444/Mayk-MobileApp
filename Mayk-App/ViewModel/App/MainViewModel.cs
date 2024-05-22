@@ -35,7 +35,7 @@ namespace Mayk_App.ViewModel.App
 
 
         [ObservableProperty]
-        int userId = 6;
+        int userId;
 
         [ObservableProperty]
         User currentUser;
@@ -56,8 +56,10 @@ namespace Mayk_App.ViewModel.App
 
         public async Task LoadNearestRepetition()
         {
-            List<UserRepetition> userRepetitions = await _userRepetitionService.GetFutherUserRepetitionsById(UserId);
-            List<Repetition> repetitions = await _repetitionService.GetFutherUserRepetitionsById(userRepetitions);
+            List<UserRepetition> userRepetitions = 
+                await _userRepetitionService.GetFutherUserRepetitionsById(UserId);
+            List<Repetition> repetitions = 
+                await _repetitionService.GetFutherUserRepetitionsById(userRepetitions);
             
             NearestRepetition = repetitions.FirstOrDefault();
         }

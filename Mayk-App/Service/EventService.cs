@@ -35,11 +35,6 @@ namespace Mayk_App.Service
             return _event;
         }
 
-        public Task<Event> GetUserEvents(string user_id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<int> UpdateAsync(Event _event)
         {
             return await connection.UpdateAsync(_event);

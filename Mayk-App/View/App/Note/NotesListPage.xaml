@@ -26,6 +26,7 @@
         </CollectionView>
         <ImageButton Source="plus.png" 
                      HorizontalOptions="Center"
-                     Command="{Binding Source={RelativeSource AncestorType={x:Type vm:NotesListViewModel}}, Path=RedirectToAddNote}"/>
+                     Margin="0, 32, 0, 0"
+                     Command="{Binding Source={RelativeSource AncestorType={x:Type vm:NotesListViewModel}}, Path=RedirectAddToNoteCommand}"/>
     </VerticalStackLayout>
 </ContentPage>
