@@ -5,7 +5,7 @@
              xmlns:model="clr-namespace:Mayk_App.Model"
              x:DataType="vm:UsersListViewModel" 
              x:Class="Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers.UsersListPage"
-             Title="AddToUsers">
+             Title="Пользователи">
     <VerticalStackLayout>
         <ListView ItemsSource="{Binding Users}">
             <ListView.ItemTemplate>

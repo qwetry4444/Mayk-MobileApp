@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:Mayk_App.ViewModel.App.Event"
              x:DataType="vm:EventDetailsViewModel"
              x:Class="Mayk_App.View.App.Event.EventDetailsPage"
-             Title="EventDetailsPage">
+             Title="Подробности">
     <Grid ColumnDefinitions="1*, 1*, 2*, 4*, 2*, 1*, 1*"
           RowDefinitions="Auto, Auto, Auto">
 

@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeRepetitionsViewModel"
              x:DataType="vm:ChangeRepetitionFormViewModel"
              x:Class="Mayk_App.View.Admin.ChangeTablesPages.ChangeRepetitions.ChangeRepetitionForm"
-             Title="ChangeRepetitionForm">
+             Title="Репетиция">
     <VerticalStackLayout>
         <Grid ColumnDefinitions="1*, 1*, 2*, 4*, 2*, 1*, 1*"
           RowDefinitions="Auto, Auto, Auto, Auto"

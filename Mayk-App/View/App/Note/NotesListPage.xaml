@@ -5,7 +5,7 @@
              xmlns:model="clr-namespace:Mayk_App.Model"
              x:DataType="vm:NotesListViewModel"
              x:Class="Mayk_App.View.App.Note.NotesListPage"
-             Title="NotesListPage">
+             Title="Заметки">
     <VerticalStackLayout>
         <CollectionView ItemsSource="{Binding Notes}">
             <CollectionView.ItemTemplate>

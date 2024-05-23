@@ -4,7 +4,7 @@
              x:Class="Mayk_App.View.App.SingInPage"
              xmlns:vm="clr-namespace:Mayk_App.ViewModel.App"
              x:DataType="vm:SingInViewModel"
-             Title="SingInPage">
+             Title="Вход">
 
     <ContentPage.Resources>
         <LayoutOptions x:Key="horzOptions"

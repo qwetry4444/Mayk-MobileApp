@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:Mayk_App.ViewModel.App.Notes"
              x:Class="Mayk_App.View.App.Note.NoteDetailsPage"
              x:DataType="vm:NoteDetailsViewModel"
-             Title="NoteDetailsPage">
+             Title="Заметка">
     <VerticalStackLayout>
         <Frame>
             <Entry Text="{Binding NoteTitle}"

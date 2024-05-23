@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeUsersViewModel"
              x:DataType="vm:UserChangeFormViewModel"
              x:Class="Mayk_App.View.Admin.ChangeTablesPages.ChangeUsers.UserChangeForm"
-             Title="UserChangeForm">
+             Title="Пользователь">
     <VerticalStackLayout>
         <Grid ColumnDefinitions="1*, 1*, 2*, 4*, 2*, 1*, 1*"
           RowDefinitions="Auto, Auto, Auto, Auto"

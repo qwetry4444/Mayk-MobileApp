@@ -5,7 +5,7 @@
              xmlns:model="clr-namespace:Mayk_App.Model"
              x:DataType="vm:EventsScheduleViewModel"
              x:Class="Mayk_App.View.App.EventsSchedulePage"
-             Title="SchedulePage">
+             Title="Расписание">
     <VerticalStackLayout>
         <Grid
             ColumnDefinitions="1*, 1*, 8*, 1*, 1*"

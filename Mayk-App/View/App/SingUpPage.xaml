@@ -4,7 +4,7 @@
              x:Class="Mayk_App.View.App.SingUpPage"
              xmlns:vm="clr-namespace:Mayk_App.ViewModel.App"
              x:DataType="vm:SingUpViewModel"
-             Title="SingUpPage"
+             Title="Регистрация"
              >
 
 

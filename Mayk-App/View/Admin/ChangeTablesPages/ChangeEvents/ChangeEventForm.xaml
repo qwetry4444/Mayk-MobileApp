@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel"
              x:DataType="vm:ChangeEventsFormViewModel"
              x:Class="Mayk_App.View.Admin.ChangeTablesPages.ChangeEvents.ChangeEventForm"
-             Title="ChangeEventForm">
+             Title="Мероприятие">
     <VerticalStackLayout>
         <Grid ColumnDefinitions="1*, 1*, 2*, 4*, 2*, 1*, 1*"
           RowDefinitions="Auto, Auto, Auto, Auto"

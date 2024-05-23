@@ -5,7 +5,7 @@
              xmlns:model="clr-namespace:Mayk_App.Model"
              x:DataType="vm:RepetitionsListViewModel" 
              x:Class="Mayk_App.View.Admin.ChangeTablesPages.RepetitionsListPage"
-             Title="AddToRepetitions">
+             Title="Репетиции">
     <VerticalStackLayout>
         <ListView ItemsSource="{Binding Repetitions}">
             <ListView.ItemTemplate>

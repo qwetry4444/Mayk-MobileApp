@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:Mayk_App.ViewModel.App.Event"
              x:DataType="vm:EventNotesViewModel"
              x:Class="Mayk_App.View.App.Event.EventNotesPage"
-             Title="EventNotesPage">
+             Title="Заметки">
     <VerticalStackLayout>
         <HorizontalStackLayout Grid.Row="0"
                                Grid.Column="0"
