@@ -20,9 +20,9 @@ namespace Mayk_App.Service
             return _navigation.PushAsync(page);
         }
 
-        public Task GoBackAsync()
+        public Task GoBackAsync(bool animated)
         {
-            return _navigation.PopAsync();
+            return _navigation.PopAsync(animated: animated);
             //_navigation.PopAsync(); 
         }
 
@@ -30,6 +30,17 @@ namespace Mayk_App.Service
         {
             _navigation.InsertPageBefore(page, Shell.Current.CurrentPage);
             await _navigation.PopAsync(animated: true);
+        }
+
+        public async Task InsertBeforeAndGoBack(String pageName)
+        {
+            //_navigation.InsertPageBefore(Shell.Current.CurrentPage);
+            await _navigation.PopAsync(animated: true);
+        }
+
+        public async Task ReplacePage()
+        {
+
         }
     }
 }

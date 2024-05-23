@@ -3,7 +3,8 @@
     public interface INavigationService
     {
         Task NavigateToAsync(Page page);
-        Task GoBackAsync();
+        Task GoBackAsync(bool animated);
         Task InsertBeforeAndGoBack(Page page);
+        Task InsertBeforeAndGoBack(String pageName);
     }
 }

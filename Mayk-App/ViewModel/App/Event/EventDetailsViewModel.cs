@@ -13,16 +13,17 @@ namespace Mayk_App.ViewModel.App.Event
     {
         private readonly IEventService _eventService;
         private readonly INavigationService _navigationService;
-        private readonly EventDocumentsPage _eventDocumentsPage;
-        private readonly EventNotesPage _eventNotesPage;
 
-        public EventDetailsViewModel(IEventService eventService, INavigationService navigationService, EventDocumentsPage eventDocumentsPage, EventNotesPage eventNotesPage)
+        private readonly EventDocumentsViewModel _eventDocumentsViewModel;
+        private readonly EventNotesViewModel _eventNotesViewModel;
+
+        public EventDetailsViewModel(IEventService eventService, INavigationService navigationService, EventDocumentsViewModel eventDocumentsViewModel, EventNotesViewModel eventNotesViewModel)
         {
             _eventService = eventService;
             _navigationService = navigationService;
 
-            _eventDocumentsPage = eventDocumentsPage;
-            _eventNotesPage = eventNotesPage;
+            _eventDocumentsViewModel = eventDocumentsViewModel;
+            _eventNotesViewModel = eventNotesViewModel;
         }
 
         [ObservableProperty]
@@ -37,13 +38,42 @@ namespace Mayk_App.ViewModel.App.Event
         [RelayCommand]
         async Task RedirectToEventDocuments()
         {
-            await _navigationService.InsertBeforeAndGoBack(_eventDocumentsPage);
+            //var navigation = Shell.Current.Navigation;
+            //var currentPage = navigation.NavigationStack.LastOrDefault();
+
+            //if (currentPage != null)
+            //{
+            //    navigation.RemovePage(currentPage);
+
+            //    await Shell.Current.GoToAsync(nameof(EventDocumentsPage), new Dictionary<string, object>
+            //    {
+            //        {"eventId", EventId }
+            //    });
+            //}
+
+            //await _navigationService.GoBackAsync(animated: false);
+            var currentPage = Shell.Current.CurrentPage;
+            await Shell.Current.GoToAsync(nameof(EventDocumentsPage), new Dictionary<string, object>
+            {
+                {"eventId", EventId }
+            });
+            Shell.Current.Navigation.RemovePage(currentPage);
+
+            //await _navigationService.InsertBeforeAndGoBack(_eventDocumentsViewModel.);
         }
 
         [RelayCommand]
         async Task RedirectToEventNotes()
         {
-            await _navigationService.InsertBeforeAndGoBack(_eventNotesPage);
+            //await _navigationService.GoBackAsync(animated: false);
+
+            var currentPage = Shell.Current.CurrentPage;
+            await Shell.Current.GoToAsync(nameof(EventNotesPage), new Dictionary<string, object>
+            {
+                {"eventId", EventId }
+            });
+            Shell.Current.Navigation.RemovePage(currentPage);
+            //await _navigationService.InsertBeforeAndGoBack(_eventNotesPage);
         }
     }
 }

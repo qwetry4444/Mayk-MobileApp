@@ -200,6 +200,6 @@
 	  <Folder Include="Database\" />
 	</ItemGroup>
 
-	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionMaykAppHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarMaykAppHideInfoBar="True" /></VisualStudio></ProjectExtensions>
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionMaykAppHideInfoBar="True" XamarinHotReloadUnhandledDeviceExceptionMaykAppHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarMaykAppHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

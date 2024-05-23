@@ -4,9 +4,18 @@ namespace Mayk_App.View.App.Event;
 
 public partial class EventNotesPage : ContentPage
 {
-	public EventNotesPage(EventNotesViewModel viewModel)
+    private readonly EventNotesViewModel viewModel;
+
+    public EventNotesPage(EventNotesViewModel vm)
 	{
 		InitializeComponent();
-		BindingContext = viewModel;
-	}
+		BindingContext = vm;
+        viewModel = vm;
+    }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        await viewModel.LoadEvent();
+    }
 }
