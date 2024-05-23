@@ -57,7 +57,7 @@ namespace Mayk_App.ViewModel.Admin.ChangeTablesViewModel.ChangeEventsViewModel
                     Location = Location,
                     Date = Date
                 });
-            await Shell.Current.GoToAsync(nameof(EventsListPage));
+            await Shell.Current.Navigation.PopAsync();
         }
 
         [RelayCommand]

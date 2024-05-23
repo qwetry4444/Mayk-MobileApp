@@ -1,6 +1,7 @@
 ﻿
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Mayk_App.Model;
 using Mayk_App.Service;
 
 namespace Mayk_App.ViewModel.App.Notes
@@ -26,10 +27,27 @@ namespace Mayk_App.ViewModel.App.Notes
         string noteTitle;
         [ObservableProperty]
         string noteDescription;
+        Note note;
 
 
         [RelayCommand]
-        public async Task LoadOrCreateNote()
+        public async Task LoadNote()
+        {
+            if (NoteId != 0)
+            {
+                note = await _noteService.GetByIdAsync(NoteId);
+                NoteTitle = note.Title;
+                NoteDescription = note.Description;
+            }
+            else
+            {
+                NoteTitle = "";
+                NoteDescription = "";
+            }
+        }
+
+        [RelayCommand]
+        public async Task SaveOrCreateNote()
         {
             if (NoteId == 0)
             {
@@ -51,6 +69,7 @@ namespace Mayk_App.ViewModel.App.Notes
                     Description = NoteDescription
                 });
             }
+            await Shell.Current.Navigation.PopAsync();
         }
 
     }

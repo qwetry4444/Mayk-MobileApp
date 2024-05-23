@@ -32,5 +32,35 @@
                        Style="{StaticResource EventPageSwitchPassiveLabel}"/>
             </Frame>
         </HorizontalStackLayout>
+
+        
+        <VerticalStackLayout HorizontalOptions="Center"
+                             Spacing="48">
+            <HorizontalStackLayout HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   Spacing="12">
+                <Image Source="documents2.png"
+                       HeightRequest="32"
+                       WidthRequest="32"/>
+                <Label Text="Список документов" 
+                       Style="{StaticResource SubtitleLabelStyle}"
+                       VerticalTextAlignment="Center"  
+                       TextColor="{StaticResource Primary}"/>
+            </HorizontalStackLayout>
+            <VerticalStackLayout Spacing="32">
+                <Label Text="Сценарий.docx"
+                       Style="{StaticResource SubtitleLabelStyle}"
+                       TextColor="Blue"
+                       FontAttributes="Italic"
+                       FontSize="19"
+                       HorizontalOptions="Start"/>
+                <Label Text="Распределение ролей.xlsx"
+                       Style="{StaticResource SubtitleLabelStyle}"
+                       TextColor="Blue"
+                       FontAttributes="Italic"
+                       FontSize="19"
+                       HorizontalOptions="Start"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

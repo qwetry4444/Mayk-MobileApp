@@ -45,7 +45,8 @@ namespace Mayk_App
 
             Routing.RegisterRoute(nameof(NotesListPage), typeof(NotesListPage));
             Routing.RegisterRoute(nameof(NoteDetailsPage), typeof(NoteDetailsPage));
-
+            Routing.RegisterRoute(nameof(RepetitionDetailsPage), typeof(RepetitionDetailsPage));
+            
 
             Routing.RegisterRoute(nameof(AddPage), typeof(AddPage));
             Routing.RegisterRoute(nameof(AddEventPage), typeof(AddEventPage));

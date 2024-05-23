@@ -63,6 +63,9 @@
         </ListView>
         <ImageButton Source="plus.png" 
                      HorizontalOptions="Center"
+                     Margin="0, 16, 0, 0"
                      Command="{Binding RedirectToEventFormCommand}"/>
     </VerticalStackLayout>
 </ContentPage>
+    
+    

@@ -22,7 +22,7 @@
 
             <Frame>
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding LoadOrCreateNoteCommand}"/>
+                    <TapGestureRecognizer Command="{Binding SaveOrCreateNoteCommand}"/>
                 </Frame.GestureRecognizers>
                 <VerticalStackLayout Spacing="10">
                     <Image Source="check.png"

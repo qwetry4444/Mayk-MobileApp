@@ -12,6 +12,7 @@ namespace Mayk_App.Service
         Task<int> AddAsync(Note note);
         Task<int> UpdateAsync(Note note);
         Task<int> DeleteAsync(Note note);
+        Task<Note> GetByIdAsync(int id);
 
         Task<List<Note>> GetUserNotes(int userId);
         Task<List<Note>> GetUserEventNotes(int userId, int eventId);

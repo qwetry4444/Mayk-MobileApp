@@ -15,10 +15,18 @@
                                    Grid.Row="0"
                                    HorizontalOptions="Center"
                                    Margin="0, 32, 0, 0">
+                <Image Source="hand2.png"
+                       HeightRequest="26"
+                       WidthRequest="26"
+                       Margin="0, 0, 6, 0"/>
                 <Label Text="Здравствуйте, "
-                       Style="{StaticResource GreetLabelStyle}"/>
+                       Style="{StaticResource GreetLabelStyle}"
+                       TextColor="Black"
+                       FontFamily="MontserratMedium"/>
                 <Label Text="{Binding CurrentUser.FirstName}"
-                       Style="{StaticResource UsernameLabelStyle}"/>
+                       Style="{StaticResource UsernameLabelStyle}"
+                       TextColor="{StaticResource Primary}"
+                       FontFamily="MontserratMedium"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Grid.Column="1"
@@ -27,10 +35,13 @@
                                    HorizontalOptions="Center"
                                    Margin="0, 32, 0, 32">
                 <Label Text="Ближайшие "
-                       Style="{StaticResource NearestEventsTitleOrangeLabelStyle}"/>
+                       Style="{StaticResource NearestEventsTitleOrangeLabelStyle}"
+                       FontFamily="MontserratMedium"/>
                 <Label Text="события"
                        Margin="0, 0, 4, 0"
-                       Style="{StaticResource NearestEventsTitleLabelStyle}"/>
+                       Style="{StaticResource NearestEventsTitleLabelStyle}"
+                       TextColor="Black"
+FontFamily="MontserratMedium"/>
                 <Image Source="bell_orange.png"
                        HeightRequest="28"/>
             </HorizontalStackLayout>
@@ -46,15 +57,18 @@
                     <Label Grid.Column="0"
                            Grid.Row="0"
                            Text="Мероприятие"
-                           Style="{StaticResource EventTypeLabelStyle}"/>
+                           Style="{StaticResource EventTypeLabelStyle}"
+                            FontFamily="MontserratMedium"/>
                     <Label Grid.Column="0"
                            Grid.Row="1"
                            Text="{Binding NearestEvent.Name}"
-                           Style="{StaticResource EventNameLabelStyle}"/>
+                           Style="{StaticResource EventNameLabelStyle}"
+                           FontFamily="MontserratMedium"/>
                     <Label Grid.Column="0"
                            Grid.Row="2"
                            Text="{Binding NearestEvent.Date}"
-                           Style="{StaticResource EventDateLabelStyle}"/>
+                           Style="{StaticResource EventDateLabelStyle}"
+                           FontFamily="MontserratMedium"/>
                     <Image Grid.Column="1"
                            Grid.Row="0"
                            Grid.RowSpan="2"
@@ -70,15 +84,18 @@
                     <Label Grid.Column="0"
                            Grid.Row="0"
                            Text="Репетиция"
-                           Style="{StaticResource EventTypeLabelStyle}"/>
+                           Style="{StaticResource EventTypeLabelStyle}"
+                           FontFamily="MontserratMedium"/>
                     <Label Grid.Column="0"
                            Grid.Row="1"
                            Text="{Binding NearestRepetition.Location}"
-                           Style="{StaticResource EventNameLabelStyle}"/>
+                           Style="{StaticResource EventNameLabelStyle}"
+                           FontFamily="MontserratMedium"/>
                     <Label Grid.Column="0"
                            Grid.Row="2"
                            Text="{Binding NearestRepetition.Date}"
-                           Style="{StaticResource EventDateLabelStyle}"/>
+                           Style="{StaticResource EventDateLabelStyle}"
+                           FontFamily="MontserratMedium"/>
                     <Image Grid.Column="1"
                            Grid.Row="0"
                            Grid.RowSpan="2"
@@ -86,6 +103,20 @@
                            HeightRequest="20"
                            VerticalOptions="Center"/>
                 </Grid>
+
+                <Frame Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="2"
+                    Style="{StaticResource PrimaryButtonPanelStyle}"
+                    HeightRequest="64"
+                       BorderColor="White"
+                       Margin="0, 86, 0, 0">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RedirectToTablesListPageCommand}"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="Админ панель"
+                   Style="{StaticResource PrimaryButtonLabelStyle}"/>
+                </Frame>
             </VerticalStackLayout>
         </Grid>
     </ScrollView>

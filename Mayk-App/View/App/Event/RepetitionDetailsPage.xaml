@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Mayk_App.ViewModel.App.Event"
+             x:DataType="vm:RepetitionDetailsViewModel"
+             x:Class="Mayk_App.View.App.Event.RepetitionDetailsPage"
+             Title="Репетиция">
+    <Grid ColumnDefinitions="1*, 1*, 2*, 4*, 2*, 1*, 1*"
+          RowDefinitions="Auto, Auto, Auto"
+          Margin="0, 64, 0, 0">
+        <VerticalStackLayout Grid.Row="1"
+                             Grid.Column="1"
+                             Grid.ColumnSpan="4"
+                             HorizontalOptions="Center" 
+                             Margin="30, 0, 0, 54">
+            <Label Text="Репетиция к мероприятию" 
+                   HorizontalOptions="Center"
+                   FontSize="21"
+                   FontFamily="MontserratMedium"
+                   HorizontalTextAlignment="Center"
+                   />
+            <Label Text="{Binding RepetitionEvent.Name}" 
+                   HorizontalOptions="Center"
+                   FontSize="21"
+                   FontFamily="MontserratBold"
+                   HorizontalTextAlignment="Center"/>
+        </VerticalStackLayout>
+
+
+        <VerticalStackLayout Grid.Row="2"
+                             Grid.Column="1"
+                             Grid.ColumnSpan="5"
+                             Spacing="32">
+            <HorizontalStackLayout Spacing="12">
+                <Image Source="clock.png"
+                       HeightRequest="32"/>
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Дата и время"
+                           TextColor="Gray"
+                           FontFamily="MontserratMedium"/>
+                    <Label Text="{Binding Repetition.Date}"
+                           TextColor="Black"
+                           FontFamily="MontserratMedium"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout Spacing="12">
+                <Image Source="location.png"
+                    HeightRequest="32"/>
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Место"
+                           TextColor="Gray"
+                           FontFamily="MontserratMedium"/>
+                    <Label Text="{Binding Repetition.Location}"
+                           TextColor="Black"
+                           FontFamily="MontserratMedium"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout Spacing="12" VerticalOptions="Center" Margin="0, 0, 0, 10">
+                <Image Source="people.png"
+                       HeightRequest="32"
+                       VerticalOptions="Center"/>
+                <Label Text="Список участников"
+                       TextColor="Black"
+                       FontFamily="MontserratMedium"
+                       VerticalOptions="Center"/>
+                <Image Source="arrow4.png"
+                   HeightRequest="20"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

@@ -33,25 +33,12 @@ namespace Mayk_App.ViewModel.App.Event
         Model.Event _event;
        
 
-        public async Task LoadEvent() => _event = await _eventService.GetEventById(EventId);
+        public async Task LoadEvent() => Event = await _eventService.GetEventById(EventId);
 
         [RelayCommand]
         async Task RedirectToEventDocuments()
         {
-            //var navigation = Shell.Current.Navigation;
-            //var currentPage = navigation.NavigationStack.LastOrDefault();
 
-            //if (currentPage != null)
-            //{
-            //    navigation.RemovePage(currentPage);
-
-            //    await Shell.Current.GoToAsync(nameof(EventDocumentsPage), new Dictionary<string, object>
-            //    {
-            //        {"eventId", EventId }
-            //    });
-            //}
-
-            //await _navigationService.GoBackAsync(animated: false);
             var currentPage = Shell.Current.CurrentPage;
             await Shell.Current.GoToAsync(nameof(EventDocumentsPage), new Dictionary<string, object>
             {

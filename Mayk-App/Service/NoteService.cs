@@ -22,6 +22,11 @@ namespace Mayk_App.Service
             return await connection.DeleteAsync(note);
         }
 
+        public async Task<Note> GetByIdAsync(int id)
+        {
+            return await connection.Table<Note>().Where(x => x.NoteId == id).FirstOrDefaultAsync();
+        }
+
         public async Task<List<Note>> GetAsync()
         {
             return await connection.Table<Note>().ToListAsync();

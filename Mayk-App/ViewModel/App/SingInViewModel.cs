@@ -22,10 +22,10 @@ namespace Mayk_App.ViewModel.App
         }
 
         [ObservableProperty]
-        string userLogin = "1";
+        string userLogin = "Surpk@surpk.ru";
 
         [ObservableProperty]
-        string userPassword = "1";
+        string userPassword = "123";
 
         [ObservableProperty]
         bool isWrong = false;

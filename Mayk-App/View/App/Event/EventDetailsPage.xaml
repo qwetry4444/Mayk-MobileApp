@@ -7,7 +7,6 @@
              Title="Подробности">
     <Grid ColumnDefinitions="1*, 1*, 2*, 4*, 2*, 1*, 1*"
           RowDefinitions="Auto, Auto, Auto">
-
         <HorizontalStackLayout Grid.Row="0"
                                Grid.Column="0"
                                Grid.ColumnSpan="7"
@@ -34,15 +33,22 @@
                        Style="{StaticResource EventPageSwitchPassiveLabel}"/>
             </Frame>
         </HorizontalStackLayout>
-        
+
         <VerticalStackLayout Grid.Row="1"
                              Grid.Column="2"
                              Grid.ColumnSpan="3"
                              HorizontalOptions="Center"
                              Margin="0, 0, 0, 54"
                              >
-            <Label Text="Мероприятие" HorizontalOptions="Center"/>
-            <Label Text="{Binding Event.Name}" HorizontalOptions="Center"/>
+            <Label Text="Мероприятие" 
+                   HorizontalOptions="Center"
+                   FontSize="21"
+                   FontFamily="MontserratMedium"
+                   />
+            <Label Text="{Binding Event.Name}" 
+                   HorizontalOptions="Center"
+                   FontSize="21"
+                   FontFamily="MontserratBold"/>
         </VerticalStackLayout>
 
 
@@ -54,8 +60,12 @@
                 <Image Source="clock.png"
                        HeightRequest="32"/>
                 <VerticalStackLayout Spacing="6">
-                    <Label Text="Дата и время"/>
-                    <Label Text="{Binding Event.Date}"/>
+                    <Label Text="Дата и время"
+                           TextColor="Gray"
+                           FontFamily="MontserratMedium"/>
+                    <Label Text="{Binding Event.Date}"
+                           TextColor="Black"
+                           FontFamily="MontserratMedium"/>
                 </VerticalStackLayout>
             </HorizontalStackLayout>
 
@@ -64,23 +74,40 @@
                 <Image Source="location.png"
                     HeightRequest="32"/>
                 <VerticalStackLayout Spacing="6">
-                    <Label Text="Место"/>
-                    <Label Text="{Binding Event.Location}"/>
+                    <Label Text="Место"
+                           TextColor="Gray"
+                           FontFamily="MontserratMedium"/>
+                    <Label Text="{Binding Event.Location}"
+                           TextColor="Black"
+                           FontFamily="MontserratMedium"/>
                 </VerticalStackLayout>
             </HorizontalStackLayout>
 
 
-            <HorizontalStackLayout Spacing="12" VerticalOptions="Center">
+            <HorizontalStackLayout Spacing="12" VerticalOptions="Center" Margin="0, 0, 0, 10">
                 <Image Source="people.png"
                        HeightRequest="32"
                        VerticalOptions="Center"/>
                 <Label Text="Список участников"
+                       TextColor="Black"
+                       FontFamily="MontserratMedium"
                        VerticalOptions="Center"/>
                 <Image Source="arrow4.png"
                    HeightRequest="20"/>
                 <!--<Label Text="{Binding Event.Date}"/> FIXME!!-->
             </HorizontalStackLayout>
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="8">
+                <Label Text="О мероприятии"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       Style="{StaticResource SubtitleLabelStyle}"/>
+                <Label Text="{Binding Event.Description}"
+                       LineBreakMode="WordWrap"
+                       FontFamily="MontserratMedium"
+                       VerticalOptions="Start"
+                       HorizontalOptions="FillAndExpand"
+                       />
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </Grid>
-
 </ContentPage>

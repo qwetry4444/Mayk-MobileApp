@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.Model;
 using Mayk_App.Service;
+using Mayk_App.View.App.Event;
 using MvvmHelpers;
 
 using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
@@ -43,7 +44,7 @@ namespace Mayk_App.ViewModel.App
         bool isRepetitionsVisible;
 
         [ObservableProperty]
-        int userId = 6;
+        int userId = 8;
 
         [ObservableProperty]
         ActivityType whatToDisplay = ActivityType.All;
@@ -87,6 +88,26 @@ namespace Mayk_App.ViewModel.App
             WhatToDisplay = ActivityType.Repetition;
             IsEventsVisible = false;
             IsRepetitionsVisible = true;
+        }
+
+        [RelayCommand]
+        async Task RedirectToEvent(Model.Event _event)
+        {
+            var x = Shell.Current.Navigation.NavigationStack;
+
+            await Shell.Current.GoToAsync(nameof(EventDetailsPage), new Dictionary<string, object>
+            {
+                {"eventId", _event.EventId }
+            });
+        }
+
+        [RelayCommand]
+        async Task RedirectToRepetition(Repetition repetition)
+        {
+            await Shell.Current.GoToAsync(nameof(EventDetailsPage), new Dictionary<string, object>
+            {
+                {"eventId", repetition.RepetitionId}
+            });
         }
 
 

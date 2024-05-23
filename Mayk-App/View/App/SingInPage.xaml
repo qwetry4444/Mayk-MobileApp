@@ -139,7 +139,8 @@
             <Frame Style="{StaticResource InputPanelStyle}">
                 <Entry Placeholder="Пароль"
                        Text="{Binding UserPassword}"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}"
+                       IsPassword="True"/>
             </Frame>
             <Frame IsVisible="{Binding IsWrong}"
                    Style="{StaticResource WrongAlertPanelStyle}">

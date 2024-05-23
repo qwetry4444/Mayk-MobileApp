@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.Model;
 using Mayk_App.Service;
+using Mayk_App.View.Admin;
 using Mayk_App.View.App.Event;
 using MvvmHelpers;
 using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
@@ -61,7 +62,7 @@ namespace Mayk_App.ViewModel.App
             List<Repetition> repetitions = 
                 await _repetitionService.GetFutherUserRepetitionsById(userRepetitions);
             
-            NearestRepetition = repetitions.FirstOrDefault();
+            NearestRepetition = repetitions.LastOrDefault();
         }
 
         public async Task GetUser()
@@ -80,8 +81,6 @@ namespace Mayk_App.ViewModel.App
         [RelayCommand]
         async Task RedirectToEvent()
         {
-            var x = Shell.Current.Navigation.NavigationStack;
-
             await Shell.Current.GoToAsync(nameof(EventDetailsPage), new Dictionary<string, object>
             {
                 {"eventId", NearestEvent.EventId }
@@ -91,10 +90,16 @@ namespace Mayk_App.ViewModel.App
         [RelayCommand]
         async Task RedirectToRepetition()
         {
-            await Shell.Current.GoToAsync(nameof(EventDetailsPage), new Dictionary<string, object>
+            await Shell.Current.GoToAsync(nameof(RepetitionDetailsPage), new Dictionary<string, object>
             {
-                {"eventId", NearestRepetition.RepetitionId}
+                {"repetitionId", NearestRepetition.RepetitionId}
             });
+        }
+
+        [RelayCommand]
+        async Task RedirectToTablesListPage()
+        {
+            await Shell.Current.GoToAsync(nameof(TablesListPage));
         }
     }
 }

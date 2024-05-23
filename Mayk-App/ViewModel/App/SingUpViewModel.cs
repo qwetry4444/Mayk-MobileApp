@@ -56,22 +56,22 @@ namespace Mayk_App.ViewModel.App
         int _userId = 0;
 
         [ObservableProperty]
-        private string _firstName = "1";
+        private string _firstName;
 
         [ObservableProperty]
-        private string _lastName = "1";
+        private string _lastName;
 
         [ObservableProperty]
-        private string _phoneNumber = "1";
+        private string _phoneNumber;
 
         [ObservableProperty]
-        private string _email = "1";
+        private string _email;
 
         [ObservableProperty]
-        private string _password = "1";
+        private string _password;
 
         [ObservableProperty]
-        private string _passwordRepeat = "1";
+        private string _passwordRepeat;
 
 
     }

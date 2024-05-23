@@ -97,6 +97,8 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddSingleton<EventDetailsViewModel>();
             mauiAppBuilder.Services.AddSingleton<EventDocumentsViewModel>();
             mauiAppBuilder.Services.AddSingleton<EventNotesViewModel>();
+            mauiAppBuilder.Services.AddSingleton<RepetitionDetailsViewModel>();
+
 
             mauiAppBuilder.Services.AddSingleton<NotesListViewModel>();
             mauiAppBuilder.Services.AddSingleton<NoteDetailsViewModel>();
@@ -139,6 +141,7 @@ namespace Mayk_App
             mauiAppBuilder.Services.AddTransient<EventDetailsPage>();
             mauiAppBuilder.Services.AddTransient<EventDocumentsPage>();
             mauiAppBuilder.Services.AddTransient<EventNotesPage>();
+            mauiAppBuilder.Services.AddTransient<RepetitionDetailsPage>();
 
             mauiAppBuilder.Services.AddTransient<NotesListPage>();
             mauiAppBuilder.Services.AddTransient<NoteDetailsPage>();

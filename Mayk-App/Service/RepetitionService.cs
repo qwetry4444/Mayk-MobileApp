@@ -51,7 +51,7 @@ namespace Mayk_App.Service
             List<int> repetitionsIds = userRepetitions.Select(ur => ur.RepetitionId).ToList();
             DateTime now = DateTime.Now;
             List<Repetition> futherRepetitions = await connection.Table<Repetition>()
-                .Where(repetition => repetitionsIds.Contains(repetition.RepetitionId) && repetition.Date > now)
+                .Where(repetition => repetitionsIds.Contains(repetition.RepetitionId) )
                 .ToListAsync();
             return futherRepetitions;   
         }

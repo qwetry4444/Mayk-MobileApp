@@ -10,13 +10,12 @@
 
     <Style x:Key="TitleLabelStyle"
                    TargetType="{x:Type Label}">
-        <Setter Property="HorizontalOptions" Value="Center"/>
-        <Setter Property="FontFamily" Value="MontserratSemibold"/>
-        <Setter Property="HorizontalTextAlignment" Value="Center"/>
-        <Setter Property="FontSize" Value="28"/>
+        <Setter Property="FontFamily" Value="MontserratMedium"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="FontSize" Value="22"/>
         <Setter Property="TextColor" Value="#fff"/>
         <Setter Property="Margin" Value="0, 50, 0, 10"/>
-        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
     </Style>
 
     <Style x:Key="SubtitleLabelStyle"
@@ -61,7 +60,7 @@
         <Setter Property="HorizontalTextAlignment" Value="Center"/>
         <Setter Property="VerticalTextAlignment" Value="Center"/>
         <Setter Property="TextColor" Value="{StaticResource Gray400}"/>
-        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontFamily" Value="MontserratMedium"/>
         <Setter Property="FontSize" Value="16"/>
     </Style>
 
@@ -70,20 +69,20 @@
         <Setter Property="HorizontalTextAlignment" Value="Center"/>
         <Setter Property="VerticalTextAlignment" Value="Center"/>
         <Setter Property="TextColor" Value="#fff"/>
-        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontFamily" Value="MontserratMedium"/>
         <Setter Property="FontSize" Value="20"/>
     </Style>
     
     <Style x:Key="GreetLabelStyle"
             TargetType="Label">
-        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontFamily" Value="MontserratMedium"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="TextColor" Value="{StaticResource Black}"/>
     </Style>
 
     <Style x:Key="EventPageSwitchActiveLabel"
            TargetType="Label">
-        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontFamily" Value="MontserratMedium"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="TextColor" Value="{StaticResource White}"/>
         <Setter Property="VerticalTextAlignment" Value="Center"/>
@@ -91,7 +90,7 @@
 
     <Style x:Key="EventPageSwitchPassiveLabel"
            TargetType="Label">
-        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontFamily" Value="MontserratMedium"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="TextColor" Value="{StaticResource Gray500}"/>
         <Setter Property="VerticalTextAlignment" Value="Center"/>
@@ -121,7 +120,7 @@
 
     <Style x:Key="NearestEventsTitleLabelStyle"
             TargetType="Label">
-        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontFamily" Value="MontserratMedium"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="TextColor" Value="{StaticResource Black}"/>
     </Style>
@@ -134,14 +133,14 @@
 
     <Style x:Key="EventTypeLabelStyle"
         TargetType="Label">
-        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontFamily" Value="MontserratMedium"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="TextColor" Value="{StaticResource Primary}"/>
     </Style>
 
     <Style x:Key="EventNameLabelStyle"
         TargetType="Label">
-        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontFamily" Value="MontserratMedium"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="TextColor" Value="{StaticResource Black}"/>
         <Setter Property="HeightRequest" Value="64"/>
@@ -151,7 +150,7 @@
 
     <Style x:Key="EventDateLabelStyle"
             TargetType="Label">
-        <Setter Property="FontFamily" Value="MontserratSemibold"/>
+        <Setter Property="FontFamily" Value="MontserratMedium"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="TextColor" Value="{StaticResource Gray400}"/>
         <Setter Property="Margin" Value="0, 8, 0, 0"/>

@@ -6,11 +6,12 @@
              x:DataType="vm:EventsScheduleViewModel"
              x:Class="Mayk_App.View.App.EventsSchedulePage"
              Title="Расписание">
+    <ScrollView>
     <VerticalStackLayout>
         <Grid
             ColumnDefinitions="1*, 1*, 8*, 1*, 1*"
             RowDefinitions="Auto, Auto, Auto">
-            <HorizontalStackLayout Grid.Column="1"
+                <HorizontalStackLayout Grid.Column="1"
                                    Grid.ColumnSpan="3"
                                    Grid.Row="0"
                                    HorizontalOptions="Center"
@@ -19,138 +20,139 @@
                                    Margin="6, 18, 6, 32">
 
 
-                <Frame Style="{StaticResource SwitchWhatToDisplayPanelStyle}">
-                    <Frame.Triggers>
-                        <DataTrigger TargetType="Frame" Binding="{Binding WhatToDisplay}" Value="All">
-                            <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
-                        </DataTrigger>
-                    </Frame.Triggers>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ShowAllCommand}"/>
-                    </Frame.GestureRecognizers>
-                    <Label Text="Все"
-                           Style="{StaticResource SwitchWhatToDisplayLabelStyle}">
-                        <Label.Triggers>
-                            <DataTrigger TargetType="Label" Binding="{Binding WhatToDisplay}" Value="All">
-                                <Setter Property="TextColor" Value="{StaticResource White}"/>
+                    <Frame Style="{StaticResource SwitchWhatToDisplayPanelStyle}">
+                        <Frame.Triggers>
+                            <DataTrigger TargetType="Frame" Binding="{Binding WhatToDisplay}" Value="All">
+                                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
                             </DataTrigger>
-                        </Label.Triggers>
-                    </Label>
-                </Frame>
+                        </Frame.Triggers>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ShowAllCommand}"/>
+                        </Frame.GestureRecognizers>
+                        <Label Text="Все"
+                           Style="{StaticResource SwitchWhatToDisplayLabelStyle}">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" Binding="{Binding WhatToDisplay}" Value="All">
+                                    <Setter Property="TextColor" Value="{StaticResource White}"/>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                    </Frame>
 
-                <Frame Style="{StaticResource SwitchWhatToDisplayPanelStyle}">
-                    <Frame.Triggers>
-                        <DataTrigger TargetType="Frame" Binding="{Binding WhatToDisplay}" Value="Repetition">
-                            <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
-                        </DataTrigger>
-                    </Frame.Triggers>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ShowRepetitionsCommand}"/>
-                    </Frame.GestureRecognizers>
-                    <Label Text="Реп"
-                           Style="{StaticResource SwitchWhatToDisplayLabelStyle}">
-                        <Label.Triggers>
-                            <DataTrigger TargetType="Label" Binding="{Binding WhatToDisplay}" Value="Repetition">
-                                <Setter Property="TextColor" Value="{StaticResource White}"/>
+                    <Frame Style="{StaticResource SwitchWhatToDisplayPanelStyle}">
+                        <Frame.Triggers>
+                            <DataTrigger TargetType="Frame" Binding="{Binding WhatToDisplay}" Value="Repetition">
+                                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
                             </DataTrigger>
-                        </Label.Triggers>
-                    </Label>
-                </Frame>
-                <Frame Style="{StaticResource SwitchWhatToDisplayPanelStyle}">
-                    <Frame.Triggers>
-                        <DataTrigger TargetType="Frame" Binding="{Binding WhatToDisplay}" Value="Event">
-                            <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
-                        </DataTrigger>
-                    </Frame.Triggers>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ShowEventsCommand}"/>
-                    </Frame.GestureRecognizers>
-                    <Label Text="Мер"
+                        </Frame.Triggers>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ShowRepetitionsCommand}"/>
+                        </Frame.GestureRecognizers>
+                        <Label Text="Реп"
                            Style="{StaticResource SwitchWhatToDisplayLabelStyle}">
-                        <Label.Triggers>
-                            <DataTrigger TargetType="Label" Binding="{Binding WhatToDisplay}" Value="Event">
-                                <Setter Property="TextColor" Value="{StaticResource White}"/>
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" Binding="{Binding WhatToDisplay}" Value="Repetition">
+                                    <Setter Property="TextColor" Value="{StaticResource White}"/>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                    </Frame>
+                    <Frame Style="{StaticResource SwitchWhatToDisplayPanelStyle}">
+                        <Frame.Triggers>
+                            <DataTrigger TargetType="Frame" Binding="{Binding WhatToDisplay}" Value="Event">
+                                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
                             </DataTrigger>
-                        </Label.Triggers>
-                    </Label>
-                </Frame>
-            </HorizontalStackLayout>
+                        </Frame.Triggers>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ShowEventsCommand}"/>
+                        </Frame.GestureRecognizers>
+                        <Label Text="Мер"
+                           Style="{StaticResource SwitchWhatToDisplayLabelStyle}">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" Binding="{Binding WhatToDisplay}" Value="Event">
+                                    <Setter Property="TextColor" Value="{StaticResource White}"/>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                    </Frame>
+                </HorizontalStackLayout>
 
-            <CollectionView ItemsSource="{Binding Events}"
+                <CollectionView ItemsSource="{Binding Events}"
                             Grid.Column="1"
                             Grid.ColumnSpan="3"
                             Grid.Row="1"
                             IsVisible="{Binding IsEventsVisible}"
                             >
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Event">
-                        <Grid ColumnDefinitions="8*, 2*"
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Event">
+                            <Grid ColumnDefinitions="8*, 2*"
                               RowDefinitions="40, 32, 32"
                               Padding="16">
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer/>
-                            </Grid.GestureRecognizers>
-                            <Label Grid.Column="0"
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:EventsScheduleViewModel}}, Path=RedirectToEventCommand}"
+                                                           CommandParameter="{Binding .}"/>
+                                </Grid.GestureRecognizers>
+                                <Label Grid.Column="0"
                                    Grid.Row="0"
                                    Text="Мероприятие"
                                    Style="{StaticResource EventTypeLabelStyle}"/>
-                            <Label Grid.Column="0"
+                                <Label Grid.Column="0"
                                    Grid.Row="1"
                                    Text="{Binding Name}"
                                    Style="{StaticResource EventNameLabelStyle}"/>
-                            <Label Grid.Column="0"
+                                <Label Grid.Column="0"
                                    Grid.Row="2"
                                    Text="{Binding Date}"
                                    Style="{StaticResource EventDateLabelStyle}"/>
-                            <Image Grid.Column="1"
+                                <Image Grid.Column="1"
                                    Grid.Row="0"
                                    Grid.RowSpan="2"
                                    Source="arrow4.png"
                                    HeightRequest="20"
                                    VerticalOptions="Center"/>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-            <CollectionView ItemsSource="{Binding Repetitions}"
+                <CollectionView ItemsSource="{Binding Repetitions}"
                             Grid.Column="1"
                             Grid.ColumnSpan="3"
                             Grid.Row="2"
                             IsVisible="{Binding IsRepetitionsVisible}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Repetition">
-                        <Grid ColumnDefinitions="8*, 2*"
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Repetition">
+                            <Grid ColumnDefinitions="8*, 2*"
                               RowDefinitions="40, 32, 32"
                               Padding="16">
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer/>
-                            </Grid.GestureRecognizers>
-                            <Label Grid.Column="0"
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:EventsScheduleViewModel}}, Path=RedirectToCommand}"
+                                                           CommandParameter="{Binding .}"/>
+                                </Grid.GestureRecognizers>
+                                <Label Grid.Column="0"
                                    
                            Grid.Row="0"
                            Text="Репетиция"
                            Style="{StaticResource EventTypeLabelStyle}"/>
-                            <Label Grid.Column="0"
+                                <Label Grid.Column="0"
                            Grid.Row="1"
                            Text="{Binding Location}"
                            Style="{StaticResource EventNameLabelStyle}"/>
-                            <Label Grid.Column="0"
+                                <Label Grid.Column="0"
                            Grid.Row="2"
                            Text="{Binding Date}"
                            Style="{StaticResource EventDateLabelStyle}"/>
-                            <Image Grid.Column="1"
+                                <Image Grid.Column="1"
                            Grid.Row="0"
                            Grid.RowSpan="2"
                            Source="arrow4.png"
                            HeightRequest="20"
                            VerticalOptions="Center"/>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Grid>
-
-
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -62,7 +62,10 @@
 	  <None Remove="Resources\Images\clock.png" />
 	  <None Remove="Resources\Images\closed_eye.png" />
 	  <None Remove="Resources\Images\docs.svg" />
+	  <None Remove="Resources\Images\documents2.png" />
+	  <None Remove="Resources\Images\documents_title.png" />
 	  <None Remove="Resources\Images\garbage_backet.png" />
+	  <None Remove="Resources\Images\hand2.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\library.png" />
 	  <None Remove="Resources\Images\location.png" />
@@ -177,6 +180,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\App\Event\EventNotesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\App\Event\RepetitionDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\App\SingInPage.xaml">

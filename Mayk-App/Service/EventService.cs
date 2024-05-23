@@ -53,7 +53,7 @@ namespace Mayk_App.Service
         {
             return await connection.Table<Event>()
                 .Where(u => DateTime.Now < u.Date)
-                .OrderByDescending(u => u.Date)
+                .OrderBy(u => u.Date)
                 .FirstOrDefaultAsync();
         }
 

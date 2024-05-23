@@ -141,7 +141,8 @@
             <Frame Style="{StaticResource InputPanelStyle}">
                 <Entry Placeholder="Пароль"
                        Text="{Binding Password, Mode=TwoWay}"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}"
+                       IsPassword="True"/>
             </Frame>
         </VerticalStackLayout>
 
