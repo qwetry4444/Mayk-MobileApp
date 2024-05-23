@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Mayk_App.Model;
 using Mayk_App.Service;
+using System.Runtime.InteropServices;
 
 namespace Mayk_App.ViewModel.App.Notes
 {
@@ -33,6 +34,8 @@ namespace Mayk_App.ViewModel.App.Notes
         [RelayCommand]
         public async Task LoadNote()
         {
+            int userNotesCount = await _noteService.GetUserNotesCount(UserId);
+
             if (NoteId != 0)
             {
                 note = await _noteService.GetByIdAsync(NoteId);
@@ -41,7 +44,7 @@ namespace Mayk_App.ViewModel.App.Notes
             }
             else
             {
-                NoteTitle = "";
+                NoteTitle = $"Заметка {userNotesCount + 1}";
                 NoteDescription = "";
             }
         }
@@ -56,8 +59,8 @@ namespace Mayk_App.ViewModel.App.Notes
                 {
                     UserId = UserId,
                     Date = DateTime.Now,
-                    Title = $"Заметка {userNotesCount + 1}",
-                    Description = "",
+                    Title = NoteTitle,
+                    Description = NoteDescription,
                 });
             }
             else
@@ -69,6 +72,13 @@ namespace Mayk_App.ViewModel.App.Notes
                     Description = NoteDescription
                 });
             }
+            await Shell.Current.Navigation.PopAsync();
+        }
+
+        [RelayCommand]
+        public async Task DeleteNote()
+        {
+            await _noteService.DeleteAsync(note);
             await Shell.Current.Navigation.PopAsync();
         }
 
